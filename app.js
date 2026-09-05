@@ -31,6 +31,15 @@ storyVideos.forEach(video => {
 
   const card = video.closest('.film-card');
   const soundBtn = card?.querySelector('.story-sound-toggle');
+  const progressFill = card?.querySelector('.film-progress-fill');
+
+  // Track progress bar smoothly
+  video.addEventListener('timeupdate', () => {
+    if (progressFill && video.duration) {
+      const pct = (video.currentTime / video.duration) * 100;
+      progressFill.style.width = `${pct}%`;
+    }
+  });
 
   if (soundBtn) {
     soundBtn.addEventListener('click', (e) => {
@@ -40,8 +49,12 @@ storyVideos.forEach(video => {
         storyVideos.forEach(v => {
           if (v !== video) {
             v.muted = true;
-            const otherBtn = v.closest('.film-card')?.querySelector('.story-sound-toggle .sound-icon');
-            if (otherBtn) otherBtn.textContent = '🔇';
+            const otherBtn = v.closest('.film-card')?.querySelector('.story-sound-toggle');
+            if (otherBtn) {
+              const icon = otherBtn.querySelector('.sound-icon');
+              if (icon) icon.textContent = '🔇';
+              otherBtn.classList.remove('unmuted');
+            }
           }
         });
         if (heroVideo) {
@@ -51,6 +64,7 @@ storyVideos.forEach(video => {
       }
       video.muted = willMute;
       soundBtn.querySelector('.sound-icon').textContent = willMute ? '🔇' : '🔊';
+      soundBtn.classList.toggle('unmuted', !willMute);
     });
   }
 

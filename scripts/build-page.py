@@ -471,23 +471,38 @@ parts.append(f'''</div>
     <div class="film-rail" tabindex="0" aria-label="Flower videos, swipe to explore">''')
 
 videos = json.loads((R / 'assets/videos.json').read_text())
-# Include all 3 videos looping seamlessly without buttons
-for v in [videos[1], videos[2], videos[0]]:
-    parts.append(f'''<article class="film-card">
+# Include Rose varmala, Lotus varmala, and Bouquet reel
+for v in videos[:3]:
+    theme = v.get('theme', 'theme-rose')
+    tag = v.get('tag', v['marathi'])
+    parts.append(f'''<article class="film-card {theme}" data-video-id="{v['id']}">
   <div class="film-frame">
     <video class="story-video" src="{v['src']}" poster="{v['poster']}" autoplay muted loop playsinline preload="auto" aria-label="{v['title']}"></video>
+    <div class="film-ambient-aura" aria-hidden="true"></div>
     <div class="story-video-overlay">
-      <span class="story-tag fluid-story-pill"><span class="story-tag-dot" aria-hidden="true"></span>{v['marathi']}</span>
-      <button class="sound-toggle-btn story-sound-toggle" aria-label="Toggle sound" title="Toggle audio">
+      <span class="story-tag fluid-story-pill">
+        <span class="story-tag-dot" aria-hidden="true"></span>
+        <span class="story-tag-text">{tag}</span>
+      </span>
+      <button class="sound-toggle-btn story-sound-toggle" aria-label="Toggle audio" title="आवाज चालू/बंद करा">
         <span class="sound-icon">🔇</span>
       </button>
     </div>
-    {watermark()}
+    <div class="film-progress-bar" aria-hidden="true">
+      <div class="film-progress-fill"></div>
+    </div>
+    <div class="film-watermark">
+      <span class="wm-brand">🌸 SAGAR FLOWER SHOP</span>
+      <span class="wm-loc">· PARLI</span>
+    </div>
   </div>
   <div class="film-caption">
-    <h3>{v['title']}</h3>
-    <p lang="mr">{v['marathi']}</p>
-    <a class="story-order-btn fluid-card-inquire" href="{wa(v['title'] + ' - ' + v['marathi'])}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp वर ऑर्डर - {v['title']}">
+    <div class="film-caption-header">
+      <span class="film-eyebrow">SAGAR SIGNATURE REEL</span>
+      <h3 class="film-title">{v['title']}</h3>
+      <p class="film-desc" lang="mr">{v['marathi']}</p>
+    </div>
+    <a class="story-order-btn fluid-card-inquire" href="{wa(v['title'] + ' - ' + v['marathi'] + ' (व्हिडिओ पाहून ऑर्डर)')}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp वर ऑर्डर - {v['title']}">
       <div class="inquire-wa-part">
         <svg class="inquire-wa-svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c4.54 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.84a8.18 8.18 0 0 1-5.82 2.41c-1.42 0-2.82-.37-4.06-1.07l-.29-.17-3.02.79.81-2.94-.19-.3a8.21 8.21 0 0 1-1.26-4.56c0-4.54 3.7-8.24 8.24-8.24zm4.51 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.25-1.49-1.4-1.74-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43l-.48-.01c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.72 4.31 3.81.6.26 1.07.42 1.44.53.61.2 1.16.17 1.6-.1.49-.3 1.47-1.2 1.68-1.75.2-.55.2-1.02.14-1.12-.06-.1-.23-.16-.48-.28z"/></svg>
         <span>WhatsApp वर ऑर्डर द्या</span>
