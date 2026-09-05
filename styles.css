@@ -526,15 +526,24 @@ h1 em {
   background: #065427;
 }
 
-/* Fluid Organic Neck Bridge connecting WA & Call */
-.fluid-pod-neck {
-  width: 26px;
-  margin-inline: -13px;
-  background: linear-gradient(90deg, #08993f 0%, rgba(255, 255, 255, 0.92) 100%);
+/* Fluid Organic Waist Bridge connecting WA & Call */
+.fluid-pod-waist {
+  width: 36px;
+  height: 100%;
+  margin-inline: -18px;
   position: relative;
   z-index: 1;
-  clip-path: polygon(0 0, 100% 14%, 100% 86%, 0 100%);
-  opacity: 0.9;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pod-waist-svg {
+  width: 100%;
+  height: 100%;
+  min-height: 68px;
+  display: block;
 }
 
 /* Call Fluid Unit */
@@ -721,31 +730,35 @@ h1 em {
   box-shadow: 0 12px 28px rgba(250, 204, 21, 0.46), inset 0 2px 1px #ffffff;
 }
 
-/* Fluid Bridges connecting the tags */
-.fluid-tag-bridge {
-  width: 22px;
-  height: 16px;
-  margin-inline: -9px;
-  border-radius: 999px;
+/* Organic Fluid Tag Waists connecting the tags */
+.fluid-tag-waist {
+  width: 28px;
+  height: 44px;
+  margin-inline: -14px;
   position: relative;
   z-index: 1;
-  opacity: 0.75;
   pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.bridge-garlands-bouquets {
-  background: linear-gradient(90deg, #fbcfe8, #bbf7d0);
-  box-shadow: 0 3px 8px rgba(244, 114, 182, 0.2);
+.tag-waist-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
-.bridge-bouquets-decor {
-  background: linear-gradient(90deg, #bbf7d0, #fecaca);
-  box-shadow: 0 3px 8px rgba(34, 197, 94, 0.2);
+.waist-1 {
+  filter: drop-shadow(0 6px 12px rgba(244, 114, 182, 0.25));
 }
 
-.bridge-decor-delivery {
-  background: linear-gradient(90deg, #fecaca, #fef08a);
-  box-shadow: 0 3px 8px rgba(250, 204, 21, 0.2);
+.waist-2 {
+  filter: drop-shadow(0 6px 12px rgba(34, 197, 94, 0.22));
+}
+
+.waist-3 {
+  filter: drop-shadow(0 6px 12px rgba(248, 113, 113, 0.22));
 }
 
 /* Hero Video Showcase */
@@ -2082,7 +2095,7 @@ dialog::backdrop { background: rgba(8, 24, 17, 0.94); }
     justify-content: space-between;
     padding: 8px 14px 8px 10px;
   }
-  .fluid-pod-neck {
+  .fluid-pod-waist {
     display: none;
   }
   .fluid-unit-wa .fluid-title, .fluid-unit-call .call-number {
@@ -2128,10 +2141,10 @@ dialog::backdrop { background: rgba(8, 24, 17, 0.94); }
   .fluid-tag-pill .tag-icon {
     font-size: 16px;
   }
-  .fluid-tag-bridge {
-    width: 18px;
-    height: 14px;
-    margin-inline: -7px;
+  .fluid-tag-waist {
+    width: 22px;
+    height: 38px;
+    margin-inline: -11px;
   }
   
   h2 { font-size: 34px; }

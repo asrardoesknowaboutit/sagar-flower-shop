@@ -143,8 +143,21 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
           </div>
         </a>
 
-        <!-- Fluid Neck Bridge -->
-        <div class="fluid-pod-neck" aria-hidden="true"></div>
+        <!-- Organic Fluid Waist Bridge -->
+        <div class="fluid-pod-waist" aria-hidden="true">
+          <svg class="pod-waist-svg" viewBox="0 0 36 72" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="podWaistGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#08993f"/>
+                <stop offset="45%" stop-color="#12b855"/>
+                <stop offset="75%" stop-color="#eaf8ef"/>
+                <stop offset="100%" stop-color="#ffffff"/>
+              </linearGradient>
+            </defs>
+            <path d="M 0,0 C 9,0 13,16 18,16 C 23,16 27,0 36,0 L 36,72 C 27,72 23,56 18,56 C 13,56 9,72 0,72 Z" fill="url(#podWaistGrad)"/>
+            <path d="M 0,0 C 9,0 13,16 18,16 C 23,16 27,0 36,0" fill="none" stroke="rgba(255, 255, 255, 0.75)" stroke-width="1.5"/>
+          </svg>
+        </div>
 
         <!-- Call Unit -->
         <a class="fluid-unit fluid-unit-call" href="tel:+917620644158" aria-label="76206 44158 - Call us directly">
@@ -177,7 +190,21 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
           <span class="tag-arrow" aria-hidden="true">›</span>
         </a>
 
-        <div class="fluid-tag-bridge bridge-garlands-bouquets" aria-hidden="true"></div>
+        <!-- Organic Fluid Tag Waist 1-2 -->
+        <div class="fluid-tag-waist waist-1" aria-hidden="true">
+          <svg class="tag-waist-svg" viewBox="0 0 28 46" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="tagWaistGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="50%" stop-color="#fff0f5"/>
+                <stop offset="100%" stop-color="#ffffff"/>
+              </linearGradient>
+            </defs>
+            <path d="M 0,0 C 7,0 10,9 14,9 C 18,9 21,0 28,0 L 28,46 C 21,46 18,37 14,37 C 10,37 7,46 0,46 Z" fill="url(#tagWaistGrad1)"/>
+            <path d="M 0,0 C 7,0 10,9 14,9 C 18,9 21,0 28,0" fill="none" stroke="rgba(255, 255, 255, 0.95)" stroke-width="1.5"/>
+            <path d="M 0,46 C 7,46 10,37 14,37 C 18,37 21,46 28,46" fill="none" stroke="rgba(255, 255, 255, 0.9)" stroke-width="1.5"/>
+          </svg>
+        </div>
 
         <!-- Tag 2: बुके (Bouquets) -->
         <a class="fluid-tag-pill tag-bouquets" href="#collection" data-filter-trigger="bouquets">
@@ -186,7 +213,21 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
           <span class="tag-arrow" aria-hidden="true">›</span>
         </a>
 
-        <div class="fluid-tag-bridge bridge-bouquets-decor" aria-hidden="true"></div>
+        <!-- Organic Fluid Tag Waist 2-3 -->
+        <div class="fluid-tag-waist waist-2" aria-hidden="true">
+          <svg class="tag-waist-svg" viewBox="0 0 28 46" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="tagWaistGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="50%" stop-color="#f0fdf4"/>
+                <stop offset="100%" stop-color="#ffffff"/>
+              </linearGradient>
+            </defs>
+            <path d="M 0,0 C 7,0 10,9 14,9 C 18,9 21,0 28,0 L 28,46 C 21,46 18,37 14,37 C 10,37 7,46 0,46 Z" fill="url(#tagWaistGrad2)"/>
+            <path d="M 0,0 C 7,0 10,9 14,9 C 18,9 21,0 28,0" fill="none" stroke="rgba(255, 255, 255, 0.95)" stroke-width="1.5"/>
+            <path d="M 0,46 C 7,46 10,37 14,37 C 18,37 21,46 28,46" fill="none" stroke="rgba(255, 255, 255, 0.9)" stroke-width="1.5"/>
+          </svg>
+        </div>
 
         <!-- Tag 3: गाडी सजावट (Car Decor) -->
         <a class="fluid-tag-pill tag-decor" href="#collection" data-filter-trigger="decor">
@@ -195,7 +236,21 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
           <span class="tag-arrow" aria-hidden="true">›</span>
         </a>
 
-        <div class="fluid-tag-bridge bridge-decor-delivery" aria-hidden="true"></div>
+        <!-- Organic Fluid Tag Waist 3-4 -->
+        <div class="fluid-tag-waist waist-3" aria-hidden="true">
+          <svg class="tag-waist-svg" viewBox="0 0 28 46" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="tagWaistGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="50%" stop-color="#fff5f5"/>
+                <stop offset="100%" stop-color="#ffffff"/>
+              </linearGradient>
+            </defs>
+            <path d="M 0,0 C 7,0 10,9 14,9 C 18,9 21,0 28,0 L 28,46 C 21,46 18,37 14,37 C 10,37 7,46 0,46 Z" fill="url(#tagWaistGrad3)"/>
+            <path d="M 0,0 C 7,0 10,9 14,9 C 18,9 21,0 28,0" fill="none" stroke="rgba(255, 255, 255, 0.95)" stroke-width="1.5"/>
+            <path d="M 0,46 C 7,46 10,37 14,37 C 18,37 21,46 28,46" fill="none" stroke="rgba(255, 255, 255, 0.9)" stroke-width="1.5"/>
+          </svg>
+        </div>
 
         <!-- Tag 4: घरपोच डिलिव्हरी (Doorstep Delivery) -->
         <a class="fluid-tag-pill tag-delivery" href="{wa('घरपोच डिलिव्हरी बद्दल माहिती')}" target="_blank" rel="noopener noreferrer">
