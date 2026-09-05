@@ -87,21 +87,35 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
     
     <h1 class="hero-headline hero-ticker-wrap" aria-live="polite">
       <div class="hero-ticker-viewport">
+        <!-- Slide 1: Marathi (ताजी फुले) -->
         <div class="hero-ticker-slide active" data-index="0">
-          <span class="ticker-headline-primary" lang="mr">ताजी फुले.</span>
-          <em class="ticker-headline-accent" lang="mr">शुभ क्षणांची साथ.</em>
+          <span class="ticker-headline-primary devanagari-text" lang="mr">ताजी फुले.</span>
+          <em class="ticker-headline-accent devanagari-text" lang="mr">शुभ क्षणांची साथ.</em>
         </div>
+        <!-- Slide 2: Hindi (ताज़े फूल) -->
         <div class="hero-ticker-slide" data-index="1">
-          <span class="ticker-headline-primary" lang="hi">ताज़े फूल.</span>
-          <em class="ticker-headline-accent" lang="hi">खुशियों में आपका साथ.</em>
+          <span class="ticker-headline-primary devanagari-text" lang="hi">ताज़े फूल.</span>
+          <em class="ticker-headline-accent devanagari-text" lang="hi">खुशियों में साथ.</em>
         </div>
+        <!-- Slide 3: English (Fresh Flowers) -->
         <div class="hero-ticker-slide" data-index="2">
-          <span class="ticker-headline-primary" lang="mr">शाही लग्नहार.</span>
-          <em class="ticker-headline-accent" lang="mr">परंपरेचा खरा सुगंध.</em>
+          <span class="ticker-headline-primary english-text" lang="en">Fresh Flowers.</span>
+          <em class="ticker-headline-accent english-text" lang="en">Made for Your Moments.</em>
         </div>
+        <!-- Slide 4: Marathi (शाही लग्नहार) -->
         <div class="hero-ticker-slide" data-index="3">
-          <span class="ticker-headline-primary" lang="hi">शाही वरमाला.</span>
-          <em class="ticker-headline-accent" lang="hi">हर उत्सव की नई शान.</em>
+          <span class="ticker-headline-primary devanagari-text" lang="mr">शाही लग्नहार.</span>
+          <em class="ticker-headline-accent devanagari-text" lang="mr">परंपरेचा खरा सुगंध.</em>
+        </div>
+        <!-- Slide 5: Hindi (शाही वरमाला) -->
+        <div class="hero-ticker-slide" data-index="4">
+          <span class="ticker-headline-primary devanagari-text" lang="hi">शाही वरमाला.</span>
+          <em class="ticker-headline-accent devanagari-text" lang="hi">हर उत्सव की शान.</em>
+        </div>
+        <!-- Slide 6: English (Royal Garlands) -->
+        <div class="hero-ticker-slide" data-index="5">
+          <span class="ticker-headline-primary english-text" lang="en">Royal Garlands.</span>
+          <em class="ticker-headline-accent english-text" lang="en">Pure Tradition & Love.</em>
         </div>
       </div>
     </h1>

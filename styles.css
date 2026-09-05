@@ -267,24 +267,18 @@ button[hidden], [hidden] { display: none !important; }
   color: var(--gold);
 }
 .hero-copy > .eyebrow span { padding: 0 6px; }
-/* HERO BILINGUAL HEADLINE TICKER (MARATHI & HINDI) */
+/* HERO MULTILINGUAL HEADLINE TICKER (MARATHI, HINDI, ENGLISH) */
 .hero-ticker-wrap {
   position: relative;
   display: block;
+  margin-top: 4px;
   margin-bottom: 22px;
 }
 
-h1, .hero-headline {
-  font-size: clamp(42px, 4.4vw, 62px);
-  line-height: 1.14;
-  letter-spacing: -1.8px;
-  margin-bottom: 22px;
-}
-
-.hero-headline {
+h1.hero-headline {
   margin: 0 0 22px 0;
   padding: 0;
-  min-height: calc(2.28em);
+  overflow: visible;
 }
 
 .hero-ticker-viewport {
@@ -293,21 +287,29 @@ h1, .hero-headline {
   grid-template-rows: 1fr;
   position: relative;
   overflow: hidden;
+  padding-block: 10px 14px;
+  padding-inline: 4px;
+  margin-block: -10px -14px;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 8px, black calc(100% - 8px), transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 8px, black calc(100% - 8px), transparent 100%);
 }
 
 .hero-ticker-slide {
   grid-area: 1 / 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(32px);
-  filter: blur(5px);
+  transform: translateY(18px);
+  filter: blur(3px);
   pointer-events: none;
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-              filter 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-              visibility 0.6s;
+  padding-block: 4px 6px;
+  box-sizing: border-box;
+  transition: opacity 0.55s cubic-bezier(0.2, 0.8, 0.2, 1),
+              transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1),
+              filter 0.55s cubic-bezier(0.2, 0.8, 0.2, 1),
+              visibility 0.55s;
   will-change: transform, opacity, filter;
 }
 
@@ -324,37 +326,65 @@ h1, .hero-headline {
 .hero-ticker-slide.leaving-up {
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-32px);
-  filter: blur(5px);
+  transform: translateY(-18px);
+  filter: blur(3px);
   z-index: 1;
 }
 
 .hero-ticker-slide.leaving-down {
   opacity: 0;
   visibility: hidden;
-  transform: translateY(32px);
-  filter: blur(5px);
+  transform: translateY(18px);
+  filter: blur(3px);
   z-index: 1;
 }
 
 .hero-ticker-slide.from-top {
-  transform: translateY(-32px);
+  transform: translateY(-18px);
 }
 
 .ticker-headline-primary {
   display: block;
-  font-family: 'Noto Serif Devanagari', Georgia, serif;
+  font-size: clamp(38px, 4.3vw, 56px);
+  line-height: 1.25;
   font-weight: 600;
   color: var(--forest);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.ticker-headline-primary.devanagari-text {
+  font-family: 'Noto Serif Devanagari', Georgia, serif;
+  letter-spacing: 0;
+}
+
+.ticker-headline-primary.english-text {
+  font-family: 'Cinzel', 'Noto Serif Devanagari', Georgia, serif;
+  letter-spacing: -0.015em;
 }
 
 .ticker-headline-accent {
   display: block;
-  font-family: 'Noto Serif Devanagari', Georgia, serif;
+  font-size: clamp(30px, 3.4vw, 44px);
+  line-height: 1.28;
   font-style: italic;
-  font-size: 0.9em;
+  font-weight: 500;
   color: var(--rose);
-  margin-top: 2px;
+  margin-top: 4px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.ticker-headline-accent.devanagari-text {
+  font-family: 'Noto Serif Devanagari', Georgia, serif;
+  letter-spacing: 0;
+}
+
+.ticker-headline-accent.english-text {
+  font-family: 'Noto Serif Devanagari', Georgia, serif;
+  letter-spacing: -0.01em;
 }
 
 h1 em {
@@ -1679,11 +1709,21 @@ dialog::backdrop { background: rgba(8, 24, 17, 0.94); }
   .hero-ticker-wrap {
     margin-bottom: 16px;
   }
-  h1, .hero-headline {
-    font-size: clamp(34px, 8.5vw, 42px);
-    letter-spacing: -1.2px;
+  .hero-ticker-viewport {
+    padding-block: 8px 12px;
+    margin-block: -8px -12px;
+  }
+  h1.hero-headline {
     margin-bottom: 16px;
-    min-height: calc(2.28em);
+  }
+  .ticker-headline-primary {
+    font-size: clamp(28px, 7.5vw, 36px);
+    line-height: 1.25;
+  }
+  .ticker-headline-accent {
+    font-size: clamp(22px, 5.8vw, 28px);
+    line-height: 1.28;
+    margin-top: 3px;
   }
   h2 { font-size: 34px; }
   
