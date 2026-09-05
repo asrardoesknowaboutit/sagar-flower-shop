@@ -77,13 +77,21 @@ if (rail) {
   });
 }
 
-// --- PORTFOLIO FILTERING & FLUID GLIDER ---
+// --- PORTFOLIO FILTERING & NEUMORPHIC FLUID GLIDER ---
 const cards = $$('.work-card');
 const filterButtons = $$('[data-filter]');
-const filterBar = $('.filter-pill-bar');
-const filterGlider = $('.filter-glider');
+const filterBar = $('.neo-filter-track') || $('.filter-pill-bar');
+const filterGlider = $('.neo-glider') || $('.filter-glider');
+const filterContainer = $('.neo-filter-container') || $('.filter-flow-wrapper');
 const batchSize = () => window.innerWidth >= 900 ? 9 : 8;
 let currentFilter = 'all', limit = batchSize();
+
+function syncPrevActive() {
+  const activeIdx = filterButtons.findIndex(btn => btn.classList.contains('active'));
+  filterButtons.forEach((btn, idx) => {
+    btn.classList.toggle('prev-active', idx === activeIdx - 1);
+  });
+}
 
 function updateGlider(activeBtn, immediate = false) {
   if (!filterBar || !filterGlider || !activeBtn) return;
@@ -95,17 +103,17 @@ function updateGlider(activeBtn, immediate = false) {
   if (immediate || !animate()) {
     filterGlider.style.transition = 'none';
   } else {
-    filterGlider.style.transition = 'transform 0.38s cubic-bezier(0.25, 1, 0.35, 1), width 0.38s cubic-bezier(0.25, 1, 0.35, 1)';
+    filterGlider.style.transition = 'transform 0.42s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.36s cubic-bezier(0.34, 1.15, 0.64, 1)';
   }
 
   filterGlider.style.transform = `translateX(${left}px)`;
   filterGlider.style.width = `${width}px`;
 
-  // Center the active pill smoothly on mobile
-  const flowWrapper = $('.filter-flow-wrapper');
-  if (flowWrapper && flowWrapper.scrollWidth > flowWrapper.clientWidth) {
-    const scrollTarget = activeBtn.offsetLeft - (flowWrapper.clientWidth / 2) + (activeBtn.offsetWidth / 2);
-    flowWrapper.scrollTo({ left: Math.max(0, scrollTarget), behavior: smooth() });
+  // Center the active button smoothly on mobile
+  if (filterContainer && filterContainer.scrollWidth > filterContainer.clientWidth) {
+    const containerRect = filterContainer.getBoundingClientRect();
+    const scrollTarget = filterContainer.scrollLeft + (btnRect.left - containerRect.left) - (filterContainer.clientWidth / 2) + (btnRect.width / 2);
+    filterContainer.scrollTo({ left: Math.max(0, scrollTarget), behavior: smooth() });
   }
 }
 
@@ -138,6 +146,7 @@ filterButtons.forEach(button => button.addEventListener('click', () => {
     item.classList.toggle('active', active);
     item.setAttribute('aria-pressed', String(active));
   });
+  syncPrevActive();
   updateGlider(button);
   renderCollection();
   if (animate()) {
@@ -338,13 +347,17 @@ renderCollection();
 syncTicker();
 requestScrollUpdate();
 
-const initialActivePill = $('.filter-pill.active');
-if (initialActivePill) {
-  requestAnimationFrame(() => updateGlider(initialActivePill, true));
+const initialActiveBtn = $('.neo-btn.active') || $('.filter-pill.active');
+if (initialActiveBtn) {
+  syncPrevActive();
+  requestAnimationFrame(() => updateGlider(initialActiveBtn, true));
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => updateGlider(initialActiveBtn, true));
+  }
 }
 window.addEventListener('resize', () => {
-  const currentPill = $('.filter-pill.active');
-  if (currentPill) updateGlider(currentPill, true);
+  const currentBtn = $('.neo-btn.active') || $('.filter-pill.active');
+  if (currentBtn) updateGlider(currentBtn, true);
 });
 
 const yearEl = $('#year');

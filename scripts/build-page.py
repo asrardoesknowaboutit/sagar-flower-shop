@@ -122,10 +122,11 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
     <p>Find a design you love. Tap to see every detail in full resolution.<br><span lang="mr">तुमची आवडती डिझाईन निवडा, ऑर्डर WhatsApp वर द्या.</span></p>
   </div>
 
-  <!-- FLUID CONNECTED PILL NAVIGATION -->
-  <div class="filter-flow-wrapper">
-    <div class="filter-pill-bar" role="group" aria-label="Filter floral collection">
-      <div class="filter-glider" aria-hidden="true"></div>''']
+  <!-- NEUMORPHIC CONNECTED CONTOUR FILTER BAR -->
+  <div class="neo-filter-container">
+    <div class="neo-filter-shelf">
+      <div class="neo-filter-track" role="group" aria-label="Filter floral collection">
+        <div class="neo-glider" aria-hidden="true"></div>''']
 
 category_labels = [
     ('all', 'All designs', 'सर्व फुले', '🌸'),
@@ -137,15 +138,16 @@ category_labels = [
 
 for key, en, mr, icon in category_labels:
     is_active = (key == 'all')
-    parts.append(f'''<button data-filter="{key}" aria-pressed="{str(is_active).lower()}" class="filter-pill{" active" if is_active else ""}">
-        <span class="pill-icon" aria-hidden="true">{icon}</span>
-        <span class="pill-text">
-          <span class="pill-mr" lang="mr">{mr}</span>
-          <span class="pill-en">{en}</span>
+    parts.append(f'''<button data-filter="{key}" aria-pressed="{str(is_active).lower()}" class="neo-btn{" active" if is_active else ""}">
+        <span class="neo-icon" aria-hidden="true">{icon}</span>
+        <span class="neo-text">
+          <span class="neo-mr" lang="mr">{mr}</span>
+          <span class="neo-en">{en}</span>
         </span>
       </button>''')
 
-parts.append(f'''    </div>
+parts.append(f'''      </div>
+    </div>
   </div>
   <div class="gallery-toolbar">
     <p id="filter-status" role="status" aria-live="polite">{len(items)} floral designs</p>
@@ -299,4 +301,4 @@ parts.append('''<nav class="mobile-nav" aria-label="Mobile navigation">
 ''')
 
 (R / 'index.html').write_text(''.join(parts))
-print('Built upgraded portfolio with fluid category track')
+print('Built upgraded portfolio with neumorphic connected contour filter bar')
