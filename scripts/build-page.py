@@ -48,14 +48,17 @@ logo = '<img class="shop-logo" src="assets/brand/sagar-logo.webp" alt="साग
 head = source[:source.index('<body>')].replace('assets/images/bouquets/bouquets-25.webp', 'assets/videos/delivery-poster.webp')
 head = re.sub(r'<link rel="preload" as="image"[^>]+>', '<link rel="preload" as="image" href="assets/videos/delivery-poster.webp">', head)
 
-ticker = 'सागर फ्लॉवर सेंटर, परळी वैजनाथ मध्ये आपले स्वागत आहे! ऑर्डर देण्यासाठी कृपया संपर्क साधा :'
+ticker_mr = 'सागर फ्लॉवर सेंटर, परळी वैजनाथ मध्ये आपले स्वागत आहे! (मराठी) · ताजी फुले, लग्नहार, बुके, गाडी सजावट व घरपोच डिलिव्हरी'
+ticker_hi = 'सागर फ्लावर सेंटर, परली वैजनाथ में आपका स्वागत है! (हिंदी) · ताज़े फूल, वरमाला, बुके, कार डेकोरेशन व होम डिलीवरी'
+ticker_html = f'✿ &nbsp; {ticker_mr} &nbsp; · &nbsp; 📞 <a href="tel:+917620644158">7620644158</a> &nbsp; ✿ &nbsp; {ticker_hi} &nbsp; · &nbsp; 📞 <a href="tel:+917620644158">7620644158</a> &nbsp; ✿ &nbsp;'
+ticker_plain = f'✿ &nbsp; {ticker_mr} &nbsp; · &nbsp; 📞 7620644158 &nbsp; ✿ &nbsp; {ticker_hi} &nbsp; · &nbsp; 📞 7620644158 &nbsp; ✿ &nbsp;'
 
 parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
 <div class="welcome-bar">
-  <div class="ticker" aria-label="{ticker} 7620644158">
+  <div class="ticker" aria-label="{ticker_mr} 7620644158. {ticker_hi}">
     <div class="ticker-track">
-      <span lang="mr">✿ &nbsp; {ticker} &nbsp; <a href="tel:+917620644158">7620644158</a> &nbsp; · &nbsp; ताजी फुले, लग्नहार, बुके, गाडी सजावट व घरपोच डिलिव्हरी &nbsp; ✿ &nbsp;</span>
-      <span aria-hidden="true" lang="mr">✿ &nbsp; {ticker} &nbsp; <b>7620644158</b> &nbsp; · &nbsp; ताजी फुले, लग्नहार, बुके, गाडी सजावट व घरपोच डिलिव्हरी &nbsp; ✿ &nbsp;</span>
+      <span>{ticker_html}</span>
+      <span aria-hidden="true">{ticker_plain}</span>
     </div>
   </div>
   <button id="ticker-toggle" aria-label="Pause welcome ticker" aria-pressed="false">Ⅱ</button>
@@ -81,7 +84,48 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
 <section class="hero wrap" id="home">
   <div class="hero-copy">
     <p class="eyebrow">📍 सागर फ्लॉवर सेंटर · PARLI, MAHARASHTRA <span>✳</span> FAST DOORSTEP DELIVERY</p>
-    <h1>ताजी फुले.<br><em>शुभ क्षणांची साथ.</em></h1>
+    
+    <div class="hero-ticker-wrap">
+      <div class="hero-ticker-header">
+        <button class="hero-ticker-lang-badge" id="hero-lang-badge" type="button" aria-label="भाषा बदला / Switch Language" title="भाषा बदला / Switch Language">
+          <span class="ticker-live-dot" aria-hidden="true"></span>
+          <span class="ticker-lang-text" id="ticker-current-lang">मराठी · MARATHI</span>
+          <span class="ticker-switch-icon" aria-hidden="true">⇄</span>
+        </button>
+        <div class="hero-ticker-pills" id="ticker-pills" aria-label="Headline ticker slides">
+          <button class="ticker-pill active" data-slide="0" aria-label="Slide 1: मराठी - ताजी फुले" aria-pressed="true"></button>
+          <button class="ticker-pill" data-slide="1" aria-label="Slide 2: हिंदी - ताज़े फूल" aria-pressed="false"></button>
+          <button class="ticker-pill" data-slide="2" aria-label="Slide 3: मराठी - शाही लग्नहार" aria-pressed="false"></button>
+          <button class="ticker-pill" data-slide="3" aria-label="Slide 4: हिंदी - शाही वरमाला" aria-pressed="false"></button>
+        </div>
+      </div>
+
+      <h1 class="hero-headline" aria-live="polite">
+        <div class="hero-ticker-viewport">
+          <div class="hero-ticker-slide active" data-lang="मराठी · MARATHI" data-index="0">
+            <span class="ticker-headline-primary" lang="mr">ताजी फुले.</span>
+            <em class="ticker-headline-accent" lang="mr">शुभ क्षणांची साथ.</em>
+          </div>
+          <div class="hero-ticker-slide" data-lang="हिंदी · HINDI" data-index="1">
+            <span class="ticker-headline-primary" lang="hi">ताज़े फूल.</span>
+            <em class="ticker-headline-accent" lang="hi">खुशियों में आपका साथ.</em>
+          </div>
+          <div class="hero-ticker-slide" data-lang="मराठी · MARATHI" data-index="2">
+            <span class="ticker-headline-primary" lang="mr">शाही लग्नहार.</span>
+            <em class="ticker-headline-accent" lang="mr">परंपरेचा खरा सुगंध.</em>
+          </div>
+          <div class="hero-ticker-slide" data-lang="हिंदी · HINDI" data-index="3">
+            <span class="ticker-headline-primary" lang="hi">शाही वरमाला.</span>
+            <em class="ticker-headline-accent" lang="hi">हर उत्सव की नई शान.</em>
+          </div>
+        </div>
+      </h1>
+
+      <div class="hero-ticker-progress" aria-hidden="true">
+        <div class="hero-ticker-progress-fill" id="ticker-progress-fill"></div>
+      </div>
+    </div>
+
     <p class="hero-description">Fresh wedding garlands, handcrafted celebration bouquets, haldi swing decorations & wedding car decor. Made fresh every day with tradition and love in Parli.</p>
     <div class="hero-actions">
       <a class="button button-wa-hero" href="{wa('फुलांची थेट ऑर्डर')}" target="_blank" rel="noopener noreferrer">
