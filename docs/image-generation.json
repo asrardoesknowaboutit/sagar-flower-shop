@@ -1,0 +1,13 @@
+{
+  "mode": "Built-in image_gen",
+  "assets": [
+    {
+      "file": "assets/images/inspiration/varmala-original.png",
+      "prompt": "Use case: ads-marketing. Asset type: portrait 3:4 floral design inspiration image for Sagar Flower Shop portfolio in Parli, India. Create an exquisite photorealistic editorial still-life of a pair of Indian wedding varmala garlands made from tightly layered deep red rose petals, ivory jasmine buds and a few delicate blush pink lotus flowers, resting gracefully on warm pale sandstone with a small brass ceremonial bowl and softly draped ivory silk. Rich tactile fresh petals, authentic Indian floral craftsmanship, sophisticated natural morning light, premium yet inviting, elegant and uncluttered. Composition: entire pair of garlands visible, no people, balanced portrait composition, no collage. Warm ivory, deep rose, subtle antique gold palette. Include ONLY the exact phone watermark \"7620644158\" in restrained clean white typography at bottom center with subtle shadow, clearly readable but not obscuring flowers. No other text or logos. This is an inspirational concept, not a photograph of completed client work."
+    },
+    {
+      "file": "assets/images/inspiration/haldi-original.png",
+      "prompt": "Use case: ads-marketing. Asset type: portrait 3:4 floral design inspiration for an Indian florist website. Create a premium photorealistic editorial image of an intimate Maharashtrian haldi ceremony setting with an elegant wooden swing framed by abundant fresh golden yellow and orange marigold garlands, delicate white jasmine strings, small green mango leaf accents, and restrained brass urns. Warm ivory courtyard with subtle limewashed arches, soft morning sunlight and real tactile flowers. Entire decorated swing visible, exceptionally beautiful warm golden and ivory palette, no people, no collage, no oversized palace or unrealistic structures. Sophisticated attainable local celebration design. Include ONLY the exact phone watermark \"7620644158\" in restrained white clean typography at bottom center with a subtle dark shadow, readable without dominating. No other text or logos. This is a floral design inspiration concept, not a claim of completed client work."
+    }
+  ]
+}

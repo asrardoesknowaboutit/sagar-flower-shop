@@ -1,0 +1,26 @@
+[
+  {
+    "id": "delivery",
+    "title": "Flowers, on their way",
+    "marathi": "जवळच्या परिसरात डिलिव्हरी",
+    "src": "assets/videos/delivery.mp4",
+    "poster": "assets/videos/delivery-poster.webp",
+    "bytes": 1798623
+  },
+  {
+    "id": "rose-varmala",
+    "title": "The wedding edit",
+    "marathi": "लग्नहारांची खास झलक",
+    "src": "assets/videos/rose-varmala.mp4",
+    "poster": "assets/videos/rose-varmala-poster.webp",
+    "bytes": 1771619
+  },
+  {
+    "id": "lotus-varmala",
+    "title": "A beautiful beginning",
+    "marathi": "शुभमंगल क्षणांसाठी",
+    "src": "assets/videos/lotus-varmala.mp4",
+    "poster": "assets/videos/lotus-varmala-poster.webp",
+    "bytes": 1362299
+  }
+]
