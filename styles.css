@@ -654,9 +654,44 @@ h1 em {
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
 }
 .work-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 34px rgba(13, 43, 31, 0.12);
-  border-color: #dfd5c2;
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(13, 43, 31, 0.12), 0 2px 10px rgba(200, 138, 44, 0.14);
+  border-color: #d6ccb8;
+}
+
+/* Optimized hardware-accelerated entrance for prioritized bouquet items */
+@keyframes priorityCardFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.work-card.priority-item {
+  animation: priorityCardFadeIn 0.52s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity;
+}
+.work-card.priority-item:nth-child(1) { animation-delay: 30ms; }
+.work-card.priority-item:nth-child(2) { animation-delay: 70ms; }
+.work-card.priority-item:nth-child(3) { animation-delay: 110ms; }
+.work-card.priority-item:nth-child(4) { animation-delay: 150ms; }
+.work-card.priority-item:nth-child(5) { animation-delay: 190ms; }
+.work-card.priority-item:nth-child(6) { animation-delay: 230ms; }
+.work-card.priority-item:nth-child(7) { animation-delay: 270ms; }
+.work-card.priority-item:nth-child(8) { animation-delay: 310ms; }
+.work-card.priority-item:nth-child(9) { animation-delay: 350ms; }
+.work-card.priority-item:nth-child(10) { animation-delay: 390ms; }
+.work-card.priority-item:nth-child(11) { animation-delay: 430ms; }
+.work-card.priority-item:nth-child(12) { animation-delay: 470ms; }
+
+/* Below-the-fold render optimization for smooth 60fps scrolling */
+.work-card:not(.priority-item) {
+  content-visibility: auto;
+  contain-intrinsic-size: 360px 480px;
 }
 
 .photo-button {

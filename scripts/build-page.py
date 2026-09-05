@@ -6,9 +6,28 @@ R = Path(__file__).resolve().parents[1]
 source = (R / 'scripts/site-base.html').read_text()
 items = json.loads((R / 'assets/collection.json').read_text())
 
-# Mix occasions in the first screen; every original upload remains in the collection.
-priority = ['new-2', 'new-21', 'new-10', 'new-7', 'new-28', 'new-33', 'new-22', 'new-5', 'new-8', 'new-26', 'new-31', 'new-11']
-items.sort(key=lambda i: priority.index(i['id']) if i['id'] in priority else 100)
+# Bouquets are top priority in the floral collection
+bouquet_order = [
+    'new-2', 'new-7', 'new-5', 'new-4', 'new-16', 'new-31', 
+    'new-6', 'new-14', 'new-3', 'new-17', 'new-12', 'new-34', 
+    'new-35', 'new-18', 'new-19', 'original-25', 'original-37'
+]
+
+def sort_key(item):
+    if item['category'] == 'bouquets':
+        try:
+            return (0, bouquet_order.index(item['id']))
+        except ValueError:
+            return (0, 99)
+    elif item['category'] == 'garlands':
+        return (1, 0)
+    elif item['category'] == 'decor':
+        return (2, 0)
+    elif item['category'] == 'belts':
+        return (3, 0)
+    return (4, 0)
+
+items.sort(key=sort_key)
 (R / 'assets/collection.json').write_text(json.dumps(items, ensure_ascii=False, indent=2))
 
 wa = lambda title: 'https://wa.me/917620644158?text=' + quote('नमस्कार! मला ' + title + ' याबद्दल माहिती हवी आहे. / Hello, I would like to enquire about ' + title + '.')
@@ -155,9 +174,11 @@ parts.append(f'''      </div>
   </div>
   <div class="portfolio">''')
 
-for i in items:
+for idx, i in enumerate(items):
     aspect = f"{i['width']} / {i['height']}"
-    parts.append(f'''<article class="work-card" data-category="{i['category']}"><button class="photo-button" style="aspect-ratio: {aspect};" data-image="{i['src']}" data-title="{i['title']}" data-marathi="{i['marathi']}" data-group="collection" aria-label="View {i['title']}">{image(i)}{watermark()}<span class="expand" aria-hidden="true" title="मोठा फोटो पहा">↗</span></button><div class="card-info"><div class="card-meta"><span class="category-pill">{i['label']}</span></div><h3 class="card-title-mr" lang="mr">{i['marathi']}</h3><p class="card-title-en">{i['title']}</p><a class="inquire" href="{wa(i['marathi'] + ' / ' + i['title'])}" target="_blank" rel="noopener noreferrer"><span>💬 WhatsApp वर ऑर्डर</span><span class="inquire-arrow" aria-hidden="true">↗</span></a></div></article>''')
+    is_eager = (idx < 6)
+    priority_class = " priority-item" if idx < 12 else ""
+    parts.append(f'''<article class="work-card{priority_class}" data-category="{i['category']}"><button class="photo-button" style="aspect-ratio: {aspect};" data-image="{i['src']}" data-title="{i['title']}" data-marathi="{i['marathi']}" data-group="collection" aria-label="View {i['title']}">{image(i, eager=is_eager)}{watermark()}<span class="expand" aria-hidden="true" title="मोठा फोटो पहा">↗</span></button><div class="card-info"><div class="card-meta"><span class="category-pill">{i['label']}</span></div><h3 class="card-title-mr" lang="mr">{i['marathi']}</h3><p class="card-title-en">{i['title']}</p><a class="inquire" href="{wa(i['marathi'] + ' / ' + i['title'])}" target="_blank" rel="noopener noreferrer"><span>💬 WhatsApp वर ऑर्डर</span><span class="inquire-arrow" aria-hidden="true">↗</span></a></div></article>''')
 
 parts.append(f'''</div>
 <div class="collection-footer">
