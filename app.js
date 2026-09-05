@@ -153,6 +153,23 @@ function renderCollection() {
       countEl.textContent = `+${remaining}`;
     }
   }
+
+  // Sync depth of field for unhidden cards
+  if (typeof focalObserver !== 'undefined' && focalObserver) {
+    const vh = window.innerHeight;
+    cards.forEach(card => {
+      if (!card.hidden && !card.classList.contains('focal-settled')) {
+        card.classList.add('cinematic-dof');
+        const rect = card.getBoundingClientRect();
+        if (rect.top < vh * 0.92 && rect.bottom > 0) {
+          card.classList.add('focal-in', 'focal-settled');
+        } else {
+          focalObserver.observe(card);
+        }
+      }
+    });
+  }
+
   requestScrollUpdate();
 }
 
@@ -428,6 +445,17 @@ function updateScroll() {
     if (active) link.setAttribute('aria-current', 'location');
     else link.removeAttribute('aria-current');
   });
+
+  // Cinematic hero optical recession on scroll
+  const heroShowcase = $('.hero-video-showcase');
+  if (heroShowcase) {
+    if (y > 90) {
+      heroShowcase.classList.add('hero-receding');
+    } else {
+      heroShowcase.classList.remove('hero-receding');
+    }
+  }
+
   framePending = false;
 }
 
@@ -498,4 +526,98 @@ $$('.fluid-tag-pill[data-filter-trigger], .fluid-val-pill[data-filter-trigger]')
 
 const yearEl = $('#year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// --- CINEMATIC SCROLL-DRIVEN DEPTH OF FIELD & PROGRESSIVE FOCUS REVEAL ---
+let focalObserver = null;
+
+function initCinematicDepthOfField() {
+  const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const targets = $$('.section-heading, .work-card, .film-card, .inspiration-card, .service-grid article, .process-card, .review-card, .values-strip');
+
+  if (isReducedMotion) {
+    targets.forEach(el => el.classList.add('cinematic-dof', 'focal-in', 'focal-settled'));
+    return;
+  }
+
+  if ('IntersectionObserver' in window) {
+    focalObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.classList.add('focal-in');
+          // Free GPU filter cache after optical transition finishes
+          setTimeout(() => {
+            if (el.classList.contains('focal-in')) {
+              el.classList.add('focal-settled');
+            }
+          }, 460);
+        }
+      });
+    }, {
+      rootMargin: '0px 0px -5% 0px',
+      threshold: [0, 0.12]
+    });
+  }
+
+  const vh = window.innerHeight;
+  targets.forEach(el => {
+    el.classList.add('cinematic-dof');
+    const rect = el.getBoundingClientRect();
+    // Pre-focus visible above-the-fold content immediately (0 latency, 0 loading)
+    if (rect.top < vh * 0.92 && rect.bottom > 0) {
+      el.classList.add('focal-in', 'focal-settled');
+    } else if (focalObserver) {
+      focalObserver.observe(el);
+    }
+  });
+
+  // Reel Rail Horizontal Focus Tracking
+  initRailFocusTracking();
+}
+
+function initRailFocusTracking() {
+  const rail = $('.film-rail');
+  if (!rail) return;
+  const cards = $$('.film-card', rail);
+  if (!cards.length) return;
+
+  let railPending = false;
+  function updateRailFocus() {
+    railPending = false;
+    const railRect = rail.getBoundingClientRect();
+    const railCenter = railRect.left + railRect.width / 2;
+
+    let closestCard = null;
+    let minDistance = Infinity;
+
+    cards.forEach(card => {
+      const cardRect = card.getBoundingClientRect();
+      const cardCenter = cardRect.left + cardRect.width / 2;
+      const dist = Math.abs(railCenter - cardCenter);
+      if (dist < minDistance) {
+        minDistance = dist;
+        closestCard = card;
+      }
+    });
+
+    cards.forEach(card => {
+      const isFocused = card === closestCard;
+      card.classList.toggle('rail-in-focus', isFocused);
+      card.classList.toggle('rail-out-of-focus', !isFocused);
+    });
+  }
+
+  rail.addEventListener('scroll', () => {
+    if (!railPending) {
+      railPending = true;
+      requestAnimationFrame(updateRailFocus);
+    }
+  }, { passive: true });
+
+  updateRailFocus();
+}
+
+// Start Depth of Field Controller
+initCinematicDepthOfField();
+
 
