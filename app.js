@@ -25,7 +25,6 @@ if (heroVideo && heroSoundBtn) {
 // --- STORY REEL VIDEOS (AUTOPLAY IN LOOP WITHOUT PLAY BUTTONS) ---
 const storyVideos = $$('.story-video');
 storyVideos.forEach(video => {
-  // Ensure loop and playsinline
   video.loop = true;
   video.muted = true;
   video.playsInline = true;
@@ -37,7 +36,6 @@ storyVideos.forEach(video => {
     soundBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       const willMute = !video.muted;
-      // If unmuting this video, mute all others
       if (!willMute) {
         storyVideos.forEach(v => {
           if (v !== video) {
@@ -56,7 +54,6 @@ storyVideos.forEach(video => {
     });
   }
 
-  // Tapping video also toggles sound cleanly
   video.addEventListener('click', () => {
     soundBtn?.click();
   });
@@ -80,11 +77,37 @@ if (rail) {
   });
 }
 
-// --- PORTFOLIO FILTERING & PAGINATION ---
+// --- PORTFOLIO FILTERING & FLUID GLIDER ---
 const cards = $$('.work-card');
 const filterButtons = $$('[data-filter]');
+const filterBar = $('.filter-pill-bar');
+const filterGlider = $('.filter-glider');
 const batchSize = () => window.innerWidth >= 900 ? 9 : 8;
 let currentFilter = 'all', limit = batchSize();
+
+function updateGlider(activeBtn, immediate = false) {
+  if (!filterBar || !filterGlider || !activeBtn) return;
+  const barRect = filterBar.getBoundingClientRect();
+  const btnRect = activeBtn.getBoundingClientRect();
+  const left = btnRect.left - barRect.left;
+  const width = btnRect.width;
+
+  if (immediate || !animate()) {
+    filterGlider.style.transition = 'none';
+  } else {
+    filterGlider.style.transition = 'transform 0.38s cubic-bezier(0.25, 1, 0.35, 1), width 0.38s cubic-bezier(0.25, 1, 0.35, 1)';
+  }
+
+  filterGlider.style.transform = `translateX(${left}px)`;
+  filterGlider.style.width = `${width}px`;
+
+  // Center the active pill smoothly on mobile
+  const flowWrapper = $('.filter-flow-wrapper');
+  if (flowWrapper && flowWrapper.scrollWidth > flowWrapper.clientWidth) {
+    const scrollTarget = activeBtn.offsetLeft - (flowWrapper.clientWidth / 2) + (activeBtn.offsetWidth / 2);
+    flowWrapper.scrollTo({ left: Math.max(0, scrollTarget), behavior: smooth() });
+  }
+}
 
 const getMatchingCards = () => cards.filter(card => currentFilter === 'all' || card.dataset.category === currentFilter);
 
@@ -115,14 +138,15 @@ filterButtons.forEach(button => button.addEventListener('click', () => {
     item.classList.toggle('active', active);
     item.setAttribute('aria-pressed', String(active));
   });
+  updateGlider(button);
   renderCollection();
   if (animate()) {
     const portfolio = $('.portfolio');
     if (portfolio) {
       portfolio.animate([
-        { opacity: 0.6, transform: 'translateY(6px)' },
+        { opacity: 0.5, transform: 'translateY(8px)' },
         { opacity: 1, transform: 'none' }
-      ], { duration: 220, easing: 'ease-out' });
+      ], { duration: 240, easing: 'cubic-bezier(0.16, 1, 0.3, 1)' });
     }
   }
 }));
@@ -313,5 +337,15 @@ motion.addEventListener('change', syncTicker);
 renderCollection();
 syncTicker();
 requestScrollUpdate();
+
+const initialActivePill = $('.filter-pill.active');
+if (initialActivePill) {
+  requestAnimationFrame(() => updateGlider(initialActivePill, true));
+}
+window.addEventListener('resize', () => {
+  const currentPill = $('.filter-pill.active');
+  if (currentPill) updateGlider(currentPill, true);
+});
+
 const yearEl = $('#year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();

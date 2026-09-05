@@ -87,7 +87,7 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
         <span class="live-dot" aria-hidden="true"></span>
         <span>Flowers, on their way · फुले, तुमच्या दारी</span>
       </div>
-      <button class="sound-toggle-btn" id="hero-sound-toggle" aria-label="Toggle hero video sound" title="Toggle audio">
+      <button class="sound-toggle-btn" id="hero-sound-toggle" aria-label="Toggle hero video sound" title="Toggle sound">
         <span class="sound-icon">🔇</span>
       </button>
     </div>
@@ -122,25 +122,36 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
     <p>Find a design you love. Tap to see every detail in full resolution.<br><span lang="mr">तुमची आवडती डिझाईन निवडा, ऑर्डर WhatsApp वर द्या.</span></p>
   </div>
 
-  <div class="filters" role="group" aria-label="Filter floral collection">''']
+  <!-- FLUID CONNECTED PILL NAVIGATION -->
+  <div class="filter-flow-wrapper">
+    <div class="filter-pill-bar" role="group" aria-label="Filter floral collection">
+      <div class="filter-glider" aria-hidden="true"></div>''']
 
 category_labels = [
-    ('all', 'All designs', 'सर्व फुले'),
-    ('garlands', 'Wedding garlands', 'लग्नहार व वरमाला'),
-    ('bouquets', 'Bouquets', 'आकर्षक बुके'),
-    ('decor', 'Car & stage décor', 'गाडी व स्टेज सजावट'),
-    ('belts', 'Floral jewellery', 'गजरा व कंबरपट्टा')
+    ('all', 'All designs', 'सर्व फुले', '🌸'),
+    ('garlands', 'Wedding garlands', 'लग्नहार व वरमाला', '🌺'),
+    ('bouquets', 'Bouquets', 'आकर्षक बुके', '💐'),
+    ('decor', 'Car & stage décor', 'गाडी व स्टेज सजावट', '🚗'),
+    ('belts', 'Floral jewellery', 'गजरा व कंबरपट्टा', '🌼')
 ]
 
-for key, en, mr in category_labels:
-    parts.append(f'<button data-filter="{key}" aria-pressed="{str(key=="all").lower()}" class="{"active" if key=="all" else ""}"><span lang="mr">{mr}</span><small>{en}</small></button>')
+for key, en, mr, icon in category_labels:
+    is_active = (key == 'all')
+    parts.append(f'''<button data-filter="{key}" aria-pressed="{str(is_active).lower()}" class="filter-pill{" active" if is_active else ""}">
+        <span class="pill-icon" aria-hidden="true">{icon}</span>
+        <span class="pill-text">
+          <span class="pill-mr" lang="mr">{mr}</span>
+          <span class="pill-en">{en}</span>
+        </span>
+      </button>''')
 
-parts.append(f'''</div>
-<div class="gallery-toolbar">
-  <p id="filter-status" role="status" aria-live="polite">{len(items)} floral designs</p>
-  <span>फोटोवर टॅप करून मोठा फोटो पहा ↗</span>
-</div>
-<div class="portfolio">''')
+parts.append(f'''    </div>
+  </div>
+  <div class="gallery-toolbar">
+    <p id="filter-status" role="status" aria-live="polite">{len(items)} floral designs</p>
+    <span>फोटोवर टॅप करून मोठा फोटो पहा ↗</span>
+  </div>
+  <div class="portfolio">''')
 
 for i in items:
     parts.append(f'''<article class="work-card" data-category="{i['category']}"><button class="photo-button" data-image="{i['src']}" data-title="{i['title']}" data-marathi="{i['marathi']}" data-group="collection" aria-label="View {i['title']}">{image(i)}{watermark()}<span class="expand" aria-hidden="true" title="मोठा फोटो पहा">↗</span></button><div class="card-info"><div class="card-meta"><span class="category-pill">{i['label']}</span></div><h3 class="card-title-mr" lang="mr">{i['marathi']}</h3><p class="card-title-en">{i['title']}</p><a class="inquire" href="{wa(i['marathi'] + ' / ' + i['title'])}" target="_blank" rel="noopener noreferrer"><span>💬 WhatsApp वर ऑर्डर</span><span class="inquire-arrow" aria-hidden="true">↗</span></a></div></article>''')
@@ -288,4 +299,4 @@ parts.append('''<nav class="mobile-nav" aria-label="Mobile navigation">
 ''')
 
 (R / 'index.html').write_text(''.join(parts))
-print('Built upgraded portfolio with', len(items), 'designs and hero video')
+print('Built upgraded portfolio with fluid category track')
