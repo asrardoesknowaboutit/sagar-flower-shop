@@ -294,86 +294,48 @@ function initHeroHeadlineTicker() {
   if (!wrap) return;
 
   const slides = $$('.hero-ticker-slide', wrap);
-  const pills = $$('.ticker-pill', wrap);
-  const langBadge = $('#hero-lang-badge');
-  const langTag = $('#ticker-current-lang');
-  const progressFill = $('#ticker-progress-fill');
-
   if (slides.length <= 1) return;
 
-  const DURATION = 3400; // 3.4 seconds per slide
+  const DURATION = 3200; // 3.2 seconds per rotation
   let currentIndex = 0;
   let tickerTimer = null;
   let isHovered = false;
 
-  function triggerProgress() {
-    if (!progressFill) return;
-    progressFill.style.transition = 'none';
-    progressFill.style.width = '0%';
-    void progressFill.offsetWidth; // Force reflow
-    if (!isHovered && !document.hidden && animate()) {
-      progressFill.style.transition = `width ${DURATION}ms linear`;
-      progressFill.style.width = '100%';
-    }
-  }
-
-  function pauseProgress() {
-    if (!progressFill) return;
-    const computedWidth = window.getComputedStyle(progressFill).width;
-    progressFill.style.transition = 'none';
-    progressFill.style.width = computedWidth;
-  }
-
-  function goToSlide(newIndex, direction = 1) {
+  function goToSlide(newIndex) {
     if (newIndex === currentIndex) return;
 
     const currentSlide = slides[currentIndex];
     const nextSlide = slides[newIndex];
-    const isForward = direction >= 0;
 
     slides.forEach(s => {
-      s.classList.remove('leaving-up', 'leaving-down', 'from-top');
+      s.classList.remove('leaving-up', 'leaving-down');
     });
 
     if (currentSlide && animate()) {
       currentSlide.classList.remove('active');
-      currentSlide.classList.add(isForward ? 'leaving-up' : 'leaving-down');
+      currentSlide.classList.add('leaving-up');
       setTimeout(() => {
-        currentSlide.classList.remove('leaving-up', 'leaving-down');
-      }, 550);
+        currentSlide.classList.remove('leaving-up');
+      }, 600);
     } else if (currentSlide) {
       currentSlide.classList.remove('active');
     }
 
     if (nextSlide) {
-      if (!isForward && animate()) {
-        nextSlide.classList.add('from-top');
-        void nextSlide.offsetWidth;
-      }
       nextSlide.classList.add('active');
-      const lang = nextSlide.dataset.lang;
-      if (langTag && lang) langTag.textContent = lang;
     }
 
-    pills.forEach((pill, idx) => {
-      const isActive = idx === newIndex;
-      pill.classList.toggle('active', isActive);
-      pill.setAttribute('aria-pressed', String(isActive));
-    });
-
     currentIndex = newIndex;
-    triggerProgress();
   }
 
   function advanceTicker() {
     const nextIdx = (currentIndex + 1) % slides.length;
-    goToSlide(nextIdx, 1);
+    goToSlide(nextIdx);
   }
 
   function startCycle() {
     stopCycle();
     if (!isHovered && !document.hidden && animate()) {
-      triggerProgress();
       tickerTimer = setInterval(advanceTicker, DURATION);
     }
   }
@@ -383,10 +345,9 @@ function initHeroHeadlineTicker() {
       clearInterval(tickerTimer);
       tickerTimer = null;
     }
-    pauseProgress();
   }
 
-  // Hover & Focus handlers
+  // Hover handlers: pause while reading
   wrap.addEventListener('mouseenter', () => {
     isHovered = true;
     stopCycle();
@@ -395,32 +356,6 @@ function initHeroHeadlineTicker() {
   wrap.addEventListener('mouseleave', () => {
     isHovered = false;
     startCycle();
-  });
-
-  wrap.addEventListener('focusin', () => {
-    isHovered = true;
-    stopCycle();
-  });
-
-  wrap.addEventListener('focusout', () => {
-    isHovered = false;
-    startCycle();
-  });
-
-  // Interactive controls
-  langBadge?.addEventListener('click', (e) => {
-    e.preventDefault();
-    advanceTicker();
-    startCycle();
-  });
-
-  pills.forEach((pill, idx) => {
-    pill.addEventListener('click', (e) => {
-      e.preventDefault();
-      const dir = idx >= currentIndex ? 1 : -1;
-      goToSlide(idx, dir);
-      startCycle();
-    });
   });
 
   document.addEventListener('visibilitychange', () => {
@@ -434,13 +369,12 @@ function initHeroHeadlineTicker() {
   motion.addEventListener('change', () => {
     if (!animate()) {
       stopCycle();
-      if (progressFill) progressFill.style.width = '100%';
     } else {
       startCycle();
     }
   });
 
-  // Start initial rotation
+  // Start rotation
   startCycle();
 }
 

@@ -270,128 +270,19 @@ button[hidden], [hidden] { display: none !important; }
 /* HERO BILINGUAL HEADLINE TICKER (MARATHI & HINDI) */
 .hero-ticker-wrap {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  display: block;
   margin-bottom: 22px;
-}
-
-.hero-ticker-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-
-.hero-ticker-lang-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(246, 241, 230, 0.88));
-  border: 1px solid rgba(179, 135, 40, 0.32);
-  padding: 5px 14px 5px 10px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  color: var(--forest);
-  box-shadow: 0 3px 10px rgba(13, 43, 31, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.9);
-  cursor: pointer;
-  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-  user-select: none;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-.hero-ticker-lang-badge:hover {
-  transform: translateY(-1.5px) scale(1.02);
-  border-color: var(--gold);
-  box-shadow: 0 6px 18px rgba(179, 135, 40, 0.22), inset 0 1px 0 #ffffff;
-}
-
-.hero-ticker-lang-badge:active {
-  transform: translateY(0) scale(0.98);
-}
-
-.ticker-live-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #16a34a;
-  box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7);
-  animation: tickerDotPulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
-}
-
-@keyframes tickerDotPulse {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7);
-  }
-  65% {
-    transform: scale(1.15);
-    box-shadow: 0 0 0 6px rgba(22, 163, 74, 0);
-  }
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
-  }
-}
-
-.ticker-lang-text {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  color: var(--forest);
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-}
-
-.ticker-switch-icon {
-  font-size: 13px;
-  color: var(--gold);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero-ticker-lang-badge:hover .ticker-switch-icon {
-  transform: rotate(180deg);
-}
-
-.hero-ticker-pills {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.ticker-pill {
-  width: 18px;
-  height: 5px;
-  border-radius: 3px;
-  border: none;
-  background: rgba(13, 43, 31, 0.14);
-  cursor: pointer;
-  padding: 0;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.ticker-pill:hover {
-  background: rgba(179, 135, 40, 0.45);
-}
-
-.ticker-pill.active {
-  width: 30px;
-  background: linear-gradient(90deg, var(--gold), #d4a338);
-  box-shadow: 0 0 10px rgba(179, 135, 40, 0.45);
 }
 
 h1, .hero-headline {
   font-size: clamp(42px, 4.4vw, 62px);
   line-height: 1.14;
   letter-spacing: -1.8px;
-  margin-bottom: 0;
+  margin-bottom: 22px;
 }
 
 .hero-headline {
-  margin: 0;
+  margin: 0 0 22px 0;
   padding: 0;
   min-height: calc(2.28em);
 }
@@ -413,10 +304,10 @@ h1, .hero-headline {
   transform: translateY(32px);
   filter: blur(5px);
   pointer-events: none;
-  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
-              filter 0.55s cubic-bezier(0.16, 1, 0.3, 1),
-              visibility 0.55s;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.6s;
   will-change: transform, opacity, filter;
 }
 
@@ -470,26 +361,6 @@ h1 em {
   font-family: 'Noto Serif Devanagari', serif;
   font-size: 0.9em;
   color: var(--rose);
-}
-
-.hero-ticker-progress {
-  width: 100%;
-  max-width: 260px;
-  height: 2.5px;
-  background: rgba(13, 43, 31, 0.08);
-  border-radius: 999px;
-  overflow: hidden;
-  margin-top: 14px;
-  position: relative;
-}
-
-.hero-ticker-progress-fill {
-  width: 0%;
-  height: 100%;
-  background: linear-gradient(90deg, var(--gold), var(--rose));
-  border-radius: 999px;
-  transform-origin: left center;
-  transition: width linear;
 }
 .hero-description {
   max-width: 440px;
@@ -1808,18 +1679,11 @@ dialog::backdrop { background: rgba(8, 24, 17, 0.94); }
   .hero-ticker-wrap {
     margin-bottom: 16px;
   }
-  .hero-ticker-header {
-    margin-bottom: 10px;
-  }
   h1, .hero-headline {
     font-size: clamp(34px, 8.5vw, 42px);
     letter-spacing: -1.2px;
-    margin-bottom: 0;
+    margin-bottom: 16px;
     min-height: calc(2.28em);
-  }
-  .hero-ticker-progress {
-    max-width: 200px;
-    margin-top: 10px;
   }
   h2 { font-size: 34px; }
   
