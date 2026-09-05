@@ -68,14 +68,27 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
     {logo}
   </a>
   <nav class="desktop-nav" aria-label="Main navigation">
-    <a href="#collection" data-section="collection">आमचे काम (Collection)</a>
-    <a href="#films" data-section="films">व्हिडिओ झलक (Stories)</a>
-    <a href="#inspiration" data-section="inspiration">शाही रचना (Signature)</a>
-    <a href="#services" data-section="services">सेवा (Services)</a>
-    <a href="#contact" data-section="contact">भेट द्या (Visit us)</a>
+    <div class="fluid-nav-track">
+      <a href="#collection" data-section="collection" class="fluid-nav-pill"><span>आमचे काम</span> <small>Collection</small></a>
+      <a href="#films" data-section="films" class="fluid-nav-pill"><span>व्हिडिओ</span> <small>Stories</small></a>
+      <a href="#inspiration" data-section="inspiration" class="fluid-nav-pill"><span>शाही रचना</span> <small>Signature</small></a>
+      <a href="#services" data-section="services" class="fluid-nav-pill"><span>सेवा</span> <small>Services</small></a>
+      <a href="#contact" data-section="contact" class="fluid-nav-pill"><span>भेट द्या</span> <small>Visit us</small></a>
+    </div>
   </nav>
-  <a class="button header-order" href="{wa('फुलांची थेट ऑर्डर')}" target="_blank" rel="noopener noreferrer">
-    <span>💬 WhatsApp वर ऑर्डर</span><span aria-hidden="true">↗</span>
+  <a class="header-fluid-order" href="{wa('फुलांची थेट ऑर्डर')}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp वर ऑर्डर">
+    <div class="header-order-wa">
+      <svg class="header-wa-icon" viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
+        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c4.54 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.84a8.18 8.18 0 0 1-5.82 2.41c-1.42 0-2.82-.37-4.06-1.07l-.29-.17-3.02.79.81-2.94-.19-.3a8.21 8.21 0 0 1-1.26-4.56c0-4.54 3.7-8.24 8.24-8.24zm4.51 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.25-1.49-1.4-1.74-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43l-.48-.01c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.72 4.31 3.81.6.26 1.07.42 1.44.53.61.2 1.16.17 1.6-.1.49-.3 1.47-1.2 1.68-1.75.2-.55.2-1.02.14-1.12-.06-.1-.23-.16-.48-.28z"/>
+      </svg>
+      <span>WhatsApp ऑर्डर</span>
+    </div>
+    <div class="header-order-arrow" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </div>
   </a>
   <div class="scroll-progress" aria-hidden="true"></div>
 </header>
@@ -286,13 +299,15 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
 </section>
 
 <div class="values-strip">
-  <span>🌸 १००% ताजी फुले</span>
-  <i>✳</i>
-  <span>💍 आकर्षक लग्नहार व वरमाला</span>
-  <i>✳</i>
-  <span>🚗 गाडी व मंडप सजावट</span>
-  <i>✳</i>
-  <span>⚡ परळी व परिसरात जलद डिलिव्हरी</span>
+  <div class="fluid-strip-track" role="region" aria-label="Sagar Highlights">
+    <span class="fluid-strip-pill">🌸 १००% ताजी फुले</span>
+    <span class="fluid-strip-sep" aria-hidden="true">✳</span>
+    <span class="fluid-strip-pill">💍 आकर्षक लग्नहार व वरमाला</span>
+    <span class="fluid-strip-sep" aria-hidden="true">✳</span>
+    <span class="fluid-strip-pill">🚗 गाडी व मंडप सजावट</span>
+    <span class="fluid-strip-sep" aria-hidden="true">✳</span>
+    <span class="fluid-strip-pill">⚡ परळी व परिसरात जलद डिलिव्हरी</span>
+  </div>
 </div>
 
 <section id="collection" class="collection wrap section">
@@ -341,7 +356,7 @@ for idx, i in enumerate(items):
     aspect = f"{i['width']} / {i['height']}"
     is_eager = (idx < 6)
     priority_class = " priority-item" if idx < 12 else ""
-    parts.append(f'''<article class="work-card{priority_class}" data-category="{i['category']}"><button class="photo-button" style="aspect-ratio: {aspect};" data-image="{i['src']}" data-title="{i['title']}" data-marathi="{i['marathi']}" data-group="collection" aria-label="View {i['title']}">{image(i, eager=is_eager)}{watermark()}<span class="expand" aria-hidden="true" title="मोठा फोटो पहा">↗</span></button><div class="card-info"><div class="card-meta"><span class="category-pill">{i['label']}</span></div><h3 class="card-title-mr" lang="mr">{i['marathi']}</h3><p class="card-title-en">{i['title']}</p><a class="inquire" href="{wa(i['marathi'] + ' / ' + i['title'])}" target="_blank" rel="noopener noreferrer"><span>💬 WhatsApp वर ऑर्डर</span><span class="inquire-arrow" aria-hidden="true">↗</span></a></div></article>''')
+    parts.append(f'''<article class="work-card{priority_class}" data-category="{i['category']}"><button class="photo-button" style="aspect-ratio: {aspect};" data-image="{i['src']}" data-title="{i['title']}" data-marathi="{i['marathi']}" data-group="collection" aria-label="View {i['title']}">{image(i, eager=is_eager)}{watermark()}<span class="expand" aria-hidden="true" title="मोठा फोटो पहा">↗</span></button><div class="card-info"><div class="card-meta"><span class="category-pill">{i['label']}</span></div><h3 class="card-title-mr" lang="mr">{i['marathi']}</h3><p class="card-title-en">{i['title']}</p><a class="inquire fluid-card-inquire" href="{wa(i['marathi'] + ' / ' + i['title'])}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp वर ऑर्डर - {i['marathi']}"><div class="inquire-wa-part"><svg class="inquire-wa-svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c4.54 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.84a8.18 8.18 0 0 1-5.82 2.41c-1.42 0-2.82-.37-4.06-1.07l-.29-.17-3.02.79.81-2.94-.19-.3a8.21 8.21 0 0 1-1.26-4.56c0-4.54 3.7-8.24 8.24-8.24zm4.51 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.25-1.49-1.4-1.74-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43l-.48-.01c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.72 4.31 3.81.6.26 1.07.42 1.44.53.61.2 1.16.17 1.6-.1.49-.3 1.47-1.2 1.68-1.75.2-.55.2-1.02.14-1.12-.06-.1-.23-.16-.48-.28z"/></svg><span>WhatsApp वर ऑर्डर</span></div><span class="inquire-arrow-pod" aria-hidden="true"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></a></div></article>''')
 
 parts.append(f'''</div>
 <div class="collection-footer">
@@ -389,7 +404,7 @@ for v in [videos[1], videos[2], videos[0]]:
   <div class="film-frame">
     <video class="story-video" src="{v['src']}" poster="{v['poster']}" autoplay muted loop playsinline preload="auto" aria-label="{v['title']}"></video>
     <div class="story-video-overlay">
-      <span class="story-tag">{v['marathi']}</span>
+      <span class="story-tag fluid-story-pill"><span class="story-tag-dot" aria-hidden="true"></span>{v['marathi']}</span>
       <button class="sound-toggle-btn story-sound-toggle" aria-label="Toggle sound" title="Toggle audio">
         <span class="sound-icon">🔇</span>
       </button>
@@ -399,18 +414,47 @@ for v in [videos[1], videos[2], videos[0]]:
   <div class="film-caption">
     <h3>{v['title']}</h3>
     <p lang="mr">{v['marathi']}</p>
-    <a class="story-order-btn" href="{wa(v['title'] + ' - ' + v['marathi'])}" target="_blank" rel="noopener noreferrer">
-      <span>💬 WhatsApp वर ऑर्डर द्या ↗</span>
+    <a class="story-order-btn fluid-card-inquire" href="{wa(v['title'] + ' - ' + v['marathi'])}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp वर ऑर्डर - {v['title']}">
+      <div class="inquire-wa-part">
+        <svg class="inquire-wa-svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c4.54 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.84a8.18 8.18 0 0 1-5.82 2.41c-1.42 0-2.82-.37-4.06-1.07l-.29-.17-3.02.79.81-2.94-.19-.3a8.21 8.21 0 0 1-1.26-4.56c0-4.54 3.7-8.24 8.24-8.24zm4.51 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.25-1.49-1.4-1.74-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43l-.48-.01c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.72 4.31 3.81.6.26 1.07.42 1.44.53.61.2 1.16.17 1.6-.1.49-.3 1.47-1.2 1.68-1.75.2-.55.2-1.02.14-1.12-.06-.1-.23-.16-.48-.28z"/></svg>
+        <span>WhatsApp वर ऑर्डर द्या</span>
+      </div>
+      <span class="inquire-arrow-pod" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </span>
     </a>
   </div>
 </article>''')
 
 parts.append('''</div>
 <div class="rail-footer">
-  <span>← डावीकडे/उजवीकडे स्वाइप करा (Swipe to explore) →</span>
-  <div>
-    <button class="film-prev" aria-label="Scroll to previous video">←</button>
-    <button class="film-next" aria-label="Scroll to next video">→</button>
+  <span class="rail-hint">← स्वाइप करा किंवा बटणाने पुढे जा (Swipe to explore) →</span>
+  <div class="fluid-reel-controls" role="group" aria-label="व्हिडिओ नेव्हिगेशन (Video controls)">
+    <button class="film-prev fluid-ctrl-pill" aria-label="मागील व्हिडिओ (Previous video)">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      <span>मागील</span>
+    </button>
+    <div class="fluid-ctrl-waist" aria-hidden="true">
+      <svg class="ctrl-waist-svg" viewBox="0 0 20 42" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="ctrlWaistGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff"/>
+            <stop offset="50%" stop-color="#f2f7f4"/>
+            <stop offset="100%" stop-color="#ffffff"/>
+          </linearGradient>
+        </defs>
+        <path d="M 0,0 C 5,0 7,8 10,8 C 13,8 15,0 20,0 L 20,42 C 15,42 13,34 10,34 C 7,34 5,42 0,42 Z" fill="url(#ctrlWaistGrad)"/>
+        <path d="M 0,0 C 5,0 7,8 10,8 C 13,8 15,0 20,0" fill="none" stroke="rgba(255,255,255,0.95)" stroke-width="1.5"/>
+        <path d="M 0,42 C 5,42 7,34 10,34 C 13,34 15,42 20,42" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <button class="film-next fluid-ctrl-pill" aria-label="पुढील व्हिडिओ (Next video)">
+      <span>पुढील</span>
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </button>
   </div>
 </div>
 </div>
@@ -435,13 +479,16 @@ for name, title, mr, badge in signature_edits:
     parts.append(f'''<article class="inspiration-card">
   <button class="photo-button" style="aspect-ratio: 3 / 4;" data-image="assets/images/inspiration/{name}-960.webp" data-title="{title}" data-marathi="{mr}" data-group="inspiration" aria-label="View {title}">
     <img src="assets/images/inspiration/{name}-480.webp" srcset="assets/images/inspiration/{name}-480.webp 480w, assets/images/inspiration/{name}-960.webp 960w" sizes="(max-width: 600px) 90vw, 45vw" width="960" height="1280" style="aspect-ratio: 3 / 4;" alt="{title} — Sagar Flower Shop" loading="lazy">
-    <span class="inspiration-badge">{badge}</span>
+    <span class="inspiration-badge fluid-gold-pill">{badge}</span>
     <span class="expand" aria-hidden="true">↗</span>
   </button>
   <div class="inspiration-caption">
     <h3 lang="mr">{mr}</h3>
     <p>{title}</p>
-    <a class="text-link" href="{wa(mr + ' (' + title + ')')}" target="_blank" rel="noopener noreferrer">या डिझाईनची ऑर्डर द्या (Book on WhatsApp) ↗</a>
+    <a class="fluid-inspire-cta" href="{wa(mr + ' (' + title + ')')}" target="_blank" rel="noopener noreferrer">
+      <span>या डिझाईनची ऑर्डर द्या (Book on WhatsApp)</span>
+      <span class="fluid-circle-arrow" aria-hidden="true">↗</span>
+    </a>
   </div>
 </article>''')
 
@@ -449,17 +496,44 @@ parts.append('</div></section>')
 
 # Retain verified business and service content from the base version.
 services = re.search(r'<section id="services".*?(?=<section id="story")', source, re.S).group()
+# Upgrade service links to fluid pill buttons and numbers to fluid pills
+services = re.sub(
+    r'<a href="([^"]+)" target="_blank" rel="noopener noreferrer">([^<]+)</a>',
+    r'<a class="fluid-service-pill" href="\1" target="_blank" rel="noopener noreferrer"><span>\2</span><span class="fluid-circle-arrow" aria-hidden="true">↗</span></a>',
+    services
+)
+services = re.sub(
+    r'<span class="service-number">([^<]+)</span>',
+    r'<span class="service-number fluid-num-pill">\1</span>',
+    services
+)
+
 story = re.search(r'<section id="story".*?(?=<section class="process)', source, re.S).group()
 
 # Present the garland photograph cleanly
 story = re.sub(
     r'<div class="story-image reveal">.*?</div>',
-    '<div class="story-image"><img src="assets/images/garlands/collection-21-640.webp" width="640" height="1044" style="aspect-ratio: 640 / 1044;" alt="Traditional rose and ivory garland by Sagar Flower Shop" loading="lazy">' + watermark() + '<div class="story-tag">परंपरेचा सुगंध.</div></div>',
+    '<div class="story-image"><img src="assets/images/garlands/collection-21-640.webp" width="640" height="1044" style="aspect-ratio: 640 / 1044;" alt="Traditional rose and ivory garland by Sagar Flower Shop" loading="lazy">' + watermark() + '<div class="story-tag fluid-story-pill">🌸 परंपरेचा सुगंध.</div></div>',
     story, count=1, flags=re.S
 )
 story = story.replace('</div></div><div class="story-copy', '</div><div class="story-copy')
 
 contact = re.search(r'<section id="contact".*?</section>', source, re.S).group()
+contact = re.sub(
+    r'<a class="button" href="([^"]+)" target="_blank" rel="noopener noreferrer">Chat on WhatsApp ↗</a>',
+    r'<a class="fluid-contact-wa-btn" href="\1" target="_blank" rel="noopener noreferrer"><div class="wa-contact-left"><svg class="wa-svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c4.54 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.84a8.18 8.18 0 0 1-5.82 2.41c-1.42 0-2.82-.37-4.06-1.07l-.29-.17-3.02.79.81-2.94-.19-.3a8.21 8.21 0 0 1-1.26-4.56c0-4.54 3.7-8.24 8.24-8.24zm4.51 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.25-1.49-1.4-1.74-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43l-.48-.01c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.72 4.31 3.81.6.26 1.07.42 1.44.53.61.2 1.16.17 1.6-.1.49-.3 1.47-1.2 1.68-1.75.2-.55.2-1.02.14-1.12-.06-.1-.23-.16-.48-.28z"/></svg><span>WhatsApp वर थेट चॅट करा</span></div><span class="fluid-circle-arrow" aria-hidden="true">↗</span></a>',
+    contact
+)
+contact = re.sub(
+    r'<a class="contact-phone" href="([^"]+)">([^<]+)</a>',
+    r'<a class="contact-phone fluid-phone-primary" href="\1"><span>📞 \2</span></a>',
+    contact
+)
+contact = re.sub(
+    r'<a class="text-link" href="([^"]+)" target="_blank" rel="noopener noreferrer">Find us on Google Maps ↗</a>',
+    r'<a class="fluid-map-pill" href="\1" target="_blank" rel="noopener noreferrer"><span>📍 Google Maps वर मार्ग पहा</span><span class="fluid-circle-arrow" aria-hidden="true">↗</span></a>',
+    contact
+)
 
 parts.extend([services, story, contact, '</main>'])
 
@@ -475,29 +549,52 @@ parts.append(f'''<footer>
   </div>
 </footer>''')
 
-parts.append(re.search(r'<a class="floating-wa".*?(?=<nav class="mobile-nav")', source, re.S).group())
+parts.append(f'''<div class="floating-wa-wrap">
+  <a class="floating-wa fluid-floating-pill" href="https://wa.me/917620644158?text={quote('नमस्कार! मला फुलांची थेट ऑर्डर करायची आहे. / Hello, I would like to book flowers.')}" aria-label="Chat with Sagar Flower Shop on WhatsApp" target="_blank" rel="noopener noreferrer">
+    <div class="floating-wa-icon-box" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c4.54 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.84a8.18 8.18 0 0 1-5.82 2.41c-1.42 0-2.82-.37-4.06-1.07l-.29-.17-3.02.79.81-2.94-.19-.3a8.21 8.21 0 0 1-1.26-4.56c0-4.54 3.7-8.24 8.24-8.24zm4.51 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.25-1.49-1.4-1.74-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43l-.48-.01c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.72 4.31 3.81.6.26 1.07.42 1.44.53.61.2 1.16.17 1.6-.1.49-.3 1.47-1.2 1.68-1.75.2-.55.2-1.02.14-1.12-.06-.1-.23-.16-.48-.28z"/>
+      </svg>
+      <span class="floating-wa-pulse" aria-hidden="true"></span>
+    </div>
+    <div class="floating-wa-copy">
+      <span class="floating-wa-mr" lang="mr">WhatsApp वर बोला</span>
+      <span class="floating-wa-en">Order & Inquire ↗</span>
+    </div>
+  </a>
+</div>''')
 
 parts.append('''<nav class="mobile-nav" aria-label="Mobile navigation">
-  <a href="#home" data-section="home" class="active"><span aria-hidden="true">⌂</span>होम</a>
-  <a href="#collection" data-section="collection"><span aria-hidden="true">❀</span>फुले</a>
-  <a href="#films" data-section="films"><span aria-hidden="true">▷</span>व्हिडिओ</a>
-  <a href="#contact" data-section="contact"><span aria-hidden="true">♡</span>संपर्क</a>
+  <div class="fluid-mobile-dock">
+    <a href="#home" data-section="home" class="fluid-mobile-item active"><span class="dock-icon" aria-hidden="true">⌂</span><span class="dock-text">होम</span></a>
+    <a href="#collection" data-section="collection" class="fluid-mobile-item"><span class="dock-icon" aria-hidden="true">❀</span><span class="dock-text">फुले</span></a>
+    <a href="#films" data-section="films" class="fluid-mobile-item"><span class="dock-icon" aria-hidden="true">▷</span><span class="dock-text">व्हिडिओ</span></a>
+    <a href="#contact" data-section="contact" class="fluid-mobile-item"><span class="dock-icon" aria-hidden="true">♡</span><span class="dock-text">संपर्क</span></a>
+  </div>
 </nav>
 
 <dialog id="lightbox" aria-labelledby="lightbox-title">
-  <button class="lightbox-close" aria-label="Close photo">×</button>
+  <button class="lightbox-close fluid-modal-close" aria-label="Close photo">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+  </button>
   <div class="lightbox-image">
-    <button class="lightbox-prev" aria-label="Previous photo">‹</button>
+    <button class="lightbox-prev fluid-modal-nav" aria-label="Previous photo">‹</button>
     <img alt="" id="lightbox-photo">
     <span class="watermark" aria-hidden="true">SAGAR · 7620644158</span>
-    <button class="lightbox-next" aria-label="Next photo">›</button>
+    <button class="lightbox-next fluid-modal-nav" aria-label="Next photo">›</button>
   </div>
   <div class="lightbox-bottom">
     <div>
       <span id="lightbox-count" class="eyebrow"></span>
       <h2 id="lightbox-title"></h2>
     </div>
-    <a class="button button-whatsapp-modal" id="lightbox-inquire" target="_blank" rel="noopener noreferrer">💬 WhatsApp वर ऑर्डर ↗</a>
+    <a class="fluid-card-inquire lightbox-inquire-btn" id="lightbox-inquire" target="_blank" rel="noopener noreferrer">
+      <div class="inquire-wa-part">
+        <svg class="inquire-wa-svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c4.54 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.84a8.18 8.18 0 0 1-5.82 2.41c-1.42 0-2.82-.37-4.06-1.07l-.29-.17-3.02.79.81-2.94-.19-.3a8.21 8.21 0 0 1-1.26-4.56c0-4.54 3.7-8.24 8.24-8.24zm4.51 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.25-1.49-1.4-1.74-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43l-.48-.01c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.72 4.31 3.81.6.26 1.07.42 1.44.53.61.2 1.16.17 1.6-.1.49-.3 1.47-1.2 1.68-1.75.2-.55.2-1.02.14-1.12-.06-.1-.23-.16-.48-.28z"/></svg>
+        <span>WhatsApp वर ऑर्डर</span>
+      </div>
+      <span class="inquire-arrow-pod" aria-hidden="true">↗</span>
+    </a>
   </div>
   <p class="lightbox-tip">स्वाइप करा किंवा बाणांचा वापर करा · दोन्ही बोटांनी झूम करू शकता</p>
 </dialog>

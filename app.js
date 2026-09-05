@@ -145,6 +145,7 @@ function renderCollection() {
 filterButtons.forEach(button => button.addEventListener('click', () => {
   currentFilter = button.dataset.filter;
   limit = batchSize();
+  if (filterContainer) filterContainer.dataset.activeFilter = currentFilter;
   filterButtons.forEach(item => {
     const active = item === button;
     item.classList.toggle('active', active);
@@ -456,6 +457,7 @@ requestScrollUpdate();
 
 const initialActiveBtn = $('.neo-btn.active') || $('.filter-pill.active');
 if (initialActiveBtn) {
+  if (filterContainer) filterContainer.dataset.activeFilter = initialActiveBtn.dataset.filter || 'all';
   syncPrevActive();
   requestAnimationFrame(() => updateGlider(initialActiveBtn, true));
   if (document.fonts && document.fonts.ready) {
