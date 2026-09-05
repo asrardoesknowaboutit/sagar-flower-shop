@@ -18,7 +18,7 @@ def image(i, eager=False, sizes='(max-width: 600px) 48vw, (max-width: 900px) 45v
         srcset = ', '.join(f"{v['path']} {v['width']}w" for v in i['copies'].values())
     else:
         srcset = f"{i['thumb']} 640w, {i['src']} {i['width']}w"
-    return f'''<img src="{i['thumb']}" srcset="{srcset}" sizes="{sizes}" width="{i['width']}" height="{i['height']}" alt="{html.escape(i['title'])} — Sagar Flower Shop" {'fetchpriority="high"' if eager else 'loading="lazy"'} decoding="async">'''
+    return f'''<img src="{i['thumb']}" srcset="{srcset}" sizes="{sizes}" width="{i['width']}" height="{i['height']}" style="aspect-ratio: {i['width']} / {i['height']};" alt="{html.escape(i['title'])} — Sagar Flower Shop" {'fetchpriority="high"' if eager else 'loading="lazy"'} decoding="async">'''
 
 def watermark():
     return '<span class="watermark" aria-hidden="true">SAGAR · 7620644158</span>'
@@ -156,7 +156,8 @@ parts.append(f'''      </div>
   <div class="portfolio">''')
 
 for i in items:
-    parts.append(f'''<article class="work-card" data-category="{i['category']}"><button class="photo-button" data-image="{i['src']}" data-title="{i['title']}" data-marathi="{i['marathi']}" data-group="collection" aria-label="View {i['title']}">{image(i)}{watermark()}<span class="expand" aria-hidden="true" title="मोठा फोटो पहा">↗</span></button><div class="card-info"><div class="card-meta"><span class="category-pill">{i['label']}</span></div><h3 class="card-title-mr" lang="mr">{i['marathi']}</h3><p class="card-title-en">{i['title']}</p><a class="inquire" href="{wa(i['marathi'] + ' / ' + i['title'])}" target="_blank" rel="noopener noreferrer"><span>💬 WhatsApp वर ऑर्डर</span><span class="inquire-arrow" aria-hidden="true">↗</span></a></div></article>''')
+    aspect = f"{i['width']} / {i['height']}"
+    parts.append(f'''<article class="work-card" data-category="{i['category']}"><button class="photo-button" style="aspect-ratio: {aspect};" data-image="{i['src']}" data-title="{i['title']}" data-marathi="{i['marathi']}" data-group="collection" aria-label="View {i['title']}">{image(i)}{watermark()}<span class="expand" aria-hidden="true" title="मोठा फोटो पहा">↗</span></button><div class="card-info"><div class="card-meta"><span class="category-pill">{i['label']}</span></div><h3 class="card-title-mr" lang="mr">{i['marathi']}</h3><p class="card-title-en">{i['title']}</p><a class="inquire" href="{wa(i['marathi'] + ' / ' + i['title'])}" target="_blank" rel="noopener noreferrer"><span>💬 WhatsApp वर ऑर्डर</span><span class="inquire-arrow" aria-hidden="true">↗</span></a></div></article>''')
 
 parts.append(f'''</div>
 <div class="collection-footer">
@@ -228,8 +229,8 @@ signature_edits = [
 
 for name, title, mr, badge in signature_edits:
     parts.append(f'''<article class="inspiration-card">
-  <button class="photo-button" data-image="assets/images/inspiration/{name}-960.webp" data-title="{title}" data-marathi="{mr}" data-group="inspiration" aria-label="View {title}">
-    <img src="assets/images/inspiration/{name}-480.webp" srcset="assets/images/inspiration/{name}-480.webp 480w, assets/images/inspiration/{name}-960.webp 960w" sizes="(max-width: 600px) 90vw, 45vw" width="960" height="1280" alt="{title} — Sagar Flower Shop" loading="lazy">
+  <button class="photo-button" style="aspect-ratio: 3 / 4;" data-image="assets/images/inspiration/{name}-960.webp" data-title="{title}" data-marathi="{mr}" data-group="inspiration" aria-label="View {title}">
+    <img src="assets/images/inspiration/{name}-480.webp" srcset="assets/images/inspiration/{name}-480.webp 480w, assets/images/inspiration/{name}-960.webp 960w" sizes="(max-width: 600px) 90vw, 45vw" width="960" height="1280" style="aspect-ratio: 3 / 4;" alt="{title} — Sagar Flower Shop" loading="lazy">
     <span class="inspiration-badge">{badge}</span>
     <span class="expand" aria-hidden="true">↗</span>
   </button>
@@ -249,7 +250,7 @@ story = re.search(r'<section id="story".*?(?=<section class="process)', source, 
 # Present the garland photograph cleanly
 story = re.sub(
     r'<div class="story-image reveal">.*?</div>',
-    '<div class="story-image"><img src="assets/images/garlands/collection-21-640.webp" width="640" height="1044" alt="Traditional rose and ivory garland by Sagar Flower Shop" loading="lazy">' + watermark() + '<div class="story-tag">परंपरेचा सुगंध.</div></div>',
+    '<div class="story-image"><img src="assets/images/garlands/collection-21-640.webp" width="640" height="1044" style="aspect-ratio: 640 / 1044;" alt="Traditional rose and ivory garland by Sagar Flower Shop" loading="lazy">' + watermark() + '<div class="story-tag">परंपरेचा सुगंध.</div></div>',
     story, count=1, flags=re.S
 )
 story = story.replace('</div></div><div class="story-copy', '</div><div class="story-copy')

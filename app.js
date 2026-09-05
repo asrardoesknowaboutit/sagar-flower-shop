@@ -83,7 +83,7 @@ const filterButtons = $$('[data-filter]');
 const filterBar = $('.neo-filter-track') || $('.filter-pill-bar');
 const filterGlider = $('.neo-glider') || $('.filter-glider');
 const filterContainer = $('.neo-filter-container') || $('.filter-flow-wrapper');
-const batchSize = () => window.innerWidth >= 900 ? 9 : 8;
+const batchSize = () => window.innerWidth >= 900 ? 12 : 8;
 let currentFilter = 'all', limit = batchSize();
 
 function syncPrevActive() {
