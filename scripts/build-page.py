@@ -299,14 +299,87 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
 </section>
 
 <div class="values-strip">
-  <div class="fluid-strip-track" role="region" aria-label="Sagar Highlights">
-    <span class="fluid-strip-pill">🌸 १००% ताजी फुले</span>
-    <span class="fluid-strip-sep" aria-hidden="true">✳</span>
-    <span class="fluid-strip-pill">💍 आकर्षक लग्नहार व वरमाला</span>
-    <span class="fluid-strip-sep" aria-hidden="true">✳</span>
-    <span class="fluid-strip-pill">🚗 गाडी व मंडप सजावट</span>
-    <span class="fluid-strip-sep" aria-hidden="true">✳</span>
-    <span class="fluid-strip-pill">⚡ परळी व परिसरात जलद डिलिव्हरी</span>
+  <div class="fluid-values-ribbon-wrap">
+    <div class="fluid-values-ribbon" role="region" aria-label="Sagar Highlights">
+      <!-- Value 1: १००% ताजी फुले -->
+      <a class="fluid-val-pill val-fresh" href="#collection" data-filter-trigger="all" aria-label="१००% ताजी फुले - सर्व ताजी फुले पहा">
+        <span class="val-icon">🌸</span>
+        <span class="val-label">१००% ताजी फुले</span>
+        <span class="val-arrow" aria-hidden="true">›</span>
+      </a>
+
+      <!-- Organic Fluid Waist 1-2 (Rose to Mint) -->
+      <div class="fluid-val-waist val-waist-1" aria-hidden="true">
+        <svg class="val-waist-svg" viewBox="0 0 28 46" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="valWaistGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="35%" stop-color="#fff0f5"/>
+              <stop offset="70%" stop-color="#f0fdf4"/>
+              <stop offset="100%" stop-color="#ffffff"/>
+            </linearGradient>
+          </defs>
+          <path d="M 0,0 C 7,0 10,9 14,9 C 18,9 21,0 28,0 L 28,46 C 21,46 18,37 14,37 C 10,37 7,46 0,46 Z" fill="url(#valWaistGrad1)"/>
+          <path d="M 0,0 C 7,0 10,9 14,9 C 18,9 21,0 28,0" fill="none" stroke="rgba(255, 255, 255, 0.95)" stroke-width="1.5"/>
+          <path d="M 0,46 C 7,46 10,37 14,37 C 18,37 21,46 28,46" fill="none" stroke="rgba(255, 255, 255, 0.9)" stroke-width="1.5"/>
+        </svg>
+      </div>
+
+      <!-- Value 2: आकर्षक लग्नहार व वरमाला -->
+      <a class="fluid-val-pill val-wedding" href="#collection" data-filter-trigger="garlands" aria-label="आकर्षक लग्नहार व वरमाला">
+        <span class="val-icon">💍</span>
+        <span class="val-label"><span class="val-text-full">आकर्षक लग्नहार व वरमाला</span><span class="val-text-short">लग्नहार व वरमाला</span></span>
+        <span class="val-arrow" aria-hidden="true">›</span>
+      </a>
+
+      <!-- Organic Fluid Waist 2-3 (Mint to Coral) -->
+      <div class="fluid-val-waist val-waist-2" aria-hidden="true">
+        <svg class="val-waist-svg" viewBox="0 0 28 46" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="valWaistGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="35%" stop-color="#f0fdf4"/>
+              <stop offset="70%" stop-color="#fff5f5"/>
+              <stop offset="100%" stop-color="#ffffff"/>
+            </linearGradient>
+          </defs>
+          <path d="M 0,0 C 7,0 10,9 14,9 C 18,9 21,0 28,0 L 28,46 C 21,46 18,37 14,37 C 10,37 7,46 0,46 Z" fill="url(#valWaistGrad2)"/>
+          <path d="M 0,0 C 7,0 10,9 14,9 C 18,9 21,0 28,0" fill="none" stroke="rgba(255, 255, 255, 0.95)" stroke-width="1.5"/>
+          <path d="M 0,46 C 7,46 10,37 14,37 C 18,37 21,46 28,46" fill="none" stroke="rgba(255, 255, 255, 0.9)" stroke-width="1.5"/>
+        </svg>
+      </div>
+
+      <!-- Value 3: गाडी व मंडप सजावट -->
+      <a class="fluid-val-pill val-decor" href="#collection" data-filter-trigger="decor" aria-label="गाडी व मंडप सजावट">
+        <span class="val-icon">🚗</span>
+        <span class="val-label"><span class="val-text-full">गाडी व मंडप सजावट</span><span class="val-text-short">गाडी व मंडप सजावट</span></span>
+        <span class="val-arrow" aria-hidden="true">›</span>
+      </a>
+
+      <!-- Organic Fluid Waist 3-4 (Coral to Gold) -->
+      <div class="fluid-val-waist val-waist-3" aria-hidden="true">
+        <svg class="val-waist-svg" viewBox="0 0 28 46" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="valWaistGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="35%" stop-color="#fff5f5"/>
+              <stop offset="70%" stop-color="#fefce8"/>
+              <stop offset="100%" stop-color="#ffffff"/>
+            </linearGradient>
+          </defs>
+          <path d="M 0,0 C 7,0 10,9 14,9 C 18,9 21,0 28,0 L 28,46 C 21,46 18,37 14,37 C 10,37 7,46 0,46 Z" fill="url(#valWaistGrad3)"/>
+          <path d="M 0,0 C 7,0 10,9 14,9 C 18,9 21,0 28,0" fill="none" stroke="rgba(255, 255, 255, 0.95)" stroke-width="1.5"/>
+          <path d="M 0,46 C 7,46 10,37 14,37 C 18,37 21,46 28,46" fill="none" stroke="rgba(255, 255, 255, 0.9)" stroke-width="1.5"/>
+        </svg>
+      </div>
+
+      <!-- Value 4: परळी व परिसरात जलद डिलिव्हरी -->
+      <a class="fluid-val-pill val-delivery" href="{wa('परळी व परिसरात जलद घरपोच डिलिव्हरी बद्दल माहिती')}" target="_blank" rel="noopener noreferrer" aria-label="परळी व परिसरात जलद डिलिव्हरी">
+        <span class="val-icon">⚡</span>
+        <span class="val-label"><span class="val-text-full">परळी व परिसरात जलद डिलिव्हरी</span><span class="val-text-short">जलद घरपोच डिलिव्हरी</span></span>
+        <span class="val-arrow" aria-hidden="true">›</span>
+      </a>
+    </div>
   </div>
 </div>
 

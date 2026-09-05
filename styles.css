@@ -940,47 +940,202 @@ h1 em {
 }
 .hero-caption-cta:hover { color: var(--wa-dark); }
 
-/* Values Strip */
+/* ==========================================================================
+   FLUID CONNECTED VALUES RIBBON (Redesigned matching ChatGPT Reference)
+   ========================================================================== */
 .values-strip {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 60px;
-  padding: 14px 16px;
-  background: #fbf7f0;
-  border-block: 1px solid #ebdcc5;
+  min-height: 72px;
+  padding: 26px 16px 30px;
+  position: relative;
+  background: transparent;
+  border-block: none;
+  overflow: hidden;
 }
-.fluid-strip-track {
+
+.fluid-values-ribbon-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding: 8px 16px 16px;
+}
+
+.fluid-values-ribbon-wrap::-webkit-scrollbar {
+  display: none;
+}
+
+.fluid-values-ribbon {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  filter: drop-shadow(0 6px 20px rgba(13, 43, 31, 0.05));
+  flex-shrink: 0;
+  margin: 0 auto;
+}
+
+/* Individual Value Chamber Pill */
+.fluid-val-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 50px;
+  padding: 0 20px 0 16px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffffff 0%, #fdfefe 55%, #f6faf7 100%);
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  z-index: 2;
+  white-space: nowrap;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.fluid-val-pill .val-icon {
+  font-size: 21px;
+  line-height: 1;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.12));
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 8px 12px;
 }
-.fluid-strip-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 16px;
-  border-radius: 9999px;
-  background: linear-gradient(180deg, #ffffff 0%, #f9f6f0 100%);
-  border: 1.2px solid rgba(225, 205, 175, 0.6);
-  box-shadow: inset 0 1px 1px #ffffff, 0 2px 8px rgba(13, 43, 31, 0.04);
+
+.fluid-val-pill .val-label {
   font-family: 'Noto Serif Devanagari', Georgia, serif;
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0d2b1f;
+  letter-spacing: 0;
+}
+
+.fluid-val-pill .val-arrow {
+  font-size: 19px;
   font-weight: 600;
-  color: #1c3325;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: default;
+  color: #557263;
+  margin-left: 2px;
+  transition: transform 0.25s ease, color 0.25s ease;
+  display: inline-block;
 }
-.fluid-strip-pill:hover {
-  transform: translateY(-1.5px);
-  box-shadow: 0 5px 12px rgba(13, 43, 31, 0.08);
+
+.fluid-val-pill:hover {
+  transform: translateY(-2.5px) scale(1.02);
 }
-.fluid-strip-sep {
-  color: var(--gold);
-  font-size: 12px;
-  opacity: 0.7;
+
+.fluid-val-pill:hover .val-arrow {
+  transform: translateX(3px);
+  color: var(--forest);
+}
+
+.fluid-val-pill:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Value Chamber Ambient Glow Colors */
+.val-fresh {
+  border: 1.5px solid rgba(251, 207, 232, 0.9);
+  box-shadow: 0 8px 24px rgba(244, 114, 182, 0.32), inset 0 2px 1px #ffffff;
+}
+.val-fresh:hover {
+  box-shadow: 0 12px 32px rgba(244, 114, 182, 0.46), inset 0 2px 1px #ffffff;
+}
+
+.val-wedding {
+  border: 1.5px solid rgba(187, 247, 208, 0.9);
+  box-shadow: 0 8px 24px rgba(34, 197, 94, 0.28), inset 0 2px 1px #ffffff;
+}
+.val-wedding:hover {
+  box-shadow: 0 12px 32px rgba(34, 197, 94, 0.42), inset 0 2px 1px #ffffff;
+}
+
+.val-decor {
+  border: 1.5px solid rgba(254, 202, 202, 0.9);
+  box-shadow: 0 8px 24px rgba(248, 113, 113, 0.28), inset 0 2px 1px #ffffff;
+}
+.val-decor:hover {
+  box-shadow: 0 12px 32px rgba(248, 113, 113, 0.42), inset 0 2px 1px #ffffff;
+}
+
+.val-delivery {
+  border: 1.5px solid rgba(254, 240, 138, 0.95);
+  box-shadow: 0 8px 24px rgba(250, 204, 21, 0.36), inset 0 2px 1px #ffffff;
+}
+.val-delivery:hover {
+  box-shadow: 0 12px 32px rgba(250, 204, 21, 0.52), inset 0 2px 1px #ffffff;
+}
+
+/* Organic Concave SVG Waist Bridges */
+.fluid-val-waist {
+  width: 28px;
+  height: 50px;
+  margin-inline: -14px;
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.val-waist-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.val-waist-1 {
+  filter: drop-shadow(0 6px 14px rgba(244, 114, 182, 0.28));
+}
+
+.val-waist-2 {
+  filter: drop-shadow(0 6px 14px rgba(34, 197, 94, 0.24));
+}
+
+.val-waist-3 {
+  filter: drop-shadow(0 6px 14px rgba(248, 113, 113, 0.24));
+}
+
+.val-text-short {
+  display: none;
+}
+
+@media (max-width: 680px) {
+  .val-text-full {
+    display: none;
+  }
+  .val-text-short {
+    display: inline;
+  }
+  .fluid-val-pill {
+    height: 44px;
+    padding: 0 15px 0 12px;
+    gap: 7px;
+  }
+  .fluid-val-pill .val-icon {
+    font-size: 18px;
+  }
+  .fluid-val-pill .val-label {
+    font-size: 13.5px;
+  }
+  .fluid-val-pill .val-arrow {
+    font-size: 16px;
+  }
+  .fluid-val-waist {
+    height: 44px;
+    width: 26px;
+    margin-inline: -13px;
+  }
+  .values-strip {
+    padding: 16px 8px 24px;
+  }
 }
 
 /* Section Headings */

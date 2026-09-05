@@ -469,8 +469,8 @@ window.addEventListener('resize', () => {
   if (currentBtn) updateGlider(currentBtn, true);
 });
 
-// Quick filter click from fluid tags ribbon
-$$('.fluid-tag-pill[data-filter-trigger]').forEach(tag => {
+// Quick filter click from fluid tags ribbon & values ribbon
+$$('.fluid-tag-pill[data-filter-trigger], .fluid-val-pill[data-filter-trigger]').forEach(tag => {
   tag.addEventListener('click', () => {
     const filter = tag.dataset.filterTrigger;
     if (filter) {
