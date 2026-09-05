@@ -179,6 +179,31 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
     </h1>
 
     <p class="hero-description">Fresh wedding garlands, handcrafted celebration bouquets, haldi swing decorations & wedding car decor. Made fresh every day with tradition and love in Parli.</p>
+
+  </div>
+
+  <div class="hero-video-showcase">
+    <div class="hero-video-card">
+      <video class="hero-video" id="hero-delivery-video" src="assets/videos/delivery.mp4" poster="assets/videos/delivery-poster.webp" autoplay muted loop playsinline preload="auto" aria-label="Flowers on their way to customers in Parli"></video>
+      <div class="hero-video-live-badge">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span>Flowers, on their way · फुले, तुमच्या दारी</span>
+      </div>
+      <button class="sound-toggle-btn" id="hero-sound-toggle" aria-label="Toggle hero video sound" title="Toggle sound">
+        <span class="sound-icon">🔇</span>
+      </button>
+    </div>
+    <div class="hero-video-caption">
+      <div>
+        <span class="eyebrow">SAGAR SPECIAL DELIVERY</span>
+        <p>Flowers, on their way <small lang="mr">परळी व जवळच्या परिसरात ताजी फुले वेळेवर घरपोच मिळतील</small></p>
+      </div>
+      <a class="hero-caption-cta" href="{wa('घरपोच डिलिव्हरी बद्दल माहिती')}" target="_blank" rel="noopener noreferrer">
+        डिलिव्हरी बुक करा ↗
+      </a>
+    </div>
+  </div>
+  <div class="reference-actions" aria-label="Order flowers and explore services">
     <!-- FLUID CONNECTED ACTION POD (WhatsApp + Call) -->
     <div class="fluid-action-pod-wrap">
       <div class="fluid-action-pod">
@@ -202,20 +227,7 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
         </a>
 
         <!-- Organic Fluid Waist Bridge -->
-        <div class="fluid-pod-waist" aria-hidden="true">
-          <svg class="pod-waist-svg" viewBox="0 0 36 72" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="podWaistGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#08993f"/>
-                <stop offset="45%" stop-color="#12b855"/>
-                <stop offset="75%" stop-color="#eaf8ef"/>
-                <stop offset="100%" stop-color="#ffffff"/>
-              </linearGradient>
-            </defs>
-            <path d="M 0,0 C 9,0 13,16 18,16 C 23,16 27,0 36,0 L 36,72 C 27,72 23,56 18,56 C 13,56 9,72 0,72 Z" fill="url(#podWaistGrad)"/>
-            <path d="M 0,0 C 9,0 13,16 18,16 C 23,16 27,0 36,0" fill="none" stroke="rgba(255, 255, 255, 0.75)" stroke-width="1.5"/>
-          </svg>
-        </div>
+
 
         <!-- Call Unit -->
         <a class="fluid-unit fluid-unit-call" href="tel:+917620644158" aria-label="76206 44158 - Call us directly">
@@ -249,20 +261,7 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
         </a>
 
         <!-- Organic Fluid Tag Waist 1-2 -->
-        <div class="fluid-tag-waist waist-1" aria-hidden="true">
-          <svg class="tag-waist-svg" viewBox="0 0 28 46" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="tagWaistGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="50%" stop-color="#fff0f5"/>
-                <stop offset="100%" stop-color="#ffffff"/>
-              </linearGradient>
-            </defs>
-            <path d="M 0,0 C 7,0 10,9 14,9 C 18,9 21,0 28,0 L 28,46 C 21,46 18,37 14,37 C 10,37 7,46 0,46 Z" fill="url(#tagWaistGrad1)"/>
-            <path d="M 0,0 C 7,0 10,9 14,9 C 18,9 21,0 28,0" fill="none" stroke="rgba(255, 255, 255, 0.95)" stroke-width="1.5"/>
-            <path d="M 0,46 C 7,46 10,37 14,37 C 18,37 21,46 28,46" fill="none" stroke="rgba(255, 255, 255, 0.9)" stroke-width="1.5"/>
-          </svg>
-        </div>
+
 
         <!-- Tag 2: बुके (Bouquets) -->
         <a class="fluid-tag-pill tag-bouquets" href="#collection" data-filter-trigger="bouquets">
@@ -272,20 +271,7 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
         </a>
 
         <!-- Organic Fluid Tag Waist 2-3 -->
-        <div class="fluid-tag-waist waist-2" aria-hidden="true">
-          <svg class="tag-waist-svg" viewBox="0 0 28 46" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="tagWaistGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="50%" stop-color="#f0fdf4"/>
-                <stop offset="100%" stop-color="#ffffff"/>
-              </linearGradient>
-            </defs>
-            <path d="M 0,0 C 7,0 10,9 14,9 C 18,9 21,0 28,0 L 28,46 C 21,46 18,37 14,37 C 10,37 7,46 0,46 Z" fill="url(#tagWaistGrad2)"/>
-            <path d="M 0,0 C 7,0 10,9 14,9 C 18,9 21,0 28,0" fill="none" stroke="rgba(255, 255, 255, 0.95)" stroke-width="1.5"/>
-            <path d="M 0,46 C 7,46 10,37 14,37 C 18,37 21,46 28,46" fill="none" stroke="rgba(255, 255, 255, 0.9)" stroke-width="1.5"/>
-          </svg>
-        </div>
+
 
         <!-- Tag 3: गाडी सजावट (Car Decor) -->
         <a class="fluid-tag-pill tag-decor" href="#collection" data-filter-trigger="decor">
@@ -295,20 +281,7 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
         </a>
 
         <!-- Organic Fluid Tag Waist 3-4 -->
-        <div class="fluid-tag-waist waist-3" aria-hidden="true">
-          <svg class="tag-waist-svg" viewBox="0 0 28 46" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="tagWaistGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="50%" stop-color="#fff5f5"/>
-                <stop offset="100%" stop-color="#ffffff"/>
-              </linearGradient>
-            </defs>
-            <path d="M 0,0 C 7,0 10,9 14,9 C 18,9 21,0 28,0 L 28,46 C 21,46 18,37 14,37 C 10,37 7,46 0,46 Z" fill="url(#tagWaistGrad3)"/>
-            <path d="M 0,0 C 7,0 10,9 14,9 C 18,9 21,0 28,0" fill="none" stroke="rgba(255, 255, 255, 0.95)" stroke-width="1.5"/>
-            <path d="M 0,46 C 7,46 10,37 14,37 C 18,37 21,46 28,46" fill="none" stroke="rgba(255, 255, 255, 0.9)" stroke-width="1.5"/>
-          </svg>
-        </div>
+
 
         <!-- Tag 4: घरपोच डिलिव्हरी (Doorstep Delivery) -->
         <a class="fluid-tag-pill tag-delivery" href="{wa('घरपोच डिलिव्हरी बद्दल माहिती')}" target="_blank" rel="noopener noreferrer">
@@ -320,27 +293,6 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
     </div>
   </div>
 
-  <div class="hero-video-showcase">
-    <div class="hero-video-card">
-      <video class="hero-video" id="hero-delivery-video" src="assets/videos/delivery.mp4" poster="assets/videos/delivery-poster.webp" autoplay muted loop playsinline preload="auto" aria-label="Flowers on their way to customers in Parli"></video>
-      <div class="hero-video-live-badge">
-        <span class="live-dot" aria-hidden="true"></span>
-        <span>Flowers, on their way · फुले, तुमच्या दारी</span>
-      </div>
-      <button class="sound-toggle-btn" id="hero-sound-toggle" aria-label="Toggle hero video sound" title="Toggle sound">
-        <span class="sound-icon">🔇</span>
-      </button>
-    </div>
-    <div class="hero-video-caption">
-      <div>
-        <span class="eyebrow">SAGAR SPECIAL DELIVERY</span>
-        <p>Flowers, on their way <small lang="mr">परळी व जवळच्या परिसरात ताजी फुले वेळेवर घरपोच मिळतील</small></p>
-      </div>
-      <a class="hero-caption-cta" href="{wa('घरपोच डिलिव्हरी बद्दल माहिती')}" target="_blank" rel="noopener noreferrer">
-        डिलिव्हरी बुक करा ↗
-      </a>
-    </div>
-  </div>
 </section>
 
 <div class="values-strip">

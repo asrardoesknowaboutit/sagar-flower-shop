@@ -4247,3 +4247,119 @@ dialog::backdrop { background: rgba(8, 24, 17, 0.94); }
 }
 
 .contact > * { min-width: 0; }
+
+/* Reference-inspired continuous glass silhouettes with live, accessible links. */
+.reference-actions {
+  grid-column: 1 / -1;
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+  padding: 12px 0 24px;
+}
+.reference-actions .fluid-action-pod-wrap { margin: 0 0 22px; }
+.reference-actions .fluid-action-pod {
+  display: grid;
+  grid-template-columns: 61% 39%;
+  width: 100%;
+  min-height: 150px;
+  background: url('assets/brand/fluid-actions.svg') center / 100% 100% no-repeat;
+  filter: drop-shadow(0 15px 18px #16b75a28);
+  border-radius: 0;
+  gap: 0;
+}
+.reference-actions .fluid-unit {
+  min-width: 0;
+  width: auto;
+  background: none;
+  border: 0;
+  box-shadow: none;
+  border-radius: 100px;
+  padding: 26px 30px;
+  gap: 20px;
+  transform: none;
+}
+.reference-actions .fluid-unit:hover { filter: brightness(1.06); }
+.reference-actions .fluid-unit-wa { padding-right: 55px; }
+.reference-actions .fluid-unit-call { padding-left: 30px; gap: 15px; }
+.reference-actions .fluid-text-group { flex: 1; min-width: 0; }
+.reference-actions .fluid-unit-wa .fluid-title,
+.reference-actions .fluid-unit-call .call-number { font-size: clamp(17px, 2.2vw, 28px); }
+.reference-actions .fluid-unit .fluid-sub { font-size: clamp(12px, 1.5vw, 18px); margin-top: 9px; }
+.reference-actions .wa-badge {
+  width: 82px; height: 82px; background: none; color: white; box-shadow: none;
+  filter: drop-shadow(0 3px 2px #006d3c40);
+}
+.reference-actions .wa-badge .wa-svg { width: 80px; height: 80px; }
+.reference-actions .call-badge { width: 68px; height: 68px; background: #e1f3e1; }
+.reference-actions .call-badge .call-svg { width: 34px; height: 34px; }
+.reference-actions .fluid-circle-arrow { width: 52px; height: 52px; box-shadow: none; }
+.reference-actions .fluid-circle-arrow svg { width: 26px; height: 26px; }
+.reference-actions .wa-arrow-btn { background: #008a48; }
+.reference-actions .fluid-tags-ribbon-wrap { margin: 0; width: 100%; }
+.reference-actions .fluid-tags-ribbon {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
+  padding: 0;
+  overflow: visible;
+  background: url('assets/brand/fluid-services.svg') center / 100% 100% no-repeat;
+  filter: drop-shadow(0 12px 15px #d9b78735);
+}
+.reference-actions .fluid-tag-pill {
+  height: 100px;
+  justify-content: center;
+  gap: 14px;
+  padding: 0 16px;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  transform: none;
+}
+.reference-actions .fluid-tag-pill:hover { background: #ffffff30; }
+.reference-actions .fluid-tag-pill .tag-icon { font-size: 34px; }
+.reference-actions .fluid-tag-pill .tag-label { font-size: clamp(15px, 1.9vw, 25px); }
+.reference-actions .fluid-tag-pill .tag-arrow { font-size: 30px; font-weight: 400; color: #183b27; }
+.reference-actions a:focus-visible { outline-offset: -5px; }
+@media (max-width: 1050px) and (min-width: 761px) {
+  .reference-actions .fluid-unit { gap: 10px; padding-inline: 20px; }
+  .reference-actions .fluid-unit-wa { padding-right: 34px; }
+  .reference-actions .wa-badge, .reference-actions .wa-badge .wa-svg { width: 58px; height: 58px; }
+  .reference-actions .call-badge { width: 45px; height: 45px; }
+  .reference-actions .fluid-circle-arrow { width: 36px; height: 36px; }
+  .reference-actions .fluid-tag-pill { gap: 8px; padding-inline: 8px; }
+  .reference-actions .fluid-tag-pill .tag-icon { font-size: 25px; }
+}
+@media (max-width: 760px) {
+  .reference-actions { padding-top: 0; }
+  .reference-actions .fluid-action-pod { grid-template-columns: 1fr; background: none; gap: 0; }
+  .reference-actions .fluid-unit { padding: 18px; gap: 12px; min-height: 96px; border: 2px solid #ffffffdd; }
+  .reference-actions .fluid-unit-wa { background: linear-gradient(145deg, #33ee83, #00b65a 45%, #009952); }
+  .reference-actions .fluid-unit-call { background: linear-gradient(145deg, #fff, #eff8ed); margin-top: 12px; }
+  .reference-actions .fluid-unit-wa::after {
+    content: ''; position: absolute; width: 52px; height: 20px; left: calc(50% - 26px); bottom: -18px;
+    background: linear-gradient(#06b760, #f3faef); clip-path: polygon(0 0, 100% 0, 80% 50%, 100% 100%, 0 100%, 20% 50%);
+  }
+  .reference-actions .wa-badge, .reference-actions .wa-badge .wa-svg { width: 55px; height: 55px; }
+  .reference-actions .call-badge { width: 52px; height: 52px; }
+  .reference-actions .fluid-unit .fluid-title { font-size: clamp(14px, 4vw, 21px); }
+  .reference-actions .fluid-unit .fluid-sub { font-size: 12px; margin-top: 5px; }
+  .reference-actions .fluid-circle-arrow { width: 34px; height: 34px; }
+  .reference-actions .fluid-tags-ribbon { grid-template-columns: repeat(2, minmax(0, 1fr)); background: none; gap: 12px 0; }
+  .reference-actions .fluid-tag-pill { height: 70px; padding: 0 8px; gap: 6px; border: 1.5px solid #fff; }
+  .reference-actions .tag-garlands { background: linear-gradient(135deg, #ffdeed, #fff4f8); }
+  .reference-actions .tag-bouquets { background: linear-gradient(135deg, #def5dc, #f7fff5); }
+  .reference-actions .tag-decor { background: linear-gradient(135deg, #ffe2d3, #fff6ef); }
+  .reference-actions .tag-delivery { background: linear-gradient(135deg, #ffefb8, #fffbf0); }
+  .reference-actions .fluid-tag-pill .tag-label { font-size: clamp(12px, 3.3vw, 19px); }
+  .reference-actions .fluid-tag-pill .tag-icon { font-size: 24px; }
+  .reference-actions .fluid-tag-pill .tag-arrow { font-size: 23px; }
+}
+@media (max-width: 360px) {
+  .reference-actions .fluid-unit { padding: 14px 12px; gap: 8px; }
+  .reference-actions .wa-badge,
+  .reference-actions .wa-badge .wa-svg,
+  .reference-actions .call-badge { width: 44px; height: 44px; }
+  .reference-actions .fluid-unit .fluid-title { font-size: 14px; }
+  .reference-actions .fluid-unit .fluid-sub { font-size: 10px; }
+  .reference-actions .fluid-circle-arrow { width: 28px; height: 28px; }
+}
