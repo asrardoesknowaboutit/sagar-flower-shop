@@ -1380,186 +1380,290 @@ h1 em {
   margin: 0;
 }
 
-/* FLUID NEUMORPHIC CONNECTED CONTOUR FILTER BAR */
-.neo-filter-container {
+/* ==========================================================================
+   PREMIUM DYNAMIC-ISLAND-STYLE TICKER (SMOKED GLASS & DEEP-BLUE GRADIENT)
+   Ultra-smooth GPU-composited organic breathing & light drift engine
+   ========================================================================== */
+
+.dynamic-island-ticker-wrap {
   position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 0 auto 16px;
+  margin: 0 auto 20px;
+  padding: 10px 4px 18px;
   overflow-x: auto;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
-  padding: 10px 4px 18px;
 }
-.neo-filter-container::-webkit-scrollbar { display: none; }
+.dynamic-island-ticker-wrap::-webkit-scrollbar {
+  display: none;
+}
 
-/* The sculpted floating shelf */
-.neo-filter-shelf {
+/* Smoked black translucent glass pill with dynamic island geometry */
+.dynamic-island-ticker {
   position: relative;
   display: inline-flex;
   align-items: center;
-  padding: 6px;
+  background: rgba(8, 12, 18, 0.88);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
   border-radius: 9999px;
-  background: linear-gradient(135deg, #fcf9f4 0%, #ede6db 100%);
+  padding: 6px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow:
-    8px 10px 24px rgba(185, 165, 140, 0.38),
-    -8px -8px 20px #ffffff,
-    0 2px 4px rgba(200, 138, 44, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.85);
+    0 24px 64px -12px rgba(0, 0, 0, 0.75),
+    0 8px 24px -4px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.18),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
   max-width: 100%;
 }
 
-/* The recessed canal / track where buttons connect fluidly */
-.neo-filter-track {
-  position: relative;
-  display: inline-flex;
-  align-items: stretch;
-  background: linear-gradient(180deg, #e5ded2 0%, #ece5da 100%);
-  border-radius: 9999px;
-  box-shadow:
-    inset 3px 4px 9px rgba(155, 135, 110, 0.36),
-    inset -3px -3px 8px #ffffff,
-    inset 0 0 0 1px rgba(175, 155, 130, 0.18);
-  padding: 5px;
-  gap: 0;
-}
-
-/* Neumorphic elevated fluid glider */
-.neo-glider {
+/* Deep-Blue Blurred Radial Light Engine (Drifting & Breathing Organically) */
+.island-light-engine {
   position: absolute;
-  top: 5px;
-  bottom: 5px;
-  left: 0;
+  inset: 0;
   border-radius: 9999px;
-  background: linear-gradient(145deg, #ffffff 0%, #f7f2ea 55%, #eae2d4 100%);
-  box-shadow:
-    4px 6px 14px rgba(145, 125, 100, 0.35),
-    -3px -3px 8px #ffffff,
-    inset 0 1.5px 1px rgba(255, 255, 255, 0.95),
-    0 0 0 1px rgba(200, 138, 44, 0.24);
-  transition: transform 0.42s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.36s cubic-bezier(0.34, 1.15, 0.64, 1), box-shadow 0.35s ease;
-  z-index: 1;
+  overflow: hidden;
   pointer-events: none;
-  will-change: transform, width;
+  z-index: 1;
 }
 
-/* Category-matched ambient glows on fluid glider */
-.neo-filter-container[data-active-filter="garlands"] .neo-glider {
-  box-shadow: 0 6px 20px rgba(244, 114, 182, 0.35), -3px -3px 8px #ffffff, inset 0 1.5px 1px #ffffff, 0 0 0 1.2px rgba(244, 114, 182, 0.4);
-}
-.neo-filter-container[data-active-filter="bouquets"] .neo-glider {
-  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.32), -3px -3px 8px #ffffff, inset 0 1.5px 1px #ffffff, 0 0 0 1.2px rgba(34, 197, 94, 0.4);
-}
-.neo-filter-container[data-active-filter="decor"] .neo-glider {
-  box-shadow: 0 6px 20px rgba(248, 113, 113, 0.32), -3px -3px 8px #ffffff, inset 0 1.5px 1px #ffffff, 0 0 0 1.2px rgba(248, 113, 113, 0.4);
-}
-.neo-filter-container[data-active-filter="belts"] .neo-glider {
-  box-shadow: 0 6px 20px rgba(250, 204, 21, 0.38), -3px -3px 8px #ffffff, inset 0 1.5px 1px #ffffff, 0 0 0 1.2px rgba(250, 204, 21, 0.45);
-}
-.neo-filter-container[data-active-filter="all"] .neo-glider {
-  box-shadow: 0 6px 20px rgba(16, 184, 83, 0.28), -3px -3px 8px #ffffff, inset 0 1.5px 1px #ffffff, 0 0 0 1.2px rgba(16, 184, 83, 0.35);
+/* Individual heavily blurred radial light sources */
+.light-orb {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform, opacity;
+  pointer-events: none;
 }
 
-/* Neumorphic connected buttons */
-.neo-btn {
-  position: relative;
+/* 1. Deep Navy Ambient Bed */
+.orb-navy-deep {
+  width: 70%;
+  height: 200%;
+  top: -50%;
+  left: -15%;
+  background: radial-gradient(ellipse at center, rgba(15, 34, 78, 0.88) 0%, rgba(10, 20, 50, 0.55) 50%, transparent 75%);
+  filter: blur(36px);
+  animation: islandNavyDrift 8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+/* 2. Luminous Rich Royal Blue Core (Primary Breathing Light) */
+.orb-rich-blue {
+  width: 50%;
+  height: 180%;
+  top: -40%;
+  left: 20%;
+  background: radial-gradient(ellipse at center, rgba(29, 78, 216, 0.65) 0%, rgba(30, 64, 175, 0.4) 50%, transparent 75%);
+  filter: blur(28px);
+  animation: islandRichBlueBreathe 8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+/* 3. Restrained Ice Blue Specular Accent (Sophisticated & Crisp) */
+.orb-ice-restrained {
+  width: 32%;
+  height: 140%;
+  top: -20%;
+  right: 15%;
+  background: radial-gradient(ellipse at center, rgba(147, 197, 253, 0.38) 0%, rgba(96, 165, 250, 0.18) 45%, transparent 70%);
+  filter: blur(22px);
+  animation: islandIceDrift 8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  animation-delay: -2s;
+}
+
+/* 4. Counter-Drift Ambient Navy Light */
+.orb-drift-counter {
+  width: 55%;
+  height: 190%;
+  top: -45%;
+  right: -10%;
+  background: radial-gradient(ellipse at center, rgba(14, 30, 68, 0.75) 0%, transparent 70%);
+  filter: blur(38px);
+  animation: islandNavyDrift 8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite reverse;
+  animation-delay: -4s;
+}
+
+/* Organic 4-second breathing cycle (8s full cycle: 4s breathe in, 4s breathe out) */
+@keyframes islandRichBlueBreathe {
+  0% {
+    transform: translate3d(-18%, 0, 0) scale(0.92);
+    opacity: 0.6;
+  }
+  50% {
+    /* 4s mark: fully breathed in, luminous & gently drifted */
+    transform: translate3d(24%, 0, 0) scale(1.16);
+    opacity: 0.95;
+  }
+  100% {
+    /* 8s mark: smoothly settled back to origin */
+    transform: translate3d(-18%, 0, 0) scale(0.92);
+    opacity: 0.6;
+  }
+}
+
+@keyframes islandIceDrift {
+  0% {
+    transform: translate3d(25%, 10%, 0) scale(0.85);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate3d(-28%, -10%, 0) scale(1.12);
+    opacity: 0.72;
+  }
+  100% {
+    transform: translate3d(25%, 10%, 0) scale(0.85);
+    opacity: 0.35;
+  }
+}
+
+@keyframes islandNavyDrift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate3d(18%, 6%, 0) scale(1.08);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.7;
+  }
+}
+
+/* Smoked translucent glass sheen layer */
+.island-glass-sheen {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.015) 35%,
+    rgba(0, 0, 0, 0.28) 100%
+  );
+  pointer-events: none;
   z-index: 2;
+}
+
+/* Track holding the interactive category pills */
+.island-ticker-track {
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* Hairline glass divider between items */
+.island-divider {
+  width: 1px;
+  height: 22px;
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.14) 50%, transparent 100%);
+  flex-shrink: 0;
+  margin: 0 1px;
+  pointer-events: none;
+}
+
+/* Razor-sharp interactive category button */
+.island-btn {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 22px;
+  padding: 8px 18px;
   border-radius: 9999px;
-  border: 0;
+  border: 1px solid transparent;
   background: transparent;
-  color: var(--ink);
   cursor: pointer;
-  white-space: nowrap;
-  transition: color 0.28s ease, transform 0.2s ease, opacity 0.2s ease;
+  text-decoration: none;
+  transition: all 0.26s cubic-bezier(0.16, 1, 0.3, 1);
+  -webkit-tap-highlight-color: transparent;
   user-select: none;
   -webkit-user-select: none;
+  white-space: nowrap;
 }
 
-/* Fluid connecting contour ridge between buttons */
-.neo-btn::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 22%;
-  height: 56%;
-  width: 1.5px;
-  background: linear-gradient(180deg,
-    transparent 0%,
-    rgba(175, 155, 130, 0.32) 30%,
-    rgba(255, 255, 255, 0.85) 70%,
-    transparent 100%
-  );
-  border-radius: 1px;
-  transition: opacity 0.25s ease;
-  pointer-events: none;
-}
-.neo-btn:last-child::after,
-.neo-btn.active::after,
-.neo-btn.prev-active::after {
-  opacity: 0;
+.island-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
 }
 
-/* Subtle tactile hover for inactive buttons */
-.neo-btn:not(.active):hover {
-  color: var(--rose);
-}
-.neo-btn:not(.active):hover .neo-mr {
-  color: var(--rose);
-}
-.neo-btn:active {
+.island-btn:active {
   transform: scale(0.97);
 }
 
-.neo-icon {
-  font-size: 16px;
-  line-height: 1;
-  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
-  opacity: 0.85;
-}
-.neo-btn:hover .neo-icon,
-.neo-btn.active .neo-icon {
-  transform: scale(1.22) rotate(-6deg);
-  opacity: 1;
-}
-.neo-btn.active .neo-icon {
-  filter: drop-shadow(0 2px 5px rgba(200, 138, 44, 0.38));
+/* Sophisticated restrained blue illumination on active state */
+.island-btn.active {
+  background: rgba(30, 58, 138, 0.42);
+  border: 1px solid rgba(147, 197, 253, 0.3);
+  box-shadow:
+    0 0 20px -2px rgba(37, 99, 235, 0.45),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
 }
 
-.neo-text {
+/* Vector icon container */
+.island-icon-wrap {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.82);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+.island-icon {
+  display: block;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.island-btn:hover .island-icon-wrap {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+.island-btn:hover .island-icon {
+  transform: scale(1.15);
+}
+.island-btn.active .island-icon-wrap {
+  background: rgba(37, 99, 235, 0.45);
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(96, 165, 250, 0.55);
+}
+.island-btn.active .island-icon {
+  transform: scale(1.12);
+}
+
+/* Razor-sharp white typography */
+.island-text-cluster {
   display: flex;
   flex-direction: column;
   text-align: left;
-  line-height: 1.25;
+  line-height: 1.18;
 }
-.neo-mr {
+.island-mr {
   font-family: 'Noto Serif Devanagari', serif;
   font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.2px;
-  color: #2b3930;
-  transition: color 0.28s ease;
-}
-.neo-en {
-  font-size: 10.5px;
-  color: #7a7065;
-  font-weight: 500;
-  transition: color 0.28s ease, opacity 0.28s ease;
-}
-
-/* Active button typography elevated on glider */
-.neo-btn.active .neo-mr {
-  color: var(--ink);
   font-weight: 700;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  color: #ffffff;
+  letter-spacing: 0.2px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+  white-space: nowrap;
+  transition: color 0.2s ease;
 }
-.neo-btn.active .neo-en {
-  color: #b07018;
-  font-weight: 600;
+.island-en {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(226, 232, 240, 0.72);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 1.5px;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+.island-btn.active .island-en {
+  color: #93c5fd;
 }
 
 .gallery-toolbar {
@@ -3820,7 +3924,7 @@ dialog::backdrop { background: rgba(8, 24, 17, 0.94); }
   }
   .inquire small { display: none; }
   
-  .neo-filter-container {
+  .dynamic-island-ticker-wrap {
     margin-inline: -16px;
     padding-inline: 16px;
     width: calc(100% + 32px);
@@ -3829,19 +3933,30 @@ dialog::backdrop { background: rgba(8, 24, 17, 0.94); }
     mask-image: linear-gradient(90deg, transparent 0, #000 16px, #000 calc(100% - 16px), transparent 100%);
     -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 16px, #000 calc(100% - 16px), transparent 100%);
   }
-  .neo-filter-shelf {
-    padding: 5px;
+  .dynamic-island-ticker {
+    padding: 5px 6px;
   }
-  .neo-filter-track {
-    padding: 4px;
-  }
-  .neo-btn {
-    padding: 8px 15px;
+  .island-btn {
+    padding: 6px 12px;
     gap: 7px;
   }
-  .neo-icon { font-size: 14px; }
-  .neo-mr { font-size: 13px; }
-  .neo-en { font-size: 9.5px; }
+  .island-icon-wrap {
+    width: 24px;
+    height: 24px;
+  }
+  .island-icon {
+    width: 14px;
+    height: 14px;
+  }
+  .island-mr {
+    font-size: 12.5px;
+  }
+  .island-en {
+    font-size: 9px;
+  }
+  .island-divider {
+    height: 18px;
+  }
 
   /* Mobile Show More Button */
   .neo-load-more {

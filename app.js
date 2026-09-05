@@ -91,41 +91,18 @@ if (rail) {
   });
 }
 
-// --- PORTFOLIO FILTERING & NEUMORPHIC FLUID GLIDER ---
+// --- PORTFOLIO FILTERING & PREMIUM DYNAMIC ISLAND TICKER ---
 const cards = $$('.work-card');
 const filterButtons = $$('[data-filter]');
-const filterBar = $('.neo-filter-track') || $('.filter-pill-bar');
-const filterGlider = $('.neo-glider') || $('.filter-glider');
-const filterContainer = $('.neo-filter-container') || $('.filter-flow-wrapper');
+const filterContainer = $('.dynamic-island-ticker-wrap') || $('.neo-filter-container') || $('.filter-flow-wrapper');
 const batchSize = () => window.innerWidth >= 900 ? 12 : 8;
 let currentFilter = 'all', limit = batchSize();
 
-function syncPrevActive() {
-  const activeIdx = filterButtons.findIndex(btn => btn.classList.contains('active'));
-  filterButtons.forEach((btn, idx) => {
-    btn.classList.toggle('prev-active', idx === activeIdx - 1);
-  });
-}
-
-function updateGlider(activeBtn, immediate = false) {
-  if (!filterBar || !filterGlider || !activeBtn) return;
-  const barRect = filterBar.getBoundingClientRect();
-  const btnRect = activeBtn.getBoundingClientRect();
-  const left = btnRect.left - barRect.left;
-  const width = btnRect.width;
-
-  if (immediate || !animate()) {
-    filterGlider.style.transition = 'none';
-  } else {
-    filterGlider.style.transition = 'transform 0.42s cubic-bezier(0.34, 1.25, 0.64, 1), width 0.36s cubic-bezier(0.34, 1.15, 0.64, 1)';
-  }
-
-  filterGlider.style.transform = `translateX(${left}px)`;
-  filterGlider.style.width = `${width}px`;
-
-  // Center the active button smoothly on mobile
-  if (filterContainer && filterContainer.scrollWidth > filterContainer.clientWidth) {
+function centerActiveButton(activeBtn) {
+  if (!filterContainer || !activeBtn) return;
+  if (filterContainer.scrollWidth > filterContainer.clientWidth) {
     const containerRect = filterContainer.getBoundingClientRect();
+    const btnRect = activeBtn.getBoundingClientRect();
     const scrollTarget = filterContainer.scrollLeft + (btnRect.left - containerRect.left) - (filterContainer.clientWidth / 2) + (btnRect.width / 2);
     filterContainer.scrollTo({ left: Math.max(0, scrollTarget), behavior: smooth() });
   }
@@ -182,8 +159,7 @@ filterButtons.forEach(button => button.addEventListener('click', () => {
     item.classList.toggle('active', active);
     item.setAttribute('aria-pressed', String(active));
   });
-  syncPrevActive();
-  updateGlider(button);
+  centerActiveButton(button);
   renderCollection();
   if (animate()) {
     const portfolio = $('.portfolio');
@@ -497,18 +473,14 @@ syncTicker();
 initHeroHeadlineTicker();
 requestScrollUpdate();
 
-const initialActiveBtn = $('.neo-btn.active') || $('.filter-pill.active');
+const initialActiveBtn = $('.island-btn.active') || $('.neo-btn.active') || $('.filter-pill.active');
 if (initialActiveBtn) {
   if (filterContainer) filterContainer.dataset.activeFilter = initialActiveBtn.dataset.filter || 'all';
-  syncPrevActive();
-  requestAnimationFrame(() => updateGlider(initialActiveBtn, true));
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(() => updateGlider(initialActiveBtn, true));
-  }
+  centerActiveButton(initialActiveBtn);
 }
 window.addEventListener('resize', () => {
-  const currentBtn = $('.neo-btn.active') || $('.filter-pill.active');
-  if (currentBtn) updateGlider(currentBtn, true);
+  const currentBtn = $('.island-btn.active') || $('.neo-btn.active') || $('.filter-pill.active');
+  if (currentBtn) centerActiveButton(currentBtn);
 });
 
 // Quick filter click from fluid tags ribbon & values ribbon
@@ -516,7 +488,7 @@ $$('.fluid-tag-pill[data-filter-trigger], .fluid-val-pill[data-filter-trigger]')
   tag.addEventListener('click', () => {
     const filter = tag.dataset.filterTrigger;
     if (filter) {
-      const targetBtn = $(`.neo-btn[data-filter="${filter}"]`) || $(`.filter-pill[data-filter="${filter}"]`);
+      const targetBtn = $(`.island-btn[data-filter="${filter}"]`) || $(`.neo-btn[data-filter="${filter}"]`) || $(`.filter-pill[data-filter="${filter}"]`);
       if (targetBtn) {
         targetBtn.click();
       }
