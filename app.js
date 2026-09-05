@@ -467,5 +467,19 @@ window.addEventListener('resize', () => {
   if (currentBtn) updateGlider(currentBtn, true);
 });
 
+// Quick filter click from fluid tags ribbon
+$$('.fluid-tag-pill[data-filter-trigger]').forEach(tag => {
+  tag.addEventListener('click', () => {
+    const filter = tag.dataset.filterTrigger;
+    if (filter) {
+      const targetBtn = $(`.neo-btn[data-filter="${filter}"]`) || $(`.filter-pill[data-filter="${filter}"]`);
+      if (targetBtn) {
+        targetBtn.click();
+      }
+    }
+  });
+});
+
 const yearEl = $('#year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+

@@ -121,19 +121,89 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
     </h1>
 
     <p class="hero-description">Fresh wedding garlands, handcrafted celebration bouquets, haldi swing decorations & wedding car decor. Made fresh every day with tradition and love in Parli.</p>
-    <div class="hero-actions">
-      <a class="button button-wa-hero" href="{wa('फुलांची थेट ऑर्डर')}" target="_blank" rel="noopener noreferrer">
-        <span>💬 WhatsApp वर ऑर्डर करा</span> <span aria-hidden="true">↗</span>
-      </a>
-      <a class="hero-call-btn" href="tel:+917620644158">
-        <span>📞 76206 44158 ↗</span>
-      </a>
+    <!-- FLUID CONNECTED ACTION POD (WhatsApp + Call) -->
+    <div class="fluid-action-pod-wrap">
+      <div class="fluid-action-pod">
+        <!-- WhatsApp Unit -->
+        <a class="fluid-unit fluid-unit-wa" href="{wa('फुलांची थेट ऑर्डर')}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp वर ऑर्डर करा - Chat now • Fast response">
+          <div class="fluid-badge wa-badge" aria-hidden="true">
+            <svg class="wa-svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+              <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c4.54 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.84a8.18 8.18 0 0 1-5.82 2.41c-1.42 0-2.82-.37-4.06-1.07l-.29-.17-3.02.79.81-2.94-.19-.3a8.21 8.21 0 0 1-1.26-4.56c0-4.54 3.7-8.24 8.24-8.24zm4.51 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.25-1.49-1.4-1.74-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43l-.48-.01c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.72 4.31 3.81.6.26 1.07.42 1.44.53.61.2 1.16.17 1.6-.1.49-.3 1.47-1.2 1.68-1.75.2-.55.2-1.02.14-1.12-.06-.1-.23-.16-.48-.28z"/>
+            </svg>
+          </div>
+          <div class="fluid-text-group">
+            <span class="fluid-title">WhatsApp वर ऑर्डर करा</span>
+            <span class="fluid-sub">Chat now • Fast response</span>
+          </div>
+          <div class="fluid-circle-arrow wa-arrow-btn" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Fluid Neck Bridge -->
+        <div class="fluid-pod-neck" aria-hidden="true"></div>
+
+        <!-- Call Unit -->
+        <a class="fluid-unit fluid-unit-call" href="tel:+917620644158" aria-label="76206 44158 - Call us directly">
+          <div class="fluid-badge call-badge" aria-hidden="true">
+            <svg class="call-svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.053 15.053 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1A11.36 11.36 0 0 1 8.5 3.99c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-.99-1.11z"/>
+            </svg>
+          </div>
+          <div class="fluid-text-group">
+            <span class="fluid-title call-number">76206 44158</span>
+            <span class="fluid-sub call-sub">Call us directly</span>
+          </div>
+          <div class="fluid-circle-arrow call-arrow-btn" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </a>
+      </div>
     </div>
-    <div class="hero-tags">
-      <span>🌸 लग्नहार</span>
-      <span>💐 बुके</span>
-      <span>🚗 गाडी सजावट</span>
-      <span>⚡ घरपोच डिलिव्हरी</span>
+
+    <!-- FLUID CONNECTED TAGS RIBBON (लग्नहार ~ बुके ~ गाडी सजावट ~ घरपोच डिलिव्हरी) -->
+    <div class="fluid-tags-ribbon-wrap">
+      <div class="fluid-tags-ribbon" role="region" aria-label="Quick Categories">
+        <!-- Tag 1: लग्नहार (Garlands) -->
+        <a class="fluid-tag-pill tag-garlands" href="#collection" data-filter-trigger="garlands">
+          <span class="tag-icon">🌸</span>
+          <span class="tag-label">लग्नहार</span>
+          <span class="tag-arrow" aria-hidden="true">›</span>
+        </a>
+
+        <div class="fluid-tag-bridge bridge-garlands-bouquets" aria-hidden="true"></div>
+
+        <!-- Tag 2: बुके (Bouquets) -->
+        <a class="fluid-tag-pill tag-bouquets" href="#collection" data-filter-trigger="bouquets">
+          <span class="tag-icon">💐</span>
+          <span class="tag-label">बुके</span>
+          <span class="tag-arrow" aria-hidden="true">›</span>
+        </a>
+
+        <div class="fluid-tag-bridge bridge-bouquets-decor" aria-hidden="true"></div>
+
+        <!-- Tag 3: गाडी सजावट (Car Decor) -->
+        <a class="fluid-tag-pill tag-decor" href="#collection" data-filter-trigger="decor">
+          <span class="tag-icon">🚗</span>
+          <span class="tag-label">गाडी सजावट</span>
+          <span class="tag-arrow" aria-hidden="true">›</span>
+        </a>
+
+        <div class="fluid-tag-bridge bridge-decor-delivery" aria-hidden="true"></div>
+
+        <!-- Tag 4: घरपोच डिलिव्हरी (Doorstep Delivery) -->
+        <a class="fluid-tag-pill tag-delivery" href="{wa('घरपोच डिलिव्हरी बद्दल माहिती')}" target="_blank" rel="noopener noreferrer">
+          <span class="tag-icon">⚡</span>
+          <span class="tag-label">घरपोच डिलिव्हरी</span>
+          <span class="tag-arrow" aria-hidden="true">›</span>
+        </a>
+      </div>
     </div>
   </div>
 
