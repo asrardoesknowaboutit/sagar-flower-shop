@@ -630,6 +630,23 @@ parts.append(f'''</div>
 </div>
 </section>
 
+<!-- Elastic Section Boundary 1: Collection to Films (Bends & Stretches on Scroll) -->
+<div class="elastic-boundary-wrap boundary-collection-to-films" data-boundary="col-to-films" aria-hidden="true">
+  <svg class="elastic-boundary-svg" viewBox="0 0 1440 140" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="edgeSilverMint" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="rgba(255, 255, 255, 0.15)"/>
+        <stop offset="25%" stop-color="rgba(255, 255, 255, 0.85)"/>
+        <stop offset="50%" stop-color="rgba(167, 243, 208, 0.95)"/>
+        <stop offset="75%" stop-color="rgba(255, 255, 255, 0.85)"/>
+        <stop offset="100%" stop-color="rgba(255, 255, 255, 0.15)"/>
+      </linearGradient>
+    </defs>
+    <path class="elastic-boundary-fill" d="M 0,75 C 440,135 1000,15 1440,70 L 1440,140 L 0,140 Z" fill="#062216"/>
+    <path class="elastic-boundary-edge" d="M 0,75 C 440,135 1000,15 1440,70" fill="none" stroke="url(#edgeSilverMint)" stroke-width="2.5"/>
+  </svg>
+</div>
+
 <section id="films" class="films section">
   <div class="wrap">
     <div class="section-heading">
@@ -716,7 +733,22 @@ parts.append('''</div>
     </button>
   </div>
 </div>
-</div>
+  <!-- Elastic Section Boundary 2: Films to Inspiration (Cream Wave Pulls Up) -->
+  <div class="elastic-boundary-wrap boundary-films-to-inspiration" data-boundary="films-to-inspire" aria-hidden="true">
+    <svg class="elastic-boundary-svg" viewBox="0 0 1440 140" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="edgeSilverGold" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="rgba(255, 255, 255, 0.15)"/>
+          <stop offset="30%" stop-color="rgba(255, 255, 255, 0.9)"/>
+          <stop offset="55%" stop-color="rgba(254, 240, 138, 0.9)"/>
+          <stop offset="80%" stop-color="rgba(255, 255, 255, 0.9)"/>
+          <stop offset="100%" stop-color="rgba(255, 255, 255, 0.15)"/>
+        </linearGradient>
+      </defs>
+      <path class="elastic-boundary-fill" d="M 0,65 C 480,15 960,130 1440,60 L 1440,140 L 0,140 Z" fill="var(--paper)"/>
+      <path class="elastic-boundary-edge" d="M 0,65 C 480,15 960,130 1440,60" fill="none" stroke="url(#edgeSilverGold)" stroke-width="2.5"/>
+    </svg>
+  </div>
 </section>
 
 <section id="inspiration" class="inspiration section wrap">
@@ -753,6 +785,21 @@ for name, title, mr, badge in signature_edits:
 
 parts.append('</div></section>')
 
+# Elastic Section Boundary 3: Inspiration to Services (Beige Wave Pulls Up)
+parts.append('''<div class="elastic-boundary-wrap boundary-inspiration-to-services" data-boundary="inspire-to-services" aria-hidden="true">
+  <svg class="elastic-boundary-svg" viewBox="0 0 1440 140" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="edgeSilverStone1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="rgba(255, 255, 255, 0.25)"/>
+        <stop offset="50%" stop-color="rgba(255, 255, 255, 0.95)"/>
+        <stop offset="100%" stop-color="rgba(255, 255, 255, 0.25)"/>
+      </linearGradient>
+    </defs>
+    <path class="elastic-boundary-fill" d="M 0,70 C 400,120 1040,25 1440,65 L 1440,140 L 0,140 Z" fill="#f2eee3"/>
+    <path class="elastic-boundary-edge" d="M 0,70 C 400,120 1040,25 1440,65" fill="none" stroke="url(#edgeSilverStone1)" stroke-width="2"/>
+  </svg>
+</div>''')
+
 # Retain verified business and service content from the base version.
 services = re.search(r'<section id="services".*?(?=<section id="story")', source, re.S).group()
 # Upgrade service links to fluid pill buttons and numbers to fluid pills
@@ -766,6 +813,23 @@ services = re.sub(
     r'<span class="service-number fluid-num-pill">\1</span>',
     services
 )
+
+# Insert Elastic Section Boundary 4: Services to Story (Cream Wave Pulls Up) at end of services
+services_boundary = '''  <div class="elastic-boundary-wrap boundary-services-to-story" data-boundary="services-to-story" aria-hidden="true">
+    <svg class="elastic-boundary-svg" viewBox="0 0 1440 140" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="edgeSilverStone2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="rgba(255, 255, 255, 0.25)"/>
+          <stop offset="50%" stop-color="rgba(255, 255, 255, 0.95)"/>
+          <stop offset="100%" stop-color="rgba(255, 255, 255, 0.25)"/>
+        </linearGradient>
+      </defs>
+      <path class="elastic-boundary-fill" d="M 0,60 C 500,20 940,120 1440,70 L 1440,140 L 0,140 Z" fill="var(--paper)"/>
+      <path class="elastic-boundary-edge" d="M 0,60 C 500,20 940,120 1440,70" fill="none" stroke="url(#edgeSilverStone2)" stroke-width="2"/>
+    </svg>
+  </div>
+</section>'''
+services = re.sub(r'</section>\s*$', services_boundary, services.strip())
 
 story = re.search(r'<section id="story".*?(?=<section class="process)', source, re.S).group()
 
@@ -899,6 +963,21 @@ contact = f'''<section id="contact" class="contact section wrap">
 </section>'''
 
 parts.extend([services, story, contact, '</main>'])
+
+# Elastic Section Boundary 5: Contact to Footer (Footer Stone Wave Pulls Up)
+parts.append('''<div class="elastic-boundary-wrap boundary-contact-to-footer" data-boundary="contact-to-footer" aria-hidden="true">
+  <svg class="elastic-boundary-svg" viewBox="0 0 1440 140" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="edgeSilverFooter" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="rgba(255, 255, 255, 0.25)"/>
+        <stop offset="50%" stop-color="rgba(255, 255, 255, 0.95)"/>
+        <stop offset="100%" stop-color="rgba(255, 255, 255, 0.25)"/>
+      </linearGradient>
+    </defs>
+    <path class="elastic-boundary-fill" d="M 0,70 C 450,125 990,30 1440,65 L 1440,140 L 0,140 Z" fill="#f1ede2"/>
+    <path class="elastic-boundary-edge" d="M 0,70 C 450,125 990,30 1440,65" fill="none" stroke="url(#edgeSilverFooter)" stroke-width="2"/>
+  </svg>
+</div>''')
 
 parts.append(f'''<footer>
   <div class="wrap footer-top">

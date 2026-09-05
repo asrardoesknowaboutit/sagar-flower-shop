@@ -704,5 +704,171 @@ function initLivingTypography() {
 // Start Living Typography
 initLivingTypography();
 
+// --- ELASTIC SECTION BOUNDARIES PHYSICS ENGINE ---
+// dividing edges subtly bend/stretch before settling organically on scroll
+function initElasticBoundaries() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const boundaries = [
+    {
+      id: 'col-to-films',
+      fillEl: document.querySelector('.boundary-collection-to-films .elastic-boundary-fill'),
+      edgeEl: document.querySelector('.boundary-collection-to-films .elastic-boundary-edge'),
+      container: document.querySelector('.boundary-collection-to-films'),
+      base: { x0: 0, y0: 75, cp1x: 440, cp1y: 135, cp2x: 1000, cp2y: 15, x1: 1440, y1: 70 },
+      factors: { cp1: 1.35, cp2: -0.9, y0: 0.2, y1: -0.2 },
+      currentStretch: 0,
+      targetStretch: 0,
+      velocity: 0,
+      stiffness: 0.1,
+      damping: 0.76
+    },
+    {
+      id: 'films-to-inspire',
+      fillEl: document.querySelector('.boundary-films-to-inspiration .elastic-boundary-fill'),
+      edgeEl: document.querySelector('.boundary-films-to-inspiration .elastic-boundary-edge'),
+      container: document.querySelector('.boundary-films-to-inspiration'),
+      base: { x0: 0, y0: 65, cp1x: 480, cp1y: 15, cp2x: 960, cp2y: 130, x1: 1440, y1: 60 },
+      factors: { cp1: -0.95, cp2: 1.25, y0: -0.2, y1: 0.2 },
+      currentStretch: 0,
+      targetStretch: 0,
+      velocity: 0,
+      stiffness: 0.1,
+      damping: 0.76
+    },
+    {
+      id: 'inspire-to-services',
+      fillEl: document.querySelector('.boundary-inspiration-to-services .elastic-boundary-fill'),
+      edgeEl: document.querySelector('.boundary-inspiration-to-services .elastic-boundary-edge'),
+      container: document.querySelector('.boundary-inspiration-to-services'),
+      base: { x0: 0, y0: 70, cp1x: 400, cp1y: 120, cp2x: 1040, cp2y: 25, x1: 1440, y1: 65 },
+      factors: { cp1: 1.1, cp2: -0.85, y0: 0.15, y1: -0.15 },
+      currentStretch: 0,
+      targetStretch: 0,
+      velocity: 0,
+      stiffness: 0.11,
+      damping: 0.78
+    },
+    {
+      id: 'services-to-story',
+      fillEl: document.querySelector('.boundary-services-to-story .elastic-boundary-fill'),
+      edgeEl: document.querySelector('.boundary-services-to-story .elastic-boundary-edge'),
+      container: document.querySelector('.boundary-services-to-story'),
+      base: { x0: 0, y0: 60, cp1x: 500, cp1y: 20, cp2x: 940, cp2y: 120, x1: 1440, y1: 70 },
+      factors: { cp1: -0.85, cp2: 1.1, y0: -0.15, y1: 0.15 },
+      currentStretch: 0,
+      targetStretch: 0,
+      velocity: 0,
+      stiffness: 0.11,
+      damping: 0.78
+    },
+    {
+      id: 'contact-to-footer',
+      fillEl: document.querySelector('.boundary-contact-to-footer .elastic-boundary-fill'),
+      edgeEl: document.querySelector('.boundary-contact-to-footer .elastic-boundary-edge'),
+      container: document.querySelector('.boundary-contact-to-footer'),
+      base: { x0: 0, y0: 70, cp1x: 450, cp1y: 125, cp2x: 990, cp2y: 30, x1: 1440, y1: 65 },
+      factors: { cp1: 1.1, cp2: -0.85, y0: 0.15, y1: -0.15 },
+      currentStretch: 0,
+      targetStretch: 0,
+      velocity: 0,
+      stiffness: 0.11,
+      damping: 0.78
+    }
+  ].filter(b => b.fillEl && b.edgeEl && b.container);
+
+  if (!boundaries.length) return;
+
+  function renderBoundary(b) {
+    const s = b.currentStretch;
+    const y0 = Math.round((b.base.y0 + s * b.factors.y0) * 10) / 10;
+    const cp1y = Math.round((b.base.cp1y + s * b.factors.cp1) * 10) / 10;
+    const cp2y = Math.round((b.base.cp2y + s * b.factors.cp2) * 10) / 10;
+    const y1 = Math.round((b.base.y1 + s * b.factors.y1) * 10) / 10;
+
+    const curve = `M ${b.base.x0},${y0} C ${b.base.cp1x},${cp1y} ${b.base.cp2x},${cp2y} ${b.base.x1},${y1}`;
+    const fillPath = `${curve} L 1440,140 L 0,140 Z`;
+
+    b.edgeEl.setAttribute('d', curve);
+    b.fillEl.setAttribute('d', fillPath);
+  }
+
+  // Initial render of all natural resting curves
+  boundaries.forEach(renderBoundary);
+
+  let lastScrollY = window.scrollY;
+  let lastTime = performance.now();
+  let isSpringActive = false;
+
+  function springStep() {
+    let hasMotion = false;
+    const vh = window.innerHeight;
+
+    for (let i = 0; i < boundaries.length; i++) {
+      const b = boundaries[i];
+      
+      const rect = b.container.getBoundingClientRect();
+      const inViewport = rect.top < vh + 100 && rect.bottom > -100;
+
+      // Spring physics: force = displacement * stiffness
+      const force = (b.targetStretch - b.currentStretch) * b.stiffness;
+      b.velocity = (b.velocity + force) * b.damping;
+      b.currentStretch += b.velocity;
+
+      // Organic relaxation of target towards equilibrium
+      b.targetStretch *= 0.88;
+      if (Math.abs(b.targetStretch) < 0.01) b.targetStretch = 0;
+
+      if (inViewport) {
+        renderBoundary(b);
+      }
+
+      if (Math.abs(b.velocity) > 0.008 || Math.abs(b.currentStretch - b.targetStretch) > 0.01) {
+        hasMotion = true;
+      }
+    }
+
+    if (hasMotion) {
+      requestAnimationFrame(springStep);
+    } else {
+      isSpringActive = false;
+      boundaries.forEach(b => {
+        b.currentStretch = 0;
+        b.velocity = 0;
+        renderBoundary(b);
+      });
+    }
+  }
+
+  function onScroll() {
+    const now = performance.now();
+    const dt = Math.max(8, now - lastTime);
+    const scrollY = window.scrollY;
+    const delta = scrollY - lastScrollY;
+    lastScrollY = scrollY;
+    lastTime = now;
+
+    // Normalize impulse by time delta
+    const speed = delta / (dt / 16.67);
+    const impulse = Math.max(-34, Math.min(34, speed * 1.6));
+
+    for (let i = 0; i < boundaries.length; i++) {
+      const b = boundaries[i];
+      b.targetStretch += impulse;
+      b.targetStretch = Math.max(-44, Math.min(44, b.targetStretch));
+    }
+
+    if (!isSpringActive) {
+      isSpringActive = true;
+      requestAnimationFrame(springStep);
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+}
+
+// Start Elastic Section Boundaries
+initElasticBoundaries();
+
 
 
