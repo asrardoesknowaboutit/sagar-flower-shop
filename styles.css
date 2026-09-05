@@ -783,13 +783,229 @@ h1 em {
 }
 .inquire-arrow { font-size: 16px; font-weight: bold; }
 
+/* IRRESISTIBLE ANIMATED "SHOW MORE" CALL-TO-ACTION BUTTON */
 .collection-footer {
   text-align: center;
-  margin-top: 42px;
+  margin-top: 48px;
+  position: relative;
 }
-.collection-footer > .button {
-  margin: 0 auto 24px;
+
+.neo-load-more {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  background: linear-gradient(135deg, #0f3527 0%, #0d2b1f 50%, #174836 100%);
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow:
+    0 14px 32px rgba(13, 43, 31, 0.24),
+    0 4px 12px rgba(200, 138, 44, 0.22),
+    -6px -6px 18px rgba(255, 255, 255, 0.85),
+    inset 0 1px 1px rgba(255, 255, 255, 0.35);
+  transition: transform 0.32s cubic-bezier(0.34, 1.4, 0.64, 1), box-shadow 0.32s ease;
+  overflow: hidden;
+  text-decoration: none;
+  margin: 0 auto 26px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
+
+/* Ambient breathing aura glow behind the button */
+.load-more-halo {
+  position: absolute;
+  inset: -6px;
+  border-radius: 9999px;
+  background: radial-gradient(circle at center, rgba(200, 138, 44, 0.5) 0%, rgba(13, 43, 31, 0.3) 60%, transparent 80%);
+  filter: blur(14px);
+  opacity: 0.6;
+  z-index: 0;
+  animation: load-more-glow 3s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes load-more-glow {
+  0%, 100% { transform: scale(0.96); opacity: 0.4; }
+  50% { transform: scale(1.06); opacity: 0.85; filter: blur(18px); }
+}
+
+.neo-load-more:hover {
+  transform: translateY(-4px) scale(1.025);
+  box-shadow:
+    0 22px 48px rgba(13, 43, 31, 0.32),
+    0 6px 20px rgba(200, 138, 44, 0.4),
+    inset 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+.neo-load-more:active {
+  transform: translateY(1px) scale(0.975);
+}
+
+.load-more-content {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 22px 10px 16px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Rotating floral emblem badge */
+.load-more-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(200, 138, 44, 0.45) 0%, rgba(200, 138, 44, 0.15) 100%);
+  border: 1px solid rgba(255, 223, 158, 0.5);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.35);
+  flex-shrink: 0;
+}
+.load-more-flower {
+  font-size: 19px;
+  line-height: 1;
+  display: inline-block;
+  animation: float-flower 3.2s ease-in-out infinite;
+}
+@keyframes float-flower {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(18deg) scale(1.18); }
+}
+.neo-load-more:hover .load-more-flower {
+  animation: spin-flower 0.75s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+@keyframes spin-flower {
+  0% { transform: rotate(0deg) scale(1); }
+  100% { transform: rotate(360deg) scale(1.25); }
+}
+
+/* Dual language invitation typography */
+.load-more-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  line-height: 1.25;
+}
+.load-more-primary {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+.load-more-secondary {
+  font-size: 10.5px;
+  color: #fed894;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  opacity: 0.95;
+}
+
+/* Dynamic remaining count pill badge */
+.load-more-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  background: rgba(200, 138, 44, 0.28);
+  border: 1px solid rgba(255, 223, 158, 0.4);
+  color: #fff9e6;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+.chip-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ffd577;
+  box-shadow: 0 0 10px #ffd577;
+  animation: chip-blink 1.8s ease-in-out infinite;
+}
+@keyframes chip-blink {
+  0%, 100% { opacity: 0.45; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.35); }
+}
+.chip-count {
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+.chip-label {
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.92;
+}
+
+/* Bouncing directional cue */
+.load-more-arrow-wrap {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffeed1;
+  font-size: 14px;
+  font-weight: bold;
+  transition: transform 0.3s cubic-bezier(0.34, 1.4, 0.64, 1), background 0.25s, color 0.25s;
+  flex-shrink: 0;
+}
+.load-more-arrow {
+  display: inline-block;
+  animation: bounce-arrow 1.6s ease-in-out infinite;
+}
+@keyframes bounce-arrow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3.5px); }
+}
+.neo-load-more:hover .load-more-arrow-wrap {
+  background: var(--gold);
+  color: var(--ink);
+  transform: translateY(2px) scale(1.08);
+}
+
+/* Luminous sheen / shimmer sweep */
+.load-more-shimmer {
+  position: absolute;
+  top: -60%;
+  left: -70%;
+  width: 45%;
+  height: 220%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.32) 50%, transparent 100%);
+  transform: rotate(25deg);
+  z-index: 1;
+  pointer-events: none;
+  animation: sweep-shimmer 3.8s ease-in-out infinite;
+}
+@keyframes sweep-shimmer {
+  0% { left: -75%; }
+  35%, 100% { left: 165%; }
+}
+
+/* Post-click staggered reveal animation for newly loaded cards */
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.card-revealing {
+  animation: cardReveal 0.46s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
 .collection-footer p {
   font-size: 13.5px;
   color: var(--muted);
@@ -1399,6 +1615,27 @@ dialog::backdrop { background: rgba(8, 24, 17, 0.94); }
   .neo-icon { font-size: 14px; }
   .neo-mr { font-size: 13px; }
   .neo-en { font-size: 9.5px; }
+
+  /* Mobile Show More Button */
+  .neo-load-more {
+    width: min(340px, calc(100% - 16px));
+    max-width: 100%;
+  }
+  .load-more-content {
+    padding: 8px 14px 8px 10px;
+    gap: 10px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .load-more-icon-wrap {
+    width: 34px;
+    height: 34px;
+  }
+  .load-more-flower { font-size: 16px; }
+  .load-more-primary { font-size: 13px; }
+  .load-more-secondary { font-size: 9.5px; }
+  .load-more-chip { padding: 4px 8px; font-size: 11px; }
+  .load-more-arrow-wrap { width: 28px; height: 28px; font-size: 12px; }
 
   .inspiration-grid {
     grid-template-columns: 1fr;

@@ -132,8 +132,12 @@ function renderCollection() {
   }
   const showMore = $('#show-more');
   if (showMore) {
-    showMore.hidden = count >= matches.length;
-    showMore.innerHTML = `अधिक डिझाईन्स पहा <span>↓</span><small> (${matches.length - count} आणखी)</small>`;
+    const remaining = matches.length - count;
+    showMore.hidden = remaining <= 0;
+    const countEl = $('#show-more-count');
+    if (countEl) {
+      countEl.textContent = `+${remaining}`;
+    }
   }
   requestScrollUpdate();
 }
@@ -162,13 +166,25 @@ filterButtons.forEach(button => button.addEventListener('click', () => {
 
 $('#show-more')?.addEventListener('click', () => {
   const matches = getMatchingCards();
-  const firstNew = matches[limit];
+  const oldLimit = limit;
+  const firstNew = matches[oldLimit];
   limit += batchSize();
   renderCollection();
+
+  if (animate()) {
+    const newlyRevealed = matches.slice(oldLimit, limit);
+    newlyRevealed.forEach((card, idx) => {
+      card.style.animationDelay = `${idx * 45}ms`;
+      card.classList.remove('card-revealing');
+      void card.offsetWidth;
+      card.classList.add('card-revealing');
+    });
+  }
+
   if (firstNew) {
     const photo = $('.photo-button', firstNew);
     photo?.focus({ preventScroll: true });
-    firstNew.scrollIntoView({ behavior: smooth(), block: 'start' });
+    firstNew.scrollIntoView({ behavior: smooth(), block: 'nearest' });
   }
 });
 
