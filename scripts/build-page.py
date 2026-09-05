@@ -95,6 +95,72 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
 <main id="main">
 
 <section class="hero wrap" id="home">
+  <!-- Living Typography Synchronized Backdrop (Cinematic crossfade + scale + blur-to-focus) -->
+  <div class="hero-living-backdrop" aria-hidden="true">
+    <div class="living-bg-slide active" data-service="bouquets" style="background-image: url('assets/images/bouquets/collection-02-1280.webp');"></div>
+    <div class="living-bg-slide" data-service="garlands" style="background-image: url('assets/images/garlands/collection-20-1280.webp');"></div>
+    <div class="living-bg-slide" data-service="wedding" style="background-image: url('assets/images/inspiration/varmala-960.webp');"></div>
+    <div class="living-bg-slide" data-service="decor" style="background-image: url('assets/images/decor/collection-10-1280.webp');"></div>
+    <div class="living-bg-slide" data-service="gifts" style="background-image: url('assets/images/bouquets/collection-34-1280.webp');"></div>
+    <div class="living-backdrop-scrim"></div>
+  </div>
+
+  <!-- LIVING TYPOGRAPHY COMPOSITION -->
+  <div class="living-typography-stage" role="region" aria-label="Living Typography - Florist Services">
+    <div class="living-stage-header">
+      <span class="living-pill-tag">
+        <span class="living-pulse-dot" aria-hidden="true"></span>
+        <span class="living-pill-text">LIVING TYPOGRAPHY · आमची सेवा व रचना</span>
+      </span>
+    </div>
+
+    <div class="living-typography-row" aria-live="polite">
+      <!-- 1: Bouquets -->
+      <a class="living-word-slot active" href="#collection" data-service="bouquets" data-filter="bouquets" aria-label="Bouquets - आकर्षक बुके">
+        <span class="living-word">
+          <span class="living-word-text">Bouquets</span>
+          <span class="living-word-mr" lang="mr">बुके</span>
+        </span>
+      </a>
+      <span class="living-dot-sep" aria-hidden="true">·</span>
+
+      <!-- 2: Garlands -->
+      <a class="living-word-slot" href="#collection" data-service="garlands" data-filter="garlands" aria-label="Garlands - लग्नहार">
+        <span class="living-word">
+          <span class="living-word-text">Garlands</span>
+          <span class="living-word-mr" lang="mr">लग्नहार</span>
+        </span>
+      </a>
+      <span class="living-dot-sep" aria-hidden="true">·</span>
+
+      <!-- 3: Wedding Flowers -->
+      <a class="living-word-slot" href="#collection" data-service="wedding" data-filter="garlands" aria-label="Wedding Flowers - वरमाला">
+        <span class="living-word">
+          <span class="living-word-text">Wedding Flowers</span>
+          <span class="living-word-mr" lang="mr">वरमाला</span>
+        </span>
+      </a>
+      <span class="living-dot-sep" aria-hidden="true">·</span>
+
+      <!-- 4: Decorations -->
+      <a class="living-word-slot" href="#collection" data-service="decor" data-filter="decor" aria-label="Decorations - सजावट">
+        <span class="living-word">
+          <span class="living-word-text">Decorations</span>
+          <span class="living-word-mr" lang="mr">सजावट</span>
+        </span>
+      </a>
+      <span class="living-dot-sep" aria-hidden="true">·</span>
+
+      <!-- 5: Gifts -->
+      <a class="living-word-slot" href="#collection" data-service="gifts" data-filter="belts" aria-label="Gifts - भेटवस्तू">
+        <span class="living-word">
+          <span class="living-word-text">Gifts</span>
+          <span class="living-word-mr" lang="mr">भेटवस्तू</span>
+        </span>
+      </a>
+    </div>
+  </div>
+
   <div class="hero-copy">
     <p class="eyebrow">📍 सागर फ्लॉवर सेंटर · PARLI, MAHARASHTRA <span>✳</span> FAST DOORSTEP DELIVERY</p>
     

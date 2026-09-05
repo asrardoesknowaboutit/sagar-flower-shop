@@ -620,4 +620,117 @@ function initRailFocusTracking() {
 // Start Depth of Field Controller
 initCinematicDepthOfField();
 
+// --- LIVING TYPOGRAPHY HERO AUTO-ANIMATION & SYNCHRONIZED BACKDROP ---
+function initLivingTypography() {
+  const stage = $('.living-typography-stage');
+  if (!stage) return;
+
+  const slots = $$('.living-word-slot', stage);
+  const slides = $$('.living-bg-slide');
+  if (!slots.length) return;
+
+  const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (isReducedMotion) {
+    slots.forEach(slot => slot.classList.remove('active'));
+    return;
+  }
+
+  const SERVICES = ['bouquets', 'garlands', 'wedding', 'decor', 'gifts'];
+  let currentIndex = 0;
+  let timerId = null;
+  let isPaused = false;
+
+  const STAND_DURATION = 1800; // 1.8s per service
+  const RESET_PAUSE = 700;     // ~700ms intentional pause when all sit down
+
+  function setService(index) {
+    // If index is -1: all five words become equal and sit down
+    if (index === -1) {
+      slots.forEach(slot => {
+        slot.classList.remove('active');
+        slot.setAttribute('aria-current', 'false');
+      });
+      // Gently dim backdrops during reset
+      slides.forEach(slide => slide.classList.remove('active'));
+      return;
+    }
+
+    const serviceId = SERVICES[index];
+    slots.forEach((slot, idx) => {
+      const isActive = (idx === index);
+      slot.classList.toggle('active', isActive);
+      slot.setAttribute('aria-current', isActive ? 'true' : 'false');
+    });
+
+    slides.forEach(slide => {
+      const match = (slide.dataset.service === serviceId);
+      slide.classList.toggle('active', match);
+    });
+  }
+
+  function nextStep() {
+    if (isPaused) return;
+
+    if (currentIndex < SERVICES.length - 1) {
+      currentIndex++;
+      setService(currentIndex);
+      timerId = setTimeout(nextStep, STAND_DURATION);
+    } else {
+      // Step: after Gifts sits down, have all five words briefly become equal, pause for ~700ms
+      setService(-1);
+      timerId = setTimeout(() => {
+        if (!isPaused) {
+          currentIndex = 0;
+          setService(currentIndex); // Bouquets starts again!
+          timerId = setTimeout(nextStep, STAND_DURATION);
+        }
+      }, RESET_PAUSE);
+    }
+  }
+
+  // Interactive Hover / Tap exploration
+  slots.forEach((slot, idx) => {
+    slot.addEventListener('mouseenter', () => {
+      isPaused = true;
+      clearTimeout(timerId);
+      currentIndex = idx;
+      setService(idx);
+    });
+
+    slot.addEventListener('mouseleave', () => {
+      isPaused = false;
+      clearTimeout(timerId);
+      timerId = setTimeout(nextStep, STAND_DURATION);
+    });
+
+    slot.addEventListener('click', () => {
+      const filter = slot.dataset.filter;
+      if (filter) {
+        const targetBtn = $(`.neo-btn[data-filter="${filter}"]`) || $(`.filter-pill[data-filter="${filter}"]`);
+        if (targetBtn) targetBtn.click();
+      }
+    });
+  });
+
+  // Power optimization on visibility change
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      isPaused = true;
+      clearTimeout(timerId);
+    } else {
+      isPaused = false;
+      clearTimeout(timerId);
+      timerId = setTimeout(nextStep, 1000);
+    }
+  });
+
+  // Initial Start: Bouquets stands up
+  setService(0);
+  timerId = setTimeout(nextStep, STAND_DURATION);
+}
+
+// Start Living Typography
+initLivingTypography();
+
+
 

@@ -323,14 +323,233 @@ button[hidden], [hidden] { display: none !important; }
   pointer-events: none;
 }
 
-/* HERO SECTION with main video */
+/* ==========================================================================
+   HERO SECTION with Living Typography
+   ========================================================================== */
 .hero {
   display: grid;
   grid-template-columns: 1.05fr 1fr;
-  gap: 50px;
+  gap: 36px 50px;
   align-items: center;
-  padding-block: 48px 56px;
+  padding-block: 40px 56px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
 }
+
+/* Synchronized Hero Photography Backdrop */
+.hero-living-backdrop {
+  grid-column: 1 / -1;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 28px;
+}
+
+.living-bg-slide {
+  position: absolute;
+  inset: -6%;
+  background-size: cover;
+  background-position: center 40%;
+  opacity: 0;
+  transform: scale(1.05);
+  filter: blur(8px);
+  transition: opacity 1.0s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.6s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 1.0s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+
+.living-bg-slide.active {
+  opacity: 0.18;
+  transform: scale(1.0);
+  filter: blur(0px);
+}
+
+.living-backdrop-scrim {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 25%, rgba(251, 248, 242, 0.65) 0%, rgba(249, 246, 239, 0.94) 65%, #f9f6ef 100%);
+  pointer-events: none;
+}
+
+/* Living Typography Stage Container */
+.living-typography-stage {
+  grid-column: 1 / -1;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 12px 22px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid rgba(214, 204, 184, 0.45);
+}
+
+.living-stage-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.living-pill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(200, 138, 44, 0.35);
+  box-shadow: 0 2px 10px rgba(13, 43, 31, 0.04);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--forest);
+}
+
+.living-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 8px var(--gold);
+  animation: livingPulse 2s infinite ease-in-out;
+}
+
+@keyframes livingPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.7; }
+}
+
+/* Horizontal Typographic Row (Shared Baseline) */
+.living-typography-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+  padding-block: 14px 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+}
+
+.living-typography-row::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual Service Word Slot (Layout Footprint Spring Interpolation) */
+.living-word-slot {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  padding-inline: clamp(6px, 1.4vw, 16px);
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  /* Fluid spring interpolation pushes neighbors without jumps */
+  transition: padding 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              margin 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Word Container (Visual scale, rise & opacity interpolation) */
+.living-word {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  opacity: 0.42;
+  transform: translate3d(0, 0, 0) scale(1);
+  transform-origin: center baseline;
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.living-word-text {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(21px, 2.3vw, 32px);
+  font-weight: 400;
+  color: #1a3829;
+  letter-spacing: -0.3px;
+  transition: color 0.6s ease, font-weight 0.4s ease;
+}
+
+.living-word-mr {
+  font-family: 'Noto Serif Devanagari', Georgia, serif;
+  font-size: clamp(12px, 1.1vw, 15px);
+  font-weight: 500;
+  color: #637f71;
+  letter-spacing: 0;
+  transition: color 0.6s ease, font-weight 0.4s ease;
+}
+
+/* Separator Dot */
+.living-dot-sep {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 1;
+  color: var(--gold);
+  opacity: 0.35;
+  padding-inline: clamp(2px, 0.6vw, 6px);
+  user-select: none;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+/* Active Service ("Standing Up" State) */
+.living-word-slot.active {
+  padding-inline: clamp(16px, 2.8vw, 34px);
+  z-index: 4;
+}
+
+.living-word-slot.active .living-word {
+  opacity: 1;
+  /* Stands up by scaling significantly and rising above shared baseline */
+  transform: translate3d(0, -9px, 0) scale(1.36);
+}
+
+.living-word-slot.active .living-word-text {
+  font-weight: 700;
+  color: #07261a;
+  text-shadow: 0 4px 20px rgba(13, 43, 31, 0.15);
+}
+
+.living-word-slot.active .living-word-mr {
+  font-weight: 700;
+  color: var(--wa-dark);
+}
+
+/* Hover elevation */
+.living-word-slot:hover .living-word {
+  opacity: 0.85;
+}
+.living-word-slot.active:hover .living-word {
+  opacity: 1;
+}
+
+.hero-copy {
+  grid-column: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-video-showcase {
+  grid-column: 2;
+  position: relative;
+  z-index: 2;
+}
+
 .hero-copy > .eyebrow {
   font-size: 10.5px;
   letter-spacing: 1.6px;
@@ -2800,8 +3019,24 @@ dialog::backdrop { background: rgba(8, 24, 17, 0.94); }
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
-    gap: 36px;
-    padding-block: 28px 40px;
+    gap: 28px;
+    padding-block: 24px 36px;
+  }
+  .hero-copy, .hero-video-showcase {
+    grid-column: 1;
+  }
+  .living-typography-stage {
+    padding: 10px 4px 16px;
+    gap: 8px;
+  }
+  .living-word-slot {
+    padding-inline: 4px;
+  }
+  .living-word-slot.active {
+    padding-inline: 12px;
+  }
+  .living-word-slot.active .living-word {
+    transform: translate3d(0, -6px, 0) scale(1.2);
   }
   .portfolio {
     column-count: 2;
