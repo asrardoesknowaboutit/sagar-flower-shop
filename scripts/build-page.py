@@ -48,53 +48,7 @@ logo = '<img class="shop-logo" src="assets/brand/sagar-logo.webp" alt="साग
 head = source[:source.index('<body>')].replace('assets/images/bouquets/bouquets-25.webp', 'assets/videos/delivery-poster.webp')
 head = re.sub(r'<link rel="preload" as="image"[^>]+>', '<link rel="preload" as="image" href="assets/videos/delivery-poster.webp">', head)
 
-ticker_mr = 'सागर फ्लॉवर सेंटर, परळी वैजनाथ मध्ये आपले स्वागत आहे! (मराठी) · ताजी फुले, लग्नहार, बुके, गाडी सजावट व घरपोच डिलिव्हरी'
-ticker_hi = 'सागर फ्लावर सेंटर, परली वैजनाथ में आपका स्वागत है! (हिंदी) · ताज़े फूल, वरमाला, बुके, कार डेकोरेशन व होम डिलीवरी'
-ticker_html = f'✿ &nbsp; {ticker_mr} &nbsp; · &nbsp; 📞 <a href="tel:+917620644158">7620644158</a> &nbsp; ✿ &nbsp; {ticker_hi} &nbsp; · &nbsp; 📞 <a href="tel:+917620644158">7620644158</a> &nbsp; ✿ &nbsp;'
-ticker_plain = f'✿ &nbsp; {ticker_mr} &nbsp; · &nbsp; 📞 7620644158 &nbsp; ✿ &nbsp; {ticker_hi} &nbsp; · &nbsp; 📞 7620644158 &nbsp; ✿ &nbsp;'
-
 parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
-<!-- Floating Dynamic Island Ticker with Ambient Gradient Blur -->
-<div class="welcome-bar welcome-island-wrap">
-  <div class="ticker-dynamic-island" role="region" aria-label="सागर फ्लॉवर सेंटर लाईव्ह अपडेट्स">
-    <!-- Ambient glowing backlight beneath island -->
-    <div class="island-ambient-blur" aria-hidden="true"></div>
-    
-    <!-- Multi-source deep-blue animated gradient blur lights -->
-    <div class="island-glow-canvas" aria-hidden="true">
-      <div class="island-glow-orb orb-navy"></div>
-      <div class="island-glow-orb orb-rich-blue"></div>
-      <div class="island-glow-orb orb-ice-blue"></div>
-      <div class="island-glow-orb orb-sapphire"></div>
-    </div>
-    
-    <!-- Smoked translucent glass sheen reflection -->
-    <div class="island-glass-sheen" aria-hidden="true"></div>
-
-    <!-- Live indicator badge -->
-    <div class="island-live-badge" aria-hidden="true">
-      <span class="island-live-beacon"></span>
-      <span class="island-live-text">LIVE</span>
-    </div>
-
-    <!-- Hairline glass divider -->
-    <span class="island-divider" aria-hidden="true"></span>
-
-    <!-- Continuous Marquee Ticker -->
-    <div class="ticker" aria-label="{ticker_mr} 7620644158. {ticker_hi}">
-      <div class="ticker-track">
-        <span>{ticker_html}</span>
-        <span aria-hidden="true">{ticker_plain}</span>
-      </div>
-    </div>
-
-    <!-- Hairline glass divider -->
-    <span class="island-divider" aria-hidden="true"></span>
-
-    <!-- Interactive Pause/Play Control -->
-    <button id="ticker-toggle" class="island-ticker-ctrl" aria-label="Pause welcome ticker" aria-pressed="false">Ⅱ</button>
-  </div>
-</div>
 <header class="header">
   <a class="brand" href="#home" aria-label="Sagar Flower Shop home">
     {logo}

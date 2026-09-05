@@ -2,6 +2,7 @@
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+let focalObserver = null;
 const motion = matchMedia('(prefers-reduced-motion: reduce)');
 const animate = () => !motion.matches;
 const smooth = () => animate() ? 'smooth' : 'auto';
@@ -279,23 +280,6 @@ function onSwipe(element, callback) {
 }
 onSwipe($('#lightbox-photo'), nextPhoto);
 
-// --- MARATHI TICKER TOGGLE ---
-let tickerPaused = false;
-const tickerToggle = $('#ticker-toggle');
-function syncTicker() {
-  const track = $('.ticker-track');
-  if (track) track.classList.toggle('stopped', tickerPaused || document.hidden || !animate());
-  if (tickerToggle) {
-    tickerToggle.textContent = tickerPaused || !animate() ? '▶' : 'Ⅱ';
-    tickerToggle.setAttribute('aria-label', tickerPaused || !animate() ? 'Play welcome ticker' : 'Pause welcome ticker');
-    tickerToggle.setAttribute('aria-pressed', String(tickerPaused || !animate()));
-  }
-}
-tickerToggle?.addEventListener('click', () => {
-  tickerPaused = !tickerPaused;
-  syncTicker();
-});
-
 // --- BILINGUAL HERO HEADLINE TICKER (MARATHI & HINDI) ---
 function initHeroHeadlineTicker() {
   const wrap = $('.hero-ticker-wrap');
@@ -462,14 +446,11 @@ document.addEventListener('visibilitychange', () => {
     if (heroVideo) heroVideo.play().catch(() => {});
     storyVideos.forEach(v => v.play().catch(() => {}));
   }
-  syncTicker();
 });
 
-motion.addEventListener('change', syncTicker);
 
 // Initialize
 renderCollection();
-syncTicker();
 initHeroHeadlineTicker();
 requestScrollUpdate();
 
@@ -500,7 +481,6 @@ const yearEl = $('#year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // --- CINEMATIC SCROLL-DRIVEN DEPTH OF FIELD & PROGRESSIVE FOCUS REVEAL ---
-let focalObserver = null;
 
 function initCinematicDepthOfField() {
   const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
