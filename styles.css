@@ -385,47 +385,9 @@ button[hidden], [hidden] { display: none !important; }
   flex-direction: column;
   align-items: center;
   gap: 12px;
-  padding: 16px 12px 22px;
+  padding: 10px 12px 18px;
   margin-bottom: 6px;
   border-bottom: 1px solid rgba(214, 204, 184, 0.45);
-}
-
-.living-stage-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.living-pill-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 5px 16px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(200, 138, 44, 0.35);
-  box-shadow: 0 2px 10px rgba(13, 43, 31, 0.04);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--forest);
-}
-
-.living-pulse-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 0 8px var(--gold);
-  animation: livingPulse 2s infinite ease-in-out;
-}
-
-@keyframes livingPulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.4); opacity: 0.7; }
 }
 
 /* Horizontal Typographic Row (Shared Baseline) */
