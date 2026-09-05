@@ -91,10 +91,10 @@ if (rail) {
   });
 }
 
-// --- PORTFOLIO FILTERING & PREMIUM DYNAMIC ISLAND TICKER ---
+// --- PORTFOLIO FILTERING & FLUID CONNECTED PILL RIBBON ---
 const cards = $$('.work-card');
 const filterButtons = $$('[data-filter]');
-const filterContainer = $('.dynamic-island-ticker-wrap') || $('.neo-filter-container') || $('.filter-flow-wrapper');
+const filterContainer = $('.fluid-filter-ribbon-wrap') || $('.dynamic-island-ticker-wrap') || $('.neo-filter-container') || $('.filter-flow-wrapper');
 const batchSize = () => window.innerWidth >= 900 ? 12 : 8;
 let currentFilter = 'all', limit = batchSize();
 
@@ -473,13 +473,13 @@ syncTicker();
 initHeroHeadlineTicker();
 requestScrollUpdate();
 
-const initialActiveBtn = $('.island-btn.active') || $('.neo-btn.active') || $('.filter-pill.active');
+const initialActiveBtn = $('.fluid-filter-pill.active') || $('.island-btn.active') || $('.neo-btn.active') || $('.filter-pill.active');
 if (initialActiveBtn) {
   if (filterContainer) filterContainer.dataset.activeFilter = initialActiveBtn.dataset.filter || 'all';
   centerActiveButton(initialActiveBtn);
 }
 window.addEventListener('resize', () => {
-  const currentBtn = $('.island-btn.active') || $('.neo-btn.active') || $('.filter-pill.active');
+  const currentBtn = $('.fluid-filter-pill.active') || $('.island-btn.active') || $('.neo-btn.active') || $('.filter-pill.active');
   if (currentBtn) centerActiveButton(currentBtn);
 });
 
@@ -488,7 +488,7 @@ $$('.fluid-tag-pill[data-filter-trigger], .fluid-val-pill[data-filter-trigger]')
   tag.addEventListener('click', () => {
     const filter = tag.dataset.filterTrigger;
     if (filter) {
-      const targetBtn = $(`.island-btn[data-filter="${filter}"]`) || $(`.neo-btn[data-filter="${filter}"]`) || $(`.filter-pill[data-filter="${filter}"]`);
+      const targetBtn = $(`.fluid-filter-pill[data-filter="${filter}"]`) || $(`.island-btn[data-filter="${filter}"]`) || $(`.neo-btn[data-filter="${filter}"]`) || $(`.filter-pill[data-filter="${filter}"]`);
       if (targetBtn) {
         targetBtn.click();
       }
@@ -678,7 +678,7 @@ function initLivingTypography() {
     slot.addEventListener('click', () => {
       const filter = slot.dataset.filter;
       if (filter) {
-        const targetBtn = $(`.neo-btn[data-filter="${filter}"]`) || $(`.filter-pill[data-filter="${filter}"]`);
+        const targetBtn = $(`.fluid-filter-pill[data-filter="${filter}"]`) || $(`.island-btn[data-filter="${filter}"]`) || $(`.neo-btn[data-filter="${filter}"]`) || $(`.filter-pill[data-filter="${filter}"]`);
         if (targetBtn) targetBtn.click();
       }
     });

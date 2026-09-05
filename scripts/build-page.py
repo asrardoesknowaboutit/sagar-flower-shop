@@ -451,55 +451,111 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
     <p>Find a design you love. Tap to see every detail in full resolution.<br><span lang="mr">तुमची आवडती डिझाईन निवडा, ऑर्डर WhatsApp वर द्या.</span></p>
   </div>
 
-  <!-- PREMIUM DYNAMIC-ISLAND-STYLE TICKER (SMOKED BLACK GLASS & ORGANIC DEEP-BLUE GRADIENT) -->
-  <div class="dynamic-island-ticker-wrap">
-    <div class="dynamic-island-ticker" role="region" aria-label="Floral Category Ticker">
-      <!-- Deep-blue blurred radial light sources drifting beneath smoked glass -->
-      <div class="island-light-engine" aria-hidden="true">
-        <div class="light-orb orb-navy-deep"></div>
-        <div class="light-orb orb-rich-blue"></div>
-        <div class="light-orb orb-ice-restrained"></div>
-        <div class="light-orb orb-drift-counter"></div>
-      </div>
-      <div class="island-glass-sheen" aria-hidden="true"></div>
+  <!-- FLUID CONNECTED CATEGORY FILTER RIBBON (MATCHING HERO VALUES RIBBON) -->
+  <div class="fluid-filter-ribbon-wrap">
+    <div class="fluid-filter-ribbon" role="region" aria-label="Floral Category Filter">
+      <!-- Category 1: सर्व फुले -->
+      <button data-filter="all" aria-pressed="true" class="fluid-filter-pill filter-all active" aria-label="सर्व फुले - All Designs">
+        <span class="filter-icon" aria-hidden="true">🌸</span>
+        <span class="filter-label">सर्व फुले</span>
+        <span class="filter-arrow" aria-hidden="true">›</span>
+      </button>
 
-      <div class="island-ticker-track" role="group" aria-label="Filter floral collection">
-        <button data-filter="all" aria-pressed="true" class="island-btn active">
-        <span class="island-icon-wrap" aria-hidden="true"><svg class="island-icon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3m0 14v3M2 12h3m14 0h3M4.93 4.93l2.12 2.12m9.9 9.9l2.12 2.12M4.93 19.07l2.12-2.12m9.9-9.9l2.12-2.12"></path></svg></span>
-        <span class="island-text-cluster">
-          <span class="island-mr" lang="mr">सर्व फुले</span>
-          <span class="island-en">All designs</span>
-        </span>
-      </button>
-      <span class="island-divider" aria-hidden="true"></span><button data-filter="garlands" aria-pressed="false" class="island-btn">
-        <span class="island-icon-wrap" aria-hidden="true"><svg class="island-icon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"></circle><path d="M12 5a7 7 0 0 1 6.5 4.5M5.5 14.5A7 7 0 0 0 12 19M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"></path></svg></span>
-        <span class="island-text-cluster">
-          <span class="island-mr" lang="mr">लग्नहार व वरमाला</span>
-          <span class="island-en">Wedding garlands</span>
-        </span>
-      </button>
-      <span class="island-divider" aria-hidden="true"></span><button data-filter="bouquets" aria-pressed="false" class="island-btn">
-        <span class="island-icon-wrap" aria-hidden="true"><svg class="island-icon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l-3 7M12 14l3 7M12 14v7M8.5 9.5a3.5 3.5 0 1 1 7 0c0 2.5-3.5 4.5-3.5 4.5s-3.5-2-3.5-4.5z"></path></svg></span>
-        <span class="island-text-cluster">
-          <span class="island-mr" lang="mr">आकर्षक बुके</span>
-          <span class="island-en">Bouquets</span>
-        </span>
-      </button>
-      <span class="island-divider" aria-hidden="true"></span><button data-filter="decor" aria-pressed="false" class="island-btn">
-        <span class="island-icon-wrap" aria-hidden="true"><svg class="island-icon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17h16M6 17V9a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8M9 7V4M15 7V4M7 17v2M17 17v2"></path></svg></span>
-        <span class="island-text-cluster">
-          <span class="island-mr" lang="mr">गाडी व स्टेज सजावट</span>
-          <span class="island-en">Car & stage décor</span>
-        </span>
-      </button>
-      <span class="island-divider" aria-hidden="true"></span><button data-filter="belts" aria-pressed="false" class="island-btn">
-        <span class="island-icon-wrap" aria-hidden="true"><svg class="island-icon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12l3.5 5.5L12 21 2.5 9.5z"></path><path d="M10 4v16M2.5 9.5h19"></path></svg></span>
-        <span class="island-text-cluster">
-          <span class="island-mr" lang="mr">गजरा व कंबरपट्टा</span>
-          <span class="island-en">Floral jewellery</span>
-        </span>
-      </button>
+      <!-- Organic Fluid Waist 1-2 (Rose to Mint) -->
+      <div class="fluid-filter-waist waist-1" aria-hidden="true">
+        <svg class="filter-waist-svg" viewBox="0 0 28 46" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="catWaistGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="35%" stop-color="#fff0f5"/>
+              <stop offset="70%" stop-color="#f0fdf4"/>
+              <stop offset="100%" stop-color="#ffffff"/>
+            </linearGradient>
+          </defs>
+          <path d="M 0,0 C 7,0 10,9 14,9 C 18,9 21,0 28,0 L 28,46 C 21,46 18,37 14,37 C 10,37 7,46 0,46 Z" fill="url(#catWaistGrad1)"/>
+          <path d="M 0,0 C 7,0 10,9 14,9 C 18,9 21,0 28,0" fill="none" stroke="rgba(255, 255, 255, 0.95)" stroke-width="1.5"/>
+          <path d="M 0,46 C 7,46 10,37 14,37 C 18,37 21,46 28,46" fill="none" stroke="rgba(255, 255, 255, 0.9)" stroke-width="1.5"/>
+        </svg>
       </div>
+
+      <!-- Category 2: लग्नहार व वरमाला -->
+      <button data-filter="garlands" aria-pressed="false" class="fluid-filter-pill filter-garlands" aria-label="लग्नहार व वरमाला - Wedding Garlands">
+        <span class="filter-icon" aria-hidden="true">🌺</span>
+        <span class="filter-label"><span class="filter-text-full">लग्नहार व वरमाला</span><span class="filter-text-short">लग्नहार</span></span>
+        <span class="filter-arrow" aria-hidden="true">›</span>
+      </button>
+
+      <!-- Organic Fluid Waist 2-3 (Mint to Sky) -->
+      <div class="fluid-filter-waist waist-2" aria-hidden="true">
+        <svg class="filter-waist-svg" viewBox="0 0 28 46" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="catWaistGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="35%" stop-color="#f0fdf4"/>
+              <stop offset="70%" stop-color="#f0f9ff"/>
+              <stop offset="100%" stop-color="#ffffff"/>
+            </linearGradient>
+          </defs>
+          <path d="M 0,0 C 7,0 10,9 14,9 C 18,9 21,0 28,0 L 28,46 C 21,46 18,37 14,37 C 10,37 7,46 0,46 Z" fill="url(#catWaistGrad2)"/>
+          <path d="M 0,0 C 7,0 10,9 14,9 C 18,9 21,0 28,0" fill="none" stroke="rgba(255, 255, 255, 0.95)" stroke-width="1.5"/>
+          <path d="M 0,46 C 7,46 10,37 14,37 C 18,37 21,46 28,46" fill="none" stroke="rgba(255, 255, 255, 0.9)" stroke-width="1.5"/>
+        </svg>
+      </div>
+
+      <!-- Category 3: आकर्षक बुके -->
+      <button data-filter="bouquets" aria-pressed="false" class="fluid-filter-pill filter-bouquets" aria-label="आकर्षक बुके - Bouquets">
+        <span class="filter-icon" aria-hidden="true">💐</span>
+        <span class="filter-label"><span class="filter-text-full">आकर्षक बुके</span><span class="filter-text-short">बुके</span></span>
+        <span class="filter-arrow" aria-hidden="true">›</span>
+      </button>
+
+      <!-- Organic Fluid Waist 3-4 (Sky to Coral) -->
+      <div class="fluid-filter-waist waist-3" aria-hidden="true">
+        <svg class="filter-waist-svg" viewBox="0 0 28 46" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="catWaistGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="35%" stop-color="#f0f9ff"/>
+              <stop offset="70%" stop-color="#fff5f5"/>
+              <stop offset="100%" stop-color="#ffffff"/>
+            </linearGradient>
+          </defs>
+          <path d="M 0,0 C 7,0 10,9 14,9 C 18,9 21,0 28,0 L 28,46 C 21,46 18,37 14,37 C 10,37 7,46 0,46 Z" fill="url(#catWaistGrad3)"/>
+          <path d="M 0,0 C 7,0 10,9 14,9 C 18,9 21,0 28,0" fill="none" stroke="rgba(255, 255, 255, 0.95)" stroke-width="1.5"/>
+          <path d="M 0,46 C 7,46 10,37 14,37 C 18,37 21,46 28,46" fill="none" stroke="rgba(255, 255, 255, 0.9)" stroke-width="1.5"/>
+        </svg>
+      </div>
+
+      <!-- Category 4: गाडी व स्टेज सजावट -->
+      <button data-filter="decor" aria-pressed="false" class="fluid-filter-pill filter-decor" aria-label="गाडी व स्टेज सजावट - Car & Stage Decor">
+        <span class="filter-icon" aria-hidden="true">🚗</span>
+        <span class="filter-label"><span class="filter-text-full">गाडी व स्टेज सजावट</span><span class="filter-text-short">गाडी सजावट</span></span>
+        <span class="filter-arrow" aria-hidden="true">›</span>
+      </button>
+
+      <!-- Organic Fluid Waist 4-5 (Coral to Gold) -->
+      <div class="fluid-filter-waist waist-4" aria-hidden="true">
+        <svg class="filter-waist-svg" viewBox="0 0 28 46" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="catWaistGrad4" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="35%" stop-color="#fff5f5"/>
+              <stop offset="70%" stop-color="#fefce8"/>
+              <stop offset="100%" stop-color="#ffffff"/>
+            </linearGradient>
+          </defs>
+          <path d="M 0,0 C 7,0 10,9 14,9 C 18,9 21,0 28,0 L 28,46 C 21,46 18,37 14,37 C 10,37 7,46 0,46 Z" fill="url(#catWaistGrad4)"/>
+          <path d="M 0,0 C 7,0 10,9 14,9 C 18,9 21,0 28,0" fill="none" stroke="rgba(255, 255, 255, 0.95)" stroke-width="1.5"/>
+          <path d="M 0,46 C 7,46 10,37 14,37 C 18,37 21,46 28,46" fill="none" stroke="rgba(255, 255, 255, 0.9)" stroke-width="1.5"/>
+        </svg>
+      </div>
+
+      <!-- Category 5: गजरा व कंबरपट्टा -->
+      <button data-filter="belts" aria-pressed="false" class="fluid-filter-pill filter-belts" aria-label="गजरा व कंबरपट्टा - Floral Jewellery">
+        <span class="filter-icon" aria-hidden="true">🌼</span>
+        <span class="filter-label"><span class="filter-text-full">गजरा व कंबरपट्टा</span><span class="filter-text-short">कंबरपट्टा</span></span>
+        <span class="filter-arrow" aria-hidden="true">›</span>
+      </button>
     </div>
   </div>
   <div class="gallery-toolbar">

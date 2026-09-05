@@ -1381,289 +1381,229 @@ h1 em {
 }
 
 /* ==========================================================================
-   PREMIUM DYNAMIC-ISLAND-STYLE TICKER (SMOKED GLASS & DEEP-BLUE GRADIENT)
-   Ultra-smooth GPU-composited organic breathing & light drift engine
+   FLUID CONNECTED CATEGORY FILTER RIBBON (MATCHING HERO VALUES RIBBON)
+   Exact match to Screenshot 04-34-37 with organic SVG waists & ambient glow
    ========================================================================== */
 
-.dynamic-island-ticker-wrap {
-  position: relative;
-  width: 100%;
+.fluid-filter-ribbon-wrap {
   display: flex;
   justify-content: center;
-  margin: 0 auto 20px;
-  padding: 10px 4px 18px;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
   overflow-x: auto;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
+  padding: 8px 16px 20px;
+  margin: 0 auto 10px;
 }
-.dynamic-island-ticker-wrap::-webkit-scrollbar {
+
+.fluid-filter-ribbon-wrap::-webkit-scrollbar {
   display: none;
 }
 
-/* Smoked black translucent glass pill with dynamic island geometry */
-.dynamic-island-ticker {
-  position: relative;
+.fluid-filter-ribbon {
   display: inline-flex;
   align-items: center;
-  background: rgba(8, 12, 18, 0.88);
-  backdrop-filter: blur(28px) saturate(190%);
-  -webkit-backdrop-filter: blur(28px) saturate(190%);
-  border-radius: 9999px;
-  padding: 6px 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow:
-    0 24px 64px -12px rgba(0, 0, 0, 0.75),
-    0 8px 24px -4px rgba(0, 0, 0, 0.5),
-    inset 0 1px 1.5px rgba(255, 255, 255, 0.18),
-    inset 0 -1px 1px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
-  max-width: 100%;
-}
-
-/* Deep-Blue Blurred Radial Light Engine (Drifting & Breathing Organically) */
-.island-light-engine {
-  position: absolute;
-  inset: 0;
-  border-radius: 9999px;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Individual heavily blurred radial light sources */
-.light-orb {
-  position: absolute;
-  border-radius: 50%;
-  will-change: transform, opacity;
-  pointer-events: none;
-}
-
-/* 1. Deep Navy Ambient Bed */
-.orb-navy-deep {
-  width: 70%;
-  height: 200%;
-  top: -50%;
-  left: -15%;
-  background: radial-gradient(ellipse at center, rgba(15, 34, 78, 0.88) 0%, rgba(10, 20, 50, 0.55) 50%, transparent 75%);
-  filter: blur(36px);
-  animation: islandNavyDrift 8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
-}
-
-/* 2. Luminous Rich Royal Blue Core (Primary Breathing Light) */
-.orb-rich-blue {
-  width: 50%;
-  height: 180%;
-  top: -40%;
-  left: 20%;
-  background: radial-gradient(ellipse at center, rgba(29, 78, 216, 0.65) 0%, rgba(30, 64, 175, 0.4) 50%, transparent 75%);
-  filter: blur(28px);
-  animation: islandRichBlueBreathe 8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
-}
-
-/* 3. Restrained Ice Blue Specular Accent (Sophisticated & Crisp) */
-.orb-ice-restrained {
-  width: 32%;
-  height: 140%;
-  top: -20%;
-  right: 15%;
-  background: radial-gradient(ellipse at center, rgba(147, 197, 253, 0.38) 0%, rgba(96, 165, 250, 0.18) 45%, transparent 70%);
-  filter: blur(22px);
-  animation: islandIceDrift 8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
-  animation-delay: -2s;
-}
-
-/* 4. Counter-Drift Ambient Navy Light */
-.orb-drift-counter {
-  width: 55%;
-  height: 190%;
-  top: -45%;
-  right: -10%;
-  background: radial-gradient(ellipse at center, rgba(14, 30, 68, 0.75) 0%, transparent 70%);
-  filter: blur(38px);
-  animation: islandNavyDrift 8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite reverse;
-  animation-delay: -4s;
-}
-
-/* Organic 4-second breathing cycle (8s full cycle: 4s breathe in, 4s breathe out) */
-@keyframes islandRichBlueBreathe {
-  0% {
-    transform: translate3d(-18%, 0, 0) scale(0.92);
-    opacity: 0.6;
-  }
-  50% {
-    /* 4s mark: fully breathed in, luminous & gently drifted */
-    transform: translate3d(24%, 0, 0) scale(1.16);
-    opacity: 0.95;
-  }
-  100% {
-    /* 8s mark: smoothly settled back to origin */
-    transform: translate3d(-18%, 0, 0) scale(0.92);
-    opacity: 0.6;
-  }
-}
-
-@keyframes islandIceDrift {
-  0% {
-    transform: translate3d(25%, 10%, 0) scale(0.85);
-    opacity: 0.35;
-  }
-  50% {
-    transform: translate3d(-28%, -10%, 0) scale(1.12);
-    opacity: 0.72;
-  }
-  100% {
-    transform: translate3d(25%, 10%, 0) scale(0.85);
-    opacity: 0.35;
-  }
-}
-
-@keyframes islandNavyDrift {
-  0% {
-    transform: translate3d(0, 0, 0) scale(1);
-    opacity: 0.7;
-  }
-  50% {
-    transform: translate3d(18%, 6%, 0) scale(1.08);
-    opacity: 0.9;
-  }
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
-    opacity: 0.7;
-  }
-}
-
-/* Smoked translucent glass sheen layer */
-.island-glass-sheen {
-  position: absolute;
-  inset: 0;
-  border-radius: 9999px;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.08) 0%,
-    rgba(255, 255, 255, 0.015) 35%,
-    rgba(0, 0, 0, 0.28) 100%
-  );
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* Track holding the interactive category pills */
-.island-ticker-track {
   position: relative;
-  z-index: 3;
-  display: inline-flex;
-  align-items: center;
-  gap: 2px;
-}
-
-/* Hairline glass divider between items */
-.island-divider {
-  width: 1px;
-  height: 22px;
-  background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.14) 50%, transparent 100%);
+  filter: drop-shadow(0 6px 20px rgba(13, 43, 31, 0.05));
   flex-shrink: 0;
-  margin: 0 1px;
-  pointer-events: none;
+  margin: 0 auto;
 }
 
-/* Razor-sharp interactive category button */
-.island-btn {
-  position: relative;
+/* Individual Filter Chamber Pill (button) */
+.fluid-filter-pill {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 18px;
-  border-radius: 9999px;
-  border: 1px solid transparent;
-  background: transparent;
+  height: 50px;
+  padding: 0 20px 0 16px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffffff 0%, #fdfefe 55%, #f6faf7 100%);
+  border: 1.5px solid transparent;
   cursor: pointer;
-  text-decoration: none;
-  transition: all 0.26s cubic-bezier(0.16, 1, 0.3, 1);
-  -webkit-tap-highlight-color: transparent;
   user-select: none;
   -webkit-user-select: none;
+  position: relative;
+  z-index: 2;
   white-space: nowrap;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.25s ease,
+              border-color 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
 }
 
-.island-btn:hover {
-  background: rgba(255, 255, 255, 0.06);
+.fluid-filter-pill .filter-icon {
+  font-size: 21px;
+  line-height: 1;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.12));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.island-btn:active {
-  transform: scale(0.97);
+.fluid-filter-pill .filter-label {
+  font-family: 'Noto Serif Devanagari', Georgia, serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0d2b1f;
+  letter-spacing: 0;
 }
 
-/* Sophisticated restrained blue illumination on active state */
-.island-btn.active {
-  background: rgba(30, 58, 138, 0.42);
-  border: 1px solid rgba(147, 197, 253, 0.3);
-  box-shadow:
-    0 0 20px -2px rgba(37, 99, 235, 0.45),
-    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+.fluid-filter-pill .filter-arrow {
+  font-size: 19px;
+  font-weight: 600;
+  color: #557263;
+  margin-left: 2px;
+  transition: transform 0.25s ease, color 0.25s ease;
+  display: inline-block;
 }
 
-/* Vector icon container */
-.island-icon-wrap {
-  display: grid;
-  place-items: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.82);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  flex-shrink: 0;
+.fluid-filter-pill:hover {
+  transform: translateY(-2.5px) scale(1.02);
+  z-index: 4;
 }
-.island-icon {
-  display: block;
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+.fluid-filter-pill:hover .filter-arrow {
+  transform: translateX(3px);
+  color: var(--forest);
 }
-.island-btn:hover .island-icon-wrap {
-  background: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
+.fluid-filter-pill:hover .filter-icon {
+  transform: scale(1.18);
 }
-.island-btn:hover .island-icon {
+.fluid-filter-pill:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Category Ambient Glow Colors (Exact match to values ribbon in Screenshot 04-34-37) */
+.filter-all {
+  border-color: rgba(251, 207, 232, 0.9);
+  box-shadow: 0 8px 24px rgba(244, 114, 182, 0.32), inset 0 2px 1px #ffffff;
+}
+.filter-all:hover {
+  box-shadow: 0 12px 32px rgba(244, 114, 182, 0.46), inset 0 2px 1px #ffffff;
+}
+
+.filter-garlands {
+  border-color: rgba(187, 247, 208, 0.9);
+  box-shadow: 0 8px 24px rgba(34, 197, 94, 0.28), inset 0 2px 1px #ffffff;
+}
+.filter-garlands:hover {
+  box-shadow: 0 12px 32px rgba(34, 197, 94, 0.42), inset 0 2px 1px #ffffff;
+}
+
+.filter-bouquets {
+  border-color: rgba(186, 230, 253, 0.9);
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.28), inset 0 2px 1px #ffffff;
+}
+.filter-bouquets:hover {
+  box-shadow: 0 12px 32px rgba(56, 189, 248, 0.42), inset 0 2px 1px #ffffff;
+}
+
+.filter-decor {
+  border-color: rgba(254, 202, 202, 0.9);
+  box-shadow: 0 8px 24px rgba(248, 113, 113, 0.28), inset 0 2px 1px #ffffff;
+}
+.filter-decor:hover {
+  box-shadow: 0 12px 32px rgba(248, 113, 113, 0.42), inset 0 2px 1px #ffffff;
+}
+
+.filter-belts {
+  border-color: rgba(254, 240, 138, 0.95);
+  box-shadow: 0 8px 24px rgba(250, 204, 21, 0.36), inset 0 2px 1px #ffffff;
+}
+.filter-belts:hover {
+  box-shadow: 0 12px 32px rgba(250, 204, 21, 0.52), inset 0 2px 1px #ffffff;
+}
+
+/* Active State: Elevated luminous focus pill with green contour */
+.fluid-filter-pill.active {
+  background: linear-gradient(180deg, #ffffff 0%, #ecfdf5 100%);
+  border-color: #10b853 !important;
+  box-shadow: 0 12px 32px rgba(16, 184, 83, 0.38), inset 0 2px 1px #ffffff !important;
+  transform: translateY(-2px);
+  z-index: 5;
+}
+.fluid-filter-pill.active .filter-label {
+  color: #065427;
+  font-weight: 800;
+}
+.fluid-filter-pill.active .filter-arrow {
+  color: #10b853;
+  transform: translateX(2px);
+}
+.fluid-filter-pill.active .filter-icon {
   transform: scale(1.15);
 }
-.island-btn.active .island-icon-wrap {
-  background: rgba(37, 99, 235, 0.45);
-  color: #ffffff;
-  box-shadow: 0 0 12px rgba(96, 165, 250, 0.55);
-}
-.island-btn.active .island-icon {
-  transform: scale(1.12);
+
+/* Organic Concave SVG Waist Bridges */
+.fluid-filter-waist {
+  width: 28px;
+  height: 50px;
+  margin-inline: -14px;
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Razor-sharp white typography */
-.island-text-cluster {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  line-height: 1.18;
+.filter-waist-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
-.island-mr {
-  font-family: 'Noto Serif Devanagari', serif;
-  font-size: 14px;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: 0.2px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
-  white-space: nowrap;
-  transition: color 0.2s ease;
+
+.fluid-filter-waist.waist-1 {
+  filter: drop-shadow(0 6px 14px rgba(244, 114, 182, 0.28));
 }
-.island-en {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 10px;
-  font-weight: 500;
-  color: rgba(226, 232, 240, 0.72);
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  margin-top: 1.5px;
-  white-space: nowrap;
-  transition: color 0.2s ease;
+.fluid-filter-waist.waist-2 {
+  filter: drop-shadow(0 6px 14px rgba(34, 197, 94, 0.24));
 }
-.island-btn.active .island-en {
-  color: #93c5fd;
+.fluid-filter-waist.waist-3 {
+  filter: drop-shadow(0 6px 14px rgba(56, 189, 248, 0.24));
+}
+.fluid-filter-waist.waist-4 {
+  filter: drop-shadow(0 6px 14px rgba(250, 204, 21, 0.28));
+}
+
+.filter-text-short {
+  display: none;
+}
+
+@media (max-width: 680px) {
+  .filter-text-full {
+    display: none;
+  }
+  .filter-text-short {
+    display: inline;
+  }
+  .fluid-filter-ribbon-wrap {
+    padding-inline: 12px;
+    justify-content: flex-start;
+  }
+  .fluid-filter-pill {
+    height: 44px;
+    padding: 0 14px 0 12px;
+    gap: 7px;
+  }
+  .fluid-filter-pill .filter-icon {
+    font-size: 18px;
+  }
+  .fluid-filter-pill .filter-label {
+    font-size: 13.5px;
+  }
+  .fluid-filter-pill .filter-arrow {
+    font-size: 16px;
+  }
+  .fluid-filter-waist {
+    height: 44px;
+    width: 26px;
+    margin-inline: -13px;
+  }
 }
 
 .gallery-toolbar {
@@ -3924,7 +3864,7 @@ dialog::backdrop { background: rgba(8, 24, 17, 0.94); }
   }
   .inquire small { display: none; }
   
-  .dynamic-island-ticker-wrap {
+  .fluid-filter-ribbon-wrap {
     margin-inline: -16px;
     padding-inline: 16px;
     width: calc(100% + 32px);
@@ -3932,30 +3872,6 @@ dialog::backdrop { background: rgba(8, 24, 17, 0.94); }
     scrollbar-width: none;
     mask-image: linear-gradient(90deg, transparent 0, #000 16px, #000 calc(100% - 16px), transparent 100%);
     -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 16px, #000 calc(100% - 16px), transparent 100%);
-  }
-  .dynamic-island-ticker {
-    padding: 5px 6px;
-  }
-  .island-btn {
-    padding: 6px 12px;
-    gap: 7px;
-  }
-  .island-icon-wrap {
-    width: 24px;
-    height: 24px;
-  }
-  .island-icon {
-    width: 14px;
-    height: 14px;
-  }
-  .island-mr {
-    font-size: 12.5px;
-  }
-  .island-en {
-    font-size: 9px;
-  }
-  .island-divider {
-    height: 18px;
   }
 
   /* Mobile Show More Button */
