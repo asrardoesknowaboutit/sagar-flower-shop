@@ -4282,19 +4282,18 @@ dialog::backdrop { background: rgba(8, 24, 17, 0.94); }
 @media (max-width: 760px) {
   .header { height: 64px; gap: 10px; padding-inline: clamp(12px, 4vw, 20px); }
   .shop-logo { width: clamp(100px, 28vw, 120px); height: 52px; }
-  .header-fluid-order { min-height: 44px; padding: 5px 7px 5px 10px; gap: 6px; box-shadow: 0 2px 8px #0d2b1f12; }
+  .header-fluid-order { min-height: 44px; padding: 5px 7px 5px 10px; gap: 6px; }
   .header-order-wa { font-size: clamp(11px, 3vw, 13px); gap: 6px; padding: 0; }
   .header-order-arrow { width: 26px; height: 26px; }
   .header-wa-icon { width: 16px; height: 16px; }
   .reference-actions { padding-bottom: 12px; }
   .reference-actions .fluid-action-pod-wrap { margin-bottom: 14px; }
-  .reference-actions .fluid-action-pod { min-height: 0; gap: 8px; filter: none; }
+  .reference-actions .fluid-action-pod { min-height: 0; gap: 0;  }
   .reference-actions .fluid-unit {
     min-height: 60px; padding: 9px 12px; gap: 10px;
-    border-width: 1px; border-radius: 18px; position: relative;
+    position: relative;
   }
-  .reference-actions .fluid-unit-call { margin-top: 0; }
-  .reference-actions .fluid-unit-wa::after { display: none; }
+  .reference-actions .fluid-unit-call { margin-top: 12px; }
   .reference-actions .wa-badge,
   .reference-actions .wa-badge .wa-svg,
   .reference-actions .call-badge { width: 34px; height: 34px; flex-shrink: 0; }
@@ -4304,59 +4303,50 @@ dialog::backdrop { background: rgba(8, 24, 17, 0.94); }
   .reference-actions .fluid-unit .fluid-sub { font-size: 10px; line-height: 1.4; margin-top: 2px; }
   .reference-actions .fluid-circle-arrow { width: 27px; height: 27px; flex-shrink: 0; }
   .reference-actions .fluid-circle-arrow svg { width: 15px; height: 15px; }
-  .reference-actions .fluid-tags-ribbon { gap: 8px; filter: none; }
-  .reference-actions .fluid-tag-pill { min-width: 0; height: auto; min-height: 46px; padding: 8px 10px; gap: 6px; border-radius: 14px; border-width: 1px; }
+  .reference-actions .fluid-tags-ribbon { gap: 8px 0;  }
+  .reference-actions .fluid-tag-pill { min-width: 0; height: auto; min-height: 46px; padding: 8px 10px; gap: 6px;  }
   .reference-actions .fluid-tag-pill .tag-label { font-size: clamp(11px, 3vw, 14px); white-space: normal; line-height: 1.4; }
   .reference-actions .fluid-tag-pill .tag-arrow { font-size: 17px; flex-shrink: 0; }
   .reference-actions .tag-sticker { width: 20px; height: 20px; flex-shrink: 0; }
   .fluid-filter-ribbon-wrap { padding-block: 6px 12px; margin-bottom: 4px; }
-  .fluid-filter-ribbon { gap: 6px; margin-inline: 0; filter: none; }
-  .fluid-filter-waist { display: none; }
-  .fluid-filter-pill { height: 44px; padding: 0 12px; gap: 6px; box-shadow: 0 2px 6px #0d2b1f0a; }
+  .fluid-filter-ribbon { gap: 0; margin-inline: 0;  }
+  .fluid-filter-waist { height: 44px; width: 24px; margin-inline: -12px; }
+  .fluid-filter-pill { height: 44px; padding: 0 12px; gap: 6px; }
   .fluid-filter-pill .filter-label { font-size: 12px; }
-  .fluid-filter-pill .filter-arrow { display: none; }
   .fluid-filter-pill .filter-sticker { width: 20px; height: 20px; }
   .fluid-filter-pill .filter-text-full { display: none; }
   .fluid-filter-pill .filter-text-short { display: inline; }
-  .inquire, .fluid-card-inquire { min-height: 44px; padding: 7px 8px; gap: 5px; box-shadow: 0 2px 6px #10b85320; }
+  .inquire, .fluid-card-inquire { min-height: 44px; padding: 7px 8px; gap: 5px; }
   .inquire-wa-part { gap: 4px; font-size: clamp(10px, 2.7vw, 12px); min-width: 0; white-space: normal; line-height: 1.4; }
   .inquire-wa-svg { width: 14px; height: 14px; }
   .inquire-arrow-pod { width: 22px; height: 22px; }
-  .neo-load-more { width: auto; max-width: 100%; min-height: 48px; box-shadow: 0 3px 10px #0d2b1f14; }
+  .neo-load-more { width: auto; max-width: 100%; min-height: 48px; }
   .load-more-content { padding: 7px 10px; gap: 8px; }
   .load-more-icon-wrap { width: 28px; height: 28px; }
   .load-more-primary { font-size: 12px; }
   .load-more-secondary { font-size: 9px; }
   .load-more-arrow-wrap { width: 24px; height: 24px; }
   .mobile-nav { left: 10px; right: 10px; bottom: calc(8px + env(safe-area-inset-bottom)); }
-  .fluid-mobile-dock { padding: 4px; gap: 2px; box-shadow: 0 4px 16px #0d2b1f1c; }
+  .fluid-mobile-dock { padding: 4px; gap: 2px; }
   .fluid-mobile-item { min-height: 44px; padding: 5px 4px; gap: 3px; }
   .fluid-mobile-item .dock-icon { font-size: 16px; }
   .fluid-mobile-item .dock-text { font-size: 10px; }
   .floating-wa-wrap { bottom: calc(74px + env(safe-area-inset-bottom)); right: 12px; }
-  .floating-wa, .fluid-floating-pill { width: 46px; height: 46px; padding: 4px; justify-content: center; gap: 0; box-shadow: 0 3px 10px #0d2b1f26; }
-  .floating-wa-copy, .floating-wa-pulse { display: none; }
+  .floating-wa, .fluid-floating-pill { min-height: 46px; padding: 4px 12px 4px 4px; gap: 7px; }
   .floating-wa-icon-box { width: 34px; height: 34px; }
   .floating-wa-icon-box svg { width: 22px; height: 22px; }
-  .footer-fluid-dock { gap: 5px; flex-wrap: wrap; border-radius: 16px; }
+  .footer-fluid-dock { gap: 3px; flex-wrap: wrap; }
   .footer-fluid-pill { min-height: 44px; padding: 7px 8px; font-size: 11px; }
   .maps-nav-action-btn { min-height: 44px; }
 }
-@media (min-width: 480px) and (max-width: 760px) {
-  .reference-actions .fluid-action-pod { grid-template-columns: 1.1fr 1fr; }
-  .reference-actions .fluid-unit { gap: 8px; }
-  .reference-actions .fluid-unit .fluid-sub { font-size: 9px; }
-  .reference-actions .fluid-circle-arrow { display: none; }
-}
 @media (max-width: 760px) {
   .values-strip { padding-block: 10px; }
-  .fluid-values-ribbon { gap: 6px; filter: none; }
-  .fluid-val-waist { display: none; }
-  .fluid-val-pill { min-height: 44px; height: auto; padding: 8px 12px; gap: 6px; box-shadow: 0 2px 6px #0d2b1f0a; }
+  .fluid-values-ribbon { gap: 0;  }
+  .fluid-val-waist { height: 44px; width: 24px; margin-inline: -12px; }
+  .fluid-val-pill { min-height: 44px; height: 44px; padding: 0 12px; gap: 6px; }
   .fluid-val-pill .val-label { font-size: 12px; }
   .fluid-val-pill .val-arrow { font-size: 16px; }
   .fluid-val-pill .val-sticker { width: 20px; height: 20px; }
-  .fluid-filter-pill.active { box-shadow: 0 2px 8px #10b85324; }
   .hero-caption-cta { min-height: 44px; display: inline-flex; align-items: center; }
   .hero-video-live-badge { max-width: calc(100% - 76px); font-size: clamp(9px, 2.5vw, 11px); padding: 5px 9px; gap: 5px; }
 }
