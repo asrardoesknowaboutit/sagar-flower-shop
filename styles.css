@@ -483,22 +483,24 @@ button[hidden], [hidden] { display: none !important; }
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: heroLevitate 5s ease-in-out infinite alternate;
-  will-change: transform;
+  animation: none !important;
+  transform: none !important;
 }
 
 .hero-subject-img {
+  position: relative;
+  z-index: 2;
   width: clamp(260px, 34vw, 440px);
   height: clamp(260px, 34vw, 440px);
   object-fit: contain;
   filter: drop-shadow(0 26px 36px rgba(23, 26, 31, 0.22)) drop-shadow(0 6px 14px rgba(183, 148, 90, 0.16));
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   user-select: none;
   -webkit-user-drag: none;
+  transform: none !important;
 }
 
 .hero-subject-wrapper:hover .hero-subject-img {
-  transform: scale(1.04) rotate(-1deg);
+  transform: none !important;
 }
 
 .hero-subject-shadow {
@@ -512,19 +514,88 @@ button[hidden], [hidden] { display: none !important; }
   border-radius: 50%;
   filter: blur(12px);
   pointer-events: none;
-  animation: shadowPulse 5s ease-in-out infinite alternate;
+  z-index: 0;
 }
 
-@keyframes heroLevitate {
-  0% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-16px) rotate(1.3deg); }
-  100% { transform: translateY(0px) rotate(0deg); }
+/* ==========================================================================
+   ULTRA-THIN LIQUID-SILVER MERCURY CONTOUR RING
+   ========================================================================== */
+.hero-liquid-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateZ(0);
+  width: 115%;
+  height: 115%;
+  pointer-events: none;
+  overflow: visible;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
-@keyframes shadowPulse {
-  0% { transform: translateX(-50%) scale(1); opacity: 0.85; }
-  50% { transform: translateX(-50%) scale(0.86); opacity: 0.5; }
-  100% { transform: translateX(-50%) scale(1); opacity: 0.85; }
+.hero-liquid-ring.ring-back {
+  z-index: 1;
+}
+
+.hero-liquid-ring.ring-front {
+  z-index: 3;
+}
+
+/* Base and Traveling Specular Highlights */
+.liquid-contour-base {
+  will-change: auto;
+}
+
+.liquid-caustic-stream {
+  stroke-dasharray: 120 280 90 350 180 260 70 320;
+  stroke-dashoffset: 0;
+  animation: mercuryCirculateFlow 26s linear infinite;
+  will-change: stroke-dashoffset;
+}
+
+.liquid-caustic-stream-front {
+  stroke-dasharray: 60 140 40 180;
+  stroke-dashoffset: 0;
+  animation: mercuryCirculateFlowFront 26s linear infinite;
+  will-change: stroke-dashoffset;
+}
+
+@keyframes mercuryCirculateFlow {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -2805.16px; }
+}
+
+@keyframes mercuryCirculateFlowFront {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -2805.16px; }
+}
+
+/* Fluid Surface Tension Breathing on Meniscus Flare */
+.liquid-fluid-envelope {
+  animation: mercurySurfaceTension 8s ease-in-out infinite alternate;
+  transform-origin: 930px 480px;
+}
+
+@keyframes mercurySurfaceTension {
+  0% { opacity: 0.82; transform: scale(0.994); }
+  100% { opacity: 0.95; transform: scale(1.006); }
+}
+
+/* Orbiting Mercury Micro-Droplets */
+.orbiting-bead {
+  filter: drop-shadow(0 2px 3px rgba(20, 28, 38, 0.4));
+  will-change: transform;
+}
+
+/* Suspended Liquid Mercury Droplets */
+.liquid-mercury-droplet {
+  filter: drop-shadow(0 2px 3px rgba(20, 28, 38, 0.35));
+  animation: dropletMicroDrift 6s ease-in-out infinite alternate;
+}
+
+@keyframes dropletMicroDrift {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(0.5px, -0.6px); }
 }
 
 /* Slide Content (Bilingual Titles, Dual CTAs) */
@@ -4739,7 +4810,7 @@ dialog::backdrop { background: rgba(10, 24, 43, 0.94); }
 .hero-display-type span:last-child { font-style: italic; color: #b7945a; }
 .hero-3d-stage { height: 410px; max-width: 900px; z-index: 1; }
 .hero-subject-img { width: 460px; height: 460px; filter: drop-shadow(0 20px 18px #183a6318); }
-.hero-subject-wrapper { animation: editorialFloat 7s ease-in-out infinite; }
+.hero-subject-wrapper { animation: none !important; transform: none !important; }
 .hero-subject-shadow { bottom: 0; opacity: .35; }
 .hero-slide-content { margin-top: 10px; }
 .hero-slide-title .title-mr { font-size: clamp(24px, 2.4vw, 34px); line-height: 1.5; font-weight: 600; }
@@ -4751,7 +4822,6 @@ dialog::backdrop { background: rgba(10, 24, 43, 0.94); }
 .hero-slide.slide-morph-in { transform: translateX(35px) !important; filter: none; }
 .hero-slide.slide-morph-blooming { filter: none !important; }
 .hero-3d-showcase.is-morphing .hero-subject-img { filter: drop-shadow(0 20px 18px #183a6318); }
-@keyframes editorialFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 @media (max-width: 768px) {
  .hero-3d-showcase { height: auto; min-height: 690px; max-height: none; padding: 24px 16px 28px; }
  .hero-editorial-eyebrow { font-size: 8px; letter-spacing: 1.6px; }

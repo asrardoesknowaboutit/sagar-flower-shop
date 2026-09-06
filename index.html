@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#183A63"><title>Sagar Flower Shop | Garlands, Bouquets & Wedding Décor in Parli</title><meta name="description" content="Flowers for life's beautiful moments. Explore Sagar Flower Shop's wedding garlands, bouquets, floral belts and event decorations in Parli. Enquire on WhatsApp."><link rel="canonical" href="https://sagarflowershopparli.github.io/sagar-flower-shop/"><meta property="og:type" content="website"><meta property="og:title" content="Sagar Flower Shop — Made for your moments"><meta property="og:description" content="Wedding garlands, thoughtful bouquets & beautiful celebrations. Discover our floral portfolio in Parli."><meta property="og:url" content="https://sagarflowershopparli.github.io/sagar-flower-shop/"><meta property="og:image" content="https://sagarflowershopparli.github.io/sagar-flower-shop/assets/videos/delivery-poster.webp"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css?v=glass-minimal-v5"><link rel="preload" as="image" href="assets/brand/hero/hero-bouquet-editorial.webp" fetchpriority="high"><link rel="preload" as="image" href="assets/videos/delivery-poster.webp"><script src="app.js?v=glass-minimal-v5" defer></script>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#183A63"><title>Sagar Flower Shop | Garlands, Bouquets & Wedding Décor in Parli</title><meta name="description" content="Flowers for life's beautiful moments. Explore Sagar Flower Shop's wedding garlands, bouquets, floral belts and event decorations in Parli. Enquire on WhatsApp."><link rel="canonical" href="https://sagarflowershopparli.github.io/sagar-flower-shop/"><meta property="og:type" content="website"><meta property="og:title" content="Sagar Flower Shop — Made for your moments"><meta property="og:description" content="Wedding garlands, thoughtful bouquets & beautiful celebrations. Discover our floral portfolio in Parli."><meta property="og:url" content="https://sagarflowershopparli.github.io/sagar-flower-shop/"><meta property="og:image" content="https://sagarflowershopparli.github.io/sagar-flower-shop/assets/videos/delivery-poster.webp"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css?v=liquid-silver-v1"><link rel="preload" as="image" href="assets/brand/hero/hero-bouquet-editorial.webp" fetchpriority="high"><link rel="preload" as="image" href="assets/videos/delivery-poster.webp"><script src="app.js?v=liquid-silver-v1" defer></script>
 <style>
 /* Instant Inlined Cache-Proof Glassmorphism & Minimalist Navbar Styles */
 @media (max-width: 768px) {
@@ -166,6 +166,57 @@
     </defs>
   </svg>
 
+  <!-- Ultra-Thin Liquid-Silver Mercury Contour Defs -->
+  <svg class="hero-liquid-defs" aria-hidden="true" style="position: absolute; width: 0; height: 0; pointer-events: none; overflow: hidden;">
+    <defs>
+      <!-- Base Mercury / Polished Liquid Chrome Reflection -->
+      <linearGradient id="mercuryChrome" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ffffff"/>
+        <stop offset="14%" stop-color="#d4dee8"/>
+        <stop offset="32%" stop-color="#8495a6"/>
+        <stop offset="50%" stop-color="#ffffff"/>
+        <stop offset="68%" stop-color="#4a5969"/>
+        <stop offset="84%" stop-color="#cbd6e2"/>
+        <stop offset="100%" stop-color="#8fa0b2"/>
+      </linearGradient>
+
+      <!-- Front Mercury Segment Gradient (Optimized for Foreground Occlusion) -->
+      <linearGradient id="mercuryChromeFront" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ffffff"/>
+        <stop offset="20%" stop-color="#d8e2ed"/>
+        <stop offset="45%" stop-color="#92a4b6"/>
+        <stop offset="65%" stop-color="#ffffff"/>
+        <stop offset="85%" stop-color="#4e5d6d"/>
+        <stop offset="100%" stop-color="#c0cddb"/>
+      </linearGradient>
+
+      <!-- Specular Traveling Highlight (Pure Liquid Caustic) -->
+      <linearGradient id="mercuryCaustic" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.2"/>
+        <stop offset="50%" stop-color="#ffffff" stop-opacity="1"/>
+        <stop offset="100%" stop-color="#ffffff" stop-opacity="0.2"/>
+      </linearGradient>
+
+      <!-- 3D Spherical Mercury Droplet / Bead Gradient with Surface Tension -->
+      <radialGradient id="mercuryDroplet" cx="32%" cy="30%" r="68%">
+        <stop offset="0%" stop-color="#ffffff"/>
+        <stop offset="22%" stop-color="#e8eef5"/>
+        <stop offset="52%" stop-color="#a4b4c4"/>
+        <stop offset="78%" stop-color="#516070"/>
+        <stop offset="100%" stop-color="#242e39"/>
+      </radialGradient>
+
+      <!-- Restrained Liquid Glow & Meniscus Refraction Sheen -->
+      <filter id="mercurySheen" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.2" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+  </svg>
+
   <!-- Slides Track / Viewport -->
   <div class="hero-slides-viewport" id="heroViewport">
 
@@ -174,8 +225,82 @@
       <div class="hero-display-type" aria-hidden="true"><span>Fresh</span><span>Blooms</span></div>
       <div class="hero-3d-stage">
         <div class="hero-subject-wrapper">
+          <!-- Liquid Silver Mercury Contour Ring (Behind Layer: passes behind bouquet) -->
+          <svg class="hero-liquid-ring ring-back" viewBox="0 0 1000 1000" aria-hidden="true">
+            <g filter="url(#mercurySheen)">
+              <!-- Ambient soft depth shadow -->
+              <path d="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z"
+                    fill="none" stroke="#25323f" stroke-width="4.2" opacity="0.18"/>
+
+              <!-- Base Ultra-Thin Liquid Chrome Fluid Tube -->
+              <path class="liquid-contour-base"
+                    d="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z"
+                    fill="none" stroke="url(#mercuryChrome)" stroke-width="2.6" stroke-linecap="round"/>
+
+              <!-- Organic Fluid Swell / Double Stream at Mid-Right (Surface tension flare) -->
+              <path class="liquid-fluid-envelope"
+                    d="M 905.1,303.0 C 935,355 968,435 965,510 C 962,580 938,640 865.2,693.8 C 910,635 940,560 942,490 C 944,425 922,355 905.1,303.0 Z"
+                    fill="url(#mercuryChrome)" opacity="0.88"/>
+              <path d="M 905.1,303.0 C 935,355 968,435 965,510 C 962,580 938,640 865.2,693.8"
+                    fill="none" stroke="#ffffff" stroke-width="0.9" opacity="0.95"/>
+
+              <!-- Continuous Circulating Specular Caustics / Fluid Highlights -->
+              <path class="liquid-caustic-stream"
+                    d="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z"
+                    fill="none" stroke="url(#mercuryCaustic)" stroke-width="1.8" stroke-linecap="round"/>
+
+              <!-- Specular Hairline Core -->
+              <path d="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z"
+                    fill="none" stroke="#ffffff" stroke-width="0.9" opacity="0.92"/>
+
+              <!-- Realistic Suspended Liquid Mercury Droplets (Spherical 3D Chrome Beads) -->
+              <circle class="liquid-mercury-droplet" cx="770" cy="80" r="4.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="792" cy="100" r="2.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="820" cy="140" r="3.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="962" cy="460" r="4.8" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="978" cy="485" r="2.4" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="920" cy="660" r="3.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="890" cy="670" r="5.6" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="250" cy="830" r="4.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="225" cy="855" r="2.4" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="62" cy="520" r="3.6" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="95" cy="240" r="4.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="118" cy="218" r="2.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="430" cy="32" r="2.6" fill="url(#mercuryDroplet)"/>
+
+              <!-- Continuously Orbiting Liquid Mercury Beads (Circulating Along Path) -->
+              <circle class="orbiting-bead" r="3.6" fill="url(#mercuryDroplet)">
+                <animateMotion dur="26s" repeatCount="indefinite"
+                  path="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z" />
+              </circle>
+              <circle class="orbiting-bead" r="2.8" fill="url(#mercuryDroplet)">
+                <animateMotion dur="26s" begin="-8.6s" repeatCount="indefinite"
+                  path="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z" />
+              </circle>
+              <circle class="orbiting-bead" r="4.0" fill="url(#mercuryDroplet)">
+                <animateMotion dur="26s" begin="-17.3s" repeatCount="indefinite"
+                  path="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z" />
+              </circle>
+            </g>
+          </svg>
+
+          <!-- Stationary Bouquet Image (Z-index: 2) -->
           <img class="hero-subject-img" src="assets/brand/hero/hero-bouquet-editorial.webp" alt="ताजी फुले व बुके · Fresh Bloom Bouquets" width="1254" height="1254" loading="eager" fetchpriority="high">
           <div class="hero-subject-shadow" aria-hidden="true"></div>
+
+          <!-- Liquid Silver Mercury Contour Ring (Front Occlusion Layer: passes in front of ribbon) -->
+          <svg class="hero-liquid-ring ring-front" viewBox="0 0 1000 1000" aria-hidden="true">
+            <g filter="url(#mercurySheen)">
+              <path class="liquid-contour-base"
+                    d="M 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0"
+                    fill="none" stroke="url(#mercuryChromeFront)" stroke-width="2.8" stroke-linecap="round"/>
+              <path class="liquid-caustic-stream-front"
+                    d="M 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0"
+                    fill="none" stroke="url(#mercuryCaustic)" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0"
+                    fill="none" stroke="#ffffff" stroke-width="0.9" opacity="0.95"/>
+            </g>
+          </svg>
         </div>
       </div>
       <div class="hero-slide-content">
@@ -203,7 +328,48 @@
       <div class="hero-display-type" aria-hidden="true"><span>Wedding</span><span>Flowers</span></div>
       <div class="hero-3d-stage">
         <div class="hero-subject-wrapper">
-          <img class="hero-subject-img" src="assets/brand/hero/hero-varmala.webp" alt="शाही लग्नहार व वरमाला · Royal Wedding Varmala" width="1024" height="1024" loading="eager">
+          <!-- Liquid Silver Mercury Contour Ring -->
+          <svg class="hero-liquid-ring ring-back" viewBox="0 0 1000 1000" aria-hidden="true">
+            <g filter="url(#mercurySheen)">
+              <path d="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z"
+                    fill="none" stroke="#25323f" stroke-width="4.2" opacity="0.18"/>
+              <path class="liquid-contour-base"
+                    d="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z"
+                    fill="none" stroke="url(#mercuryChrome)" stroke-width="2.6" stroke-linecap="round"/>
+              <path class="liquid-fluid-envelope"
+                    d="M 905.1,303.0 C 935,355 968,435 965,510 C 962,580 938,640 865.2,693.8 C 910,635 940,560 942,490 C 944,425 922,355 905.1,303.0 Z"
+                    fill="url(#mercuryChrome)" opacity="0.88"/>
+              <path d="M 905.1,303.0 C 935,355 968,435 965,510 C 962,580 938,640 865.2,693.8"
+                    fill="none" stroke="#ffffff" stroke-width="0.9" opacity="0.95"/>
+              <path class="liquid-caustic-stream"
+                    d="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z"
+                    fill="none" stroke="url(#mercuryCaustic)" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z"
+                    fill="none" stroke="#ffffff" stroke-width="0.9" opacity="0.92"/>
+              <circle class="liquid-mercury-droplet" cx="770" cy="80" r="4.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="792" cy="100" r="2.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="820" cy="140" r="3.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="962" cy="460" r="4.8" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="920" cy="660" r="3.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="890" cy="670" r="5.6" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="250" cy="830" r="4.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="62" cy="520" r="3.6" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="95" cy="240" r="4.2" fill="url(#mercuryDroplet)"/>
+              <circle class="orbiting-bead" r="3.6" fill="url(#mercuryDroplet)">
+                <animateMotion dur="26s" repeatCount="indefinite"
+                  path="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z" />
+              </circle>
+              <circle class="orbiting-bead" r="2.8" fill="url(#mercuryDroplet)">
+                <animateMotion dur="26s" begin="-8.6s" repeatCount="indefinite"
+                  path="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z" />
+              </circle>
+              <circle class="orbiting-bead" r="4.0" fill="url(#mercuryDroplet)">
+                <animateMotion dur="26s" begin="-17.3s" repeatCount="indefinite"
+                  path="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z" />
+              </circle>
+            </g>
+          </svg>
+<img class="hero-subject-img" src="assets/brand/hero/hero-varmala.webp" alt="शाही लग्नहार व वरमाला · Royal Wedding Varmala" width="1024" height="1024" loading="eager">
           <div class="hero-subject-shadow" aria-hidden="true"></div>
         </div>
       </div>
@@ -232,7 +398,48 @@
       <div class="hero-display-type" aria-hidden="true"><span>Grand</span><span>Arrivals</span></div>
       <div class="hero-3d-stage">
         <div class="hero-subject-wrapper">
-          <img class="hero-subject-img" src="assets/brand/hero/hero-cardecor.webp" alt="लग्न कार व मंडप सजावट · Car & Mandap Décor" width="1024" height="1024" loading="eager">
+          <!-- Liquid Silver Mercury Contour Ring -->
+          <svg class="hero-liquid-ring ring-back" viewBox="0 0 1000 1000" aria-hidden="true">
+            <g filter="url(#mercurySheen)">
+              <path d="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z"
+                    fill="none" stroke="#25323f" stroke-width="4.2" opacity="0.18"/>
+              <path class="liquid-contour-base"
+                    d="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z"
+                    fill="none" stroke="url(#mercuryChrome)" stroke-width="2.6" stroke-linecap="round"/>
+              <path class="liquid-fluid-envelope"
+                    d="M 905.1,303.0 C 935,355 968,435 965,510 C 962,580 938,640 865.2,693.8 C 910,635 940,560 942,490 C 944,425 922,355 905.1,303.0 Z"
+                    fill="url(#mercuryChrome)" opacity="0.88"/>
+              <path d="M 905.1,303.0 C 935,355 968,435 965,510 C 962,580 938,640 865.2,693.8"
+                    fill="none" stroke="#ffffff" stroke-width="0.9" opacity="0.95"/>
+              <path class="liquid-caustic-stream"
+                    d="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z"
+                    fill="none" stroke="url(#mercuryCaustic)" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z"
+                    fill="none" stroke="#ffffff" stroke-width="0.9" opacity="0.92"/>
+              <circle class="liquid-mercury-droplet" cx="770" cy="80" r="4.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="792" cy="100" r="2.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="820" cy="140" r="3.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="962" cy="460" r="4.8" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="920" cy="660" r="3.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="890" cy="670" r="5.6" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="250" cy="830" r="4.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="62" cy="520" r="3.6" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="95" cy="240" r="4.2" fill="url(#mercuryDroplet)"/>
+              <circle class="orbiting-bead" r="3.6" fill="url(#mercuryDroplet)">
+                <animateMotion dur="26s" repeatCount="indefinite"
+                  path="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z" />
+              </circle>
+              <circle class="orbiting-bead" r="2.8" fill="url(#mercuryDroplet)">
+                <animateMotion dur="26s" begin="-8.6s" repeatCount="indefinite"
+                  path="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z" />
+              </circle>
+              <circle class="orbiting-bead" r="4.0" fill="url(#mercuryDroplet)">
+                <animateMotion dur="26s" begin="-17.3s" repeatCount="indefinite"
+                  path="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z" />
+              </circle>
+            </g>
+          </svg>
+<img class="hero-subject-img" src="assets/brand/hero/hero-cardecor.webp" alt="लग्न कार व मंडप सजावट · Car & Mandap Décor" width="1024" height="1024" loading="eager">
           <div class="hero-subject-shadow" aria-hidden="true"></div>
         </div>
       </div>
@@ -261,7 +468,48 @@
       <div class="hero-display-type" aria-hidden="true"><span>Floral</span><span>Jewels</span></div>
       <div class="hero-3d-stage">
         <div class="hero-subject-wrapper">
-          <img class="hero-subject-img" src="assets/brand/hero/hero-belt.webp" alt="कमरपट्टा व फ्लोरल ज्वेलरी · Bridal Floral Jewellery" width="1024" height="1024" loading="eager">
+          <!-- Liquid Silver Mercury Contour Ring -->
+          <svg class="hero-liquid-ring ring-back" viewBox="0 0 1000 1000" aria-hidden="true">
+            <g filter="url(#mercurySheen)">
+              <path d="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z"
+                    fill="none" stroke="#25323f" stroke-width="4.2" opacity="0.18"/>
+              <path class="liquid-contour-base"
+                    d="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z"
+                    fill="none" stroke="url(#mercuryChrome)" stroke-width="2.6" stroke-linecap="round"/>
+              <path class="liquid-fluid-envelope"
+                    d="M 905.1,303.0 C 935,355 968,435 965,510 C 962,580 938,640 865.2,693.8 C 910,635 940,560 942,490 C 944,425 922,355 905.1,303.0 Z"
+                    fill="url(#mercuryChrome)" opacity="0.88"/>
+              <path d="M 905.1,303.0 C 935,355 968,435 965,510 C 962,580 938,640 865.2,693.8"
+                    fill="none" stroke="#ffffff" stroke-width="0.9" opacity="0.95"/>
+              <path class="liquid-caustic-stream"
+                    d="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z"
+                    fill="none" stroke="url(#mercuryCaustic)" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z"
+                    fill="none" stroke="#ffffff" stroke-width="0.9" opacity="0.92"/>
+              <circle class="liquid-mercury-droplet" cx="770" cy="80" r="4.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="792" cy="100" r="2.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="820" cy="140" r="3.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="962" cy="460" r="4.8" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="920" cy="660" r="3.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="890" cy="670" r="5.6" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="250" cy="830" r="4.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="62" cy="520" r="3.6" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="95" cy="240" r="4.2" fill="url(#mercuryDroplet)"/>
+              <circle class="orbiting-bead" r="3.6" fill="url(#mercuryDroplet)">
+                <animateMotion dur="26s" repeatCount="indefinite"
+                  path="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z" />
+              </circle>
+              <circle class="orbiting-bead" r="2.8" fill="url(#mercuryDroplet)">
+                <animateMotion dur="26s" begin="-8.6s" repeatCount="indefinite"
+                  path="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z" />
+              </circle>
+              <circle class="orbiting-bead" r="4.0" fill="url(#mercuryDroplet)">
+                <animateMotion dur="26s" begin="-17.3s" repeatCount="indefinite"
+                  path="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z" />
+              </circle>
+            </g>
+          </svg>
+<img class="hero-subject-img" src="assets/brand/hero/hero-belt.webp" alt="कमरपट्टा व फ्लोरल ज्वेलरी · Bridal Floral Jewellery" width="1024" height="1024" loading="eager">
           <div class="hero-subject-shadow" aria-hidden="true"></div>
         </div>
       </div>
@@ -290,7 +538,48 @@
       <div class="hero-display-type" aria-hidden="true"><span>Golden</span><span>Moments</span></div>
       <div class="hero-3d-stage">
         <div class="hero-subject-wrapper">
-          <img class="hero-subject-img" src="assets/brand/hero/hero-jhula.webp" alt="हळदीचा झोपाळा व सजावट · Haldi Ceremony Floral Swing" width="1024" height="1024" loading="eager">
+          <!-- Liquid Silver Mercury Contour Ring -->
+          <svg class="hero-liquid-ring ring-back" viewBox="0 0 1000 1000" aria-hidden="true">
+            <g filter="url(#mercurySheen)">
+              <path d="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z"
+                    fill="none" stroke="#25323f" stroke-width="4.2" opacity="0.18"/>
+              <path class="liquid-contour-base"
+                    d="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z"
+                    fill="none" stroke="url(#mercuryChrome)" stroke-width="2.6" stroke-linecap="round"/>
+              <path class="liquid-fluid-envelope"
+                    d="M 905.1,303.0 C 935,355 968,435 965,510 C 962,580 938,640 865.2,693.8 C 910,635 940,560 942,490 C 944,425 922,355 905.1,303.0 Z"
+                    fill="url(#mercuryChrome)" opacity="0.88"/>
+              <path d="M 905.1,303.0 C 935,355 968,435 965,510 C 962,580 938,640 865.2,693.8"
+                    fill="none" stroke="#ffffff" stroke-width="0.9" opacity="0.95"/>
+              <path class="liquid-caustic-stream"
+                    d="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z"
+                    fill="none" stroke="url(#mercuryCaustic)" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z"
+                    fill="none" stroke="#ffffff" stroke-width="0.9" opacity="0.92"/>
+              <circle class="liquid-mercury-droplet" cx="770" cy="80" r="4.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="792" cy="100" r="2.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="820" cy="140" r="3.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="962" cy="460" r="4.8" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="920" cy="660" r="3.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="890" cy="670" r="5.6" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="250" cy="830" r="4.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="62" cy="520" r="3.6" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="95" cy="240" r="4.2" fill="url(#mercuryDroplet)"/>
+              <circle class="orbiting-bead" r="3.6" fill="url(#mercuryDroplet)">
+                <animateMotion dur="26s" repeatCount="indefinite"
+                  path="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z" />
+              </circle>
+              <circle class="orbiting-bead" r="2.8" fill="url(#mercuryDroplet)">
+                <animateMotion dur="26s" begin="-8.6s" repeatCount="indefinite"
+                  path="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z" />
+              </circle>
+              <circle class="orbiting-bead" r="4.0" fill="url(#mercuryDroplet)">
+                <animateMotion dur="26s" begin="-17.3s" repeatCount="indefinite"
+                  path="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z" />
+              </circle>
+            </g>
+          </svg>
+<img class="hero-subject-img" src="assets/brand/hero/hero-jhula.webp" alt="हळदीचा झोपाळा व सजावट · Haldi Ceremony Floral Swing" width="1024" height="1024" loading="eager">
           <div class="hero-subject-shadow" aria-hidden="true"></div>
         </div>
       </div>
@@ -319,7 +608,48 @@
       <div class="hero-display-type" aria-hidden="true"><span>Sacred</span><span>Blooms</span></div>
       <div class="hero-3d-stage">
         <div class="hero-subject-wrapper">
-          <img class="hero-subject-img" src="assets/brand/hero/hero-urli.webp" alt="शाही उरळी व पूजा फुले · Royal Urli & Festive Flowers" width="1024" height="1024" loading="eager">
+          <!-- Liquid Silver Mercury Contour Ring -->
+          <svg class="hero-liquid-ring ring-back" viewBox="0 0 1000 1000" aria-hidden="true">
+            <g filter="url(#mercurySheen)">
+              <path d="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z"
+                    fill="none" stroke="#25323f" stroke-width="4.2" opacity="0.18"/>
+              <path class="liquid-contour-base"
+                    d="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z"
+                    fill="none" stroke="url(#mercuryChrome)" stroke-width="2.6" stroke-linecap="round"/>
+              <path class="liquid-fluid-envelope"
+                    d="M 905.1,303.0 C 935,355 968,435 965,510 C 962,580 938,640 865.2,693.8 C 910,635 940,560 942,490 C 944,425 922,355 905.1,303.0 Z"
+                    fill="url(#mercuryChrome)" opacity="0.88"/>
+              <path d="M 905.1,303.0 C 935,355 968,435 965,510 C 962,580 938,640 865.2,693.8"
+                    fill="none" stroke="#ffffff" stroke-width="0.9" opacity="0.95"/>
+              <path class="liquid-caustic-stream"
+                    d="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z"
+                    fill="none" stroke="url(#mercuryCaustic)" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z"
+                    fill="none" stroke="#ffffff" stroke-width="0.9" opacity="0.92"/>
+              <circle class="liquid-mercury-droplet" cx="770" cy="80" r="4.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="792" cy="100" r="2.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="820" cy="140" r="3.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="962" cy="460" r="4.8" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="920" cy="660" r="3.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="890" cy="670" r="5.6" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="250" cy="830" r="4.2" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="62" cy="520" r="3.6" fill="url(#mercuryDroplet)"/>
+              <circle class="liquid-mercury-droplet" cx="95" cy="240" r="4.2" fill="url(#mercuryDroplet)"/>
+              <circle class="orbiting-bead" r="3.6" fill="url(#mercuryDroplet)">
+                <animateMotion dur="26s" repeatCount="indefinite"
+                  path="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z" />
+              </circle>
+              <circle class="orbiting-bead" r="2.8" fill="url(#mercuryDroplet)">
+                <animateMotion dur="26s" begin="-8.6s" repeatCount="indefinite"
+                  path="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z" />
+              </circle>
+              <circle class="orbiting-bead" r="4.0" fill="url(#mercuryDroplet)">
+                <animateMotion dur="26s" begin="-17.3s" repeatCount="indefinite"
+                  path="M 953.0,470.5 C 957.6,515.7 947.6,536.9 933.0,574.2 C 918.4,611.4 897.1,653.9 865.2,693.8 C 833.3,733.7 787.5,774.2 741.6,813.4 C 695.8,852.6 639.3,907.1 590.1,929.0 C 540.9,951.0 493.1,949.6 446.6,945.0 C 400.1,940.3 352.9,925.7 311.0,901.1 C 269.1,876.5 227.3,838.6 195.4,797.4 C 163.5,756.2 140.2,707.1 119.6,653.9 C 99.0,600.7 79.5,531.6 71.8,478.5 C 64.1,425.3 66.1,380.1 73.4,334.9 C 80.7,289.7 90.0,245.9 115.6,207.3 C 141.3,168.8 183.4,129.6 227.3,103.7 C 271.1,77.8 330.9,62.5 378.8,51.8 C 426.6,41.2 467.2,37.2 514.4,39.9 C 561.5,42.5 613.4,49.2 661.9,67.8 C 710.4,86.4 764.9,112.3 805.4,151.5 C 846.0,190.7 880.5,249.9 905.1,303.0 C 929.7,356.2 948.3,425.3 953.0,470.5 Z" />
+              </circle>
+            </g>
+          </svg>
+<img class="hero-subject-img" src="assets/brand/hero/hero-urli.webp" alt="शाही उरळी व पूजा फुले · Royal Urli & Festive Flowers" width="1024" height="1024" loading="eager">
           <div class="hero-subject-shadow" aria-hidden="true"></div>
         </div>
       </div>
