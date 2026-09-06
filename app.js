@@ -233,23 +233,89 @@ function initHero3DShowcase() {
 
   const slides = container.querySelectorAll('.hero-slide');
   const pills = container.querySelectorAll('.hero-pagination-pill');
+  const glider = document.getElementById('heroPaginationGlider');
   const prevBtn = document.getElementById('heroPrevBtn');
   const nextBtn = document.getElementById('heroNextBtn');
+  const morphTurbulence = document.getElementById('morphTurbulence');
+  const morphDisplacement = document.getElementById('morphDisplacement');
   if (!slides.length) return;
 
   let currentIndex = 0;
   let autoplayTimer = null;
   let isPaused = false;
+  let morphAnimFrame = null;
   const ROTATION_MS = 5500;
 
-  function setSlide(targetIndex) {
-    if (targetIndex === currentIndex && slides[currentIndex].classList.contains('active')) return;
+  function updateGlider() {
+    if (!glider || currentIndex < 0 || currentIndex >= pills.length) return;
+    const activePill = pills[currentIndex];
+    if (!activePill) return;
+    const leftOffset = activePill.offsetLeft;
+    const pillWidth = activePill.offsetWidth;
+    glider.style.transform = `translateX(${leftOffset}px)`;
+    glider.style.width = `${pillWidth}px`;
+  }
 
-    slides.forEach((s, idx) => {
-      const isActive = idx === targetIndex;
-      s.classList.toggle('active', isActive);
-      s.classList.remove('slide-leaving-prev', 'slide-leaving-next', 'slide-entering-prev', 'slide-entering-next');
-    });
+  function triggerMorphEffect() {
+    if (!morphDisplacement) return;
+    container.classList.add('is-morphing');
+    const startTime = performance.now();
+    const duration = 600;
+    const maxScale = 32;
+
+    if (morphAnimFrame) cancelAnimationFrame(morphAnimFrame);
+
+    function stepMorph(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const currentScale = Math.sin(progress * Math.PI) * maxScale;
+      morphDisplacement.setAttribute('scale', currentScale.toFixed(2));
+
+      if (morphTurbulence) {
+        const freqX = (0.02 + Math.sin(progress * Math.PI) * 0.015).toFixed(3);
+        const freqY = (0.03 + Math.cos(progress * Math.PI) * 0.015).toFixed(3);
+        morphTurbulence.setAttribute('baseFrequency', `${freqX} ${freqY}`);
+      }
+
+      if (progress < 1) {
+        morphAnimFrame = requestAnimationFrame(stepMorph);
+      } else {
+        morphDisplacement.setAttribute('scale', '0');
+        container.classList.remove('is-morphing');
+      }
+    }
+
+    morphAnimFrame = requestAnimationFrame(stepMorph);
+  }
+
+  function setSlide(targetIndex, dir = 'next') {
+    if (targetIndex === currentIndex && slides[currentIndex].classList.contains('active')) {
+      updateGlider();
+      return;
+    }
+
+    const outgoingSlide = slides[currentIndex];
+    const incomingSlide = slides[targetIndex];
+
+    triggerMorphEffect();
+
+    if (outgoingSlide && outgoingSlide !== incomingSlide) {
+      outgoingSlide.classList.remove('active', 'slide-morph-blooming');
+      outgoingSlide.classList.add('slide-morph-out');
+      setTimeout(() => {
+        outgoingSlide.classList.remove('slide-morph-out');
+      }, 550);
+    }
+
+    if (incomingSlide) {
+      incomingSlide.classList.remove('slide-morph-out');
+      incomingSlide.classList.add('slide-morph-in');
+      void incomingSlide.offsetWidth;
+      requestAnimationFrame(() => {
+        incomingSlide.classList.add('active', 'slide-morph-blooming');
+        incomingSlide.classList.remove('slide-morph-in');
+      });
+    }
 
     pills.forEach((pill, idx) => {
       const isActive = idx === targetIndex;
@@ -258,12 +324,16 @@ function initHero3DShowcase() {
     });
 
     currentIndex = targetIndex;
+    updateGlider();
   }
 
   const urlParams = new URLSearchParams(window.location.search);
   const initialSlide = parseInt(urlParams.get('slide'), 10);
   if (!isNaN(initialSlide) && initialSlide >= 0 && initialSlide < slides.length) {
     setSlide(initialSlide);
+  } else {
+    // Initial glider layout
+    requestAnimationFrame(updateGlider);
   }
 
   function nextSlide() {
@@ -395,6 +465,10 @@ function initHero3DShowcase() {
       }
     }
   });
+
+  window.addEventListener('resize', updateGlider, { passive: true });
+  window.addEventListener('load', updateGlider);
+  document.fonts?.ready?.then(updateGlider);
 
   startAutoplay();
 }

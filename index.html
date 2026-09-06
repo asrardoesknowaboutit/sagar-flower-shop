@@ -47,19 +47,21 @@
   </button>
 
   <!-- Ambient Floating Petals Background Layer (Drifting 3D Floral Asset) -->
-  <div class="hero-ambient-petals" aria-hidden="true">
-    <img class="hero-petals-img" src="assets/brand/hero/hero-petals.webp" alt="" width="1024" height="1024">
-  </div>
+  <!-- Organic Floral Morphing SVG Filter (No background visual) -->
+  <svg class="hero-morph-defs" aria-hidden="true" style="position: absolute; width: 0; height: 0; pointer-events: none; overflow: hidden;">
+    <defs>
+      <filter id="floralMorph" x="-20%" y="-20%" width="140%" height="140%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="noise" id="morphTurbulence" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="G" id="morphDisplacement" />
+      </filter>
+    </defs>
+  </svg>
 
   <!-- Slides Track / Viewport -->
   <div class="hero-slides-viewport" id="heroViewport">
 
     <!-- SLIDE 1: Fresh Bloom Bouquets -->
     <article class="hero-slide active" data-slide-index="0" data-category="bouquets">
-      <div class="hero-slide-aura aura-bouquet" aria-hidden="true"></div>
-      <div class="hero-giant-bg-text" aria-hidden="true">
-        <span>BLOOM BOUQUETS</span>
-      </div>
       <div class="hero-3d-stage">
         <div class="hero-subject-wrapper">
           <img class="hero-subject-img" src="assets/brand/hero/hero-bouquet.webp" alt="ताजी फुले व बुके · Fresh Bloom Bouquets" width="1024" height="1024" loading="eager" fetchpriority="high">
@@ -88,10 +90,6 @@
 
     <!-- SLIDE 2: Royal Wedding Varmala -->
     <article class="hero-slide" data-slide-index="1" data-category="garlands">
-      <div class="hero-slide-aura aura-varmala" aria-hidden="true"></div>
-      <div class="hero-giant-bg-text" aria-hidden="true">
-        <span>ROYAL VARMALA</span>
-      </div>
       <div class="hero-3d-stage">
         <div class="hero-subject-wrapper">
           <img class="hero-subject-img" src="assets/brand/hero/hero-varmala.webp" alt="शाही लग्नहार व वरमाला · Royal Wedding Varmala" width="1024" height="1024" loading="eager">
@@ -120,10 +118,6 @@
 
     <!-- SLIDE 3: Wedding Car & Stage Décor -->
     <article class="hero-slide" data-slide-index="2" data-category="decor">
-      <div class="hero-slide-aura aura-decor" aria-hidden="true"></div>
-      <div class="hero-giant-bg-text" aria-hidden="true">
-        <span>CAR & MANDAP</span>
-      </div>
       <div class="hero-3d-stage">
         <div class="hero-subject-wrapper">
           <img class="hero-subject-img" src="assets/brand/hero/hero-cardecor.webp" alt="लग्न कार व मंडप सजावट · Car & Mandap Décor" width="1024" height="1024" loading="eager">
@@ -152,10 +146,6 @@
 
     <!-- SLIDE 4: Floral Jewellery & Waist Belts -->
     <article class="hero-slide" data-slide-index="3" data-category="belts">
-      <div class="hero-slide-aura aura-belt" aria-hidden="true"></div>
-      <div class="hero-giant-bg-text" aria-hidden="true">
-        <span>FLORAL JEWELS</span>
-      </div>
       <div class="hero-3d-stage">
         <div class="hero-subject-wrapper">
           <img class="hero-subject-img" src="assets/brand/hero/hero-belt.webp" alt="कमरपट्टा व फ्लोरल ज्वेलरी · Bridal Floral Jewellery" width="1024" height="1024" loading="eager">
@@ -184,10 +174,6 @@
 
     <!-- SLIDE 5: Haldi Ceremony Floral Swing (Jhula) -->
     <article class="hero-slide" data-slide-index="4" data-category="decor">
-      <div class="hero-slide-aura aura-jhula" aria-hidden="true"></div>
-      <div class="hero-giant-bg-text" aria-hidden="true">
-        <span>HALDI JHULA</span>
-      </div>
       <div class="hero-3d-stage">
         <div class="hero-subject-wrapper">
           <img class="hero-subject-img" src="assets/brand/hero/hero-jhula.webp" alt="हळदीचा झोपाळा व सजावट · Haldi Ceremony Floral Swing" width="1024" height="1024" loading="eager">
@@ -216,10 +202,6 @@
 
     <!-- SLIDE 6: Traditional Urli & Pooja Flowers -->
     <article class="hero-slide" data-slide-index="5" data-category="garlands">
-      <div class="hero-slide-aura aura-urli" aria-hidden="true"></div>
-      <div class="hero-giant-bg-text" aria-hidden="true">
-        <span>POOJA URLI</span>
-      </div>
       <div class="hero-3d-stage">
         <div class="hero-subject-wrapper">
           <img class="hero-subject-img" src="assets/brand/hero/hero-urli.webp" alt="शाही उरळी व पूजा फुले · Royal Urli & Festive Flowers" width="1024" height="1024" loading="eager">
@@ -248,8 +230,9 @@
 
   </div>
 
-  <!-- Bottom Minimal Navigation Dots / Category Pills -->
+  <!-- Bottom Minimal Navigation Dots / Category Pills with Fluid Glider -->
   <div class="hero-pagination-bar" role="tablist" aria-label="Hero Carousel Navigation">
+    <div class="hero-pagination-glider" id="heroPaginationGlider" aria-hidden="true"></div>
     <button class="hero-pagination-pill active" role="tab" aria-selected="true" data-slide-to="0">
       <span class="pill-dot"></span>
       <span class="pill-title">बुके</span>
