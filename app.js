@@ -11,26 +11,24 @@ const whatsapp = (title, marathi = '') => {
   return 'https://wa.me/917620644158?text=' + encodeURIComponent(`नमस्कार! मला ${item} याबद्दल माहिती हवी आहे. / Hello, I would like to order ${item}.`);
 };
 
-// --- HERO VIDEO SOUND TOGGLE ---
+// --- HERO DELIVERY VIDEO (SILENT AUTOPLAY LOOP) ---
 const heroVideo = $('#hero-delivery-video');
-const heroSoundBtn = $('#hero-sound-toggle');
-if (heroVideo && heroSoundBtn) {
-  heroSoundBtn.addEventListener('click', () => {
-    heroVideo.muted = !heroVideo.muted;
-    heroSoundBtn.querySelector('.sound-icon').textContent = heroVideo.muted ? '🔇' : '🔊';
-    heroSoundBtn.setAttribute('aria-label', heroVideo.muted ? 'Unmute hero video' : 'Mute hero video');
-  });
+if (heroVideo) {
+  heroVideo.muted = true;
+  heroVideo.defaultMuted = true;
+  heroVideo.playsInline = true;
+  heroVideo.loop = true;
 }
 
-// --- STORY REEL VIDEOS (AUTOPLAY IN LOOP WITHOUT PLAY BUTTONS) ---
+// --- STORY REEL VIDEOS (AUTOPLAY IN LOOP, STRICTLY MUTED) ---
 const storyVideos = $$('.story-video');
 storyVideos.forEach(video => {
   video.loop = true;
   video.muted = true;
+  video.defaultMuted = true;
   video.playsInline = true;
 
   const card = video.closest('.film-card');
-  const soundBtn = card?.querySelector('.story-sound-toggle');
   const progressFill = card?.querySelector('.film-progress-fill');
 
   // Track progress bar smoothly
@@ -41,35 +39,13 @@ storyVideos.forEach(video => {
     }
   });
 
-  if (soundBtn) {
-    soundBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const willMute = !video.muted;
-      if (!willMute) {
-        storyVideos.forEach(v => {
-          if (v !== video) {
-            v.muted = true;
-            const otherBtn = v.closest('.film-card')?.querySelector('.story-sound-toggle');
-            if (otherBtn) {
-              const icon = otherBtn.querySelector('.sound-icon');
-              if (icon) icon.textContent = '🔇';
-              otherBtn.classList.remove('unmuted');
-            }
-          }
-        });
-        if (heroVideo) {
-          heroVideo.muted = true;
-          if (heroSoundBtn) heroSoundBtn.querySelector('.sound-icon').textContent = '🔇';
-        }
-      }
-      video.muted = willMute;
-      soundBtn.querySelector('.sound-icon').textContent = willMute ? '🔇' : '🔊';
-      soundBtn.classList.toggle('unmuted', !willMute);
-    });
-  }
-
+  // Tap/click video to toggle play/pause silently
   video.addEventListener('click', () => {
-    soundBtn?.click();
+    if (video.paused) {
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
   });
 });
 

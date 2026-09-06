@@ -189,9 +189,6 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
         <span class="live-dot" aria-hidden="true"></span>
         <span>Flowers, on their way · फुले, तुमच्या दारी</span>
       </div>
-      <button class="sound-toggle-btn" id="hero-sound-toggle" aria-label="Toggle hero video sound" title="Toggle sound">
-        <span class="sound-icon">🔇</span>
-      </button>
     </div>
     <div class="hero-video-caption">
       <div>
@@ -557,9 +554,6 @@ for v in videos[:3]:
         <span class="story-tag-dot" aria-hidden="true"></span>
         <span class="story-tag-text">{tag}</span>
       </span>
-      <button class="sound-toggle-btn story-sound-toggle" aria-label="Toggle audio" title="आवाज चालू/बंद करा">
-        <span class="sound-icon">🔇</span>
-      </button>
     </div>
     <div class="film-progress-bar" aria-hidden="true">
       <div class="film-progress-fill"></div>

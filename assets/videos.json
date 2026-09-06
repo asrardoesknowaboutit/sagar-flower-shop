@@ -7,7 +7,7 @@
     "theme": "theme-rose",
     "src": "assets/videos/rose-varmala.mp4",
     "poster": "assets/videos/rose-varmala-poster.webp",
-    "bytes": 1771619
+    "bytes": 1606403
   },
   {
     "id": "lotus-varmala",
@@ -17,7 +17,7 @@
     "theme": "theme-lotus",
     "src": "assets/videos/lotus-varmala.mp4",
     "poster": "assets/videos/lotus-varmala-poster.webp",
-    "bytes": 1362299
+    "bytes": 1197145
   },
   {
     "id": "bouquet-reel",
@@ -27,7 +27,7 @@
     "theme": "theme-bouquet",
     "src": "assets/videos/bouquet-reel.mp4",
     "poster": "assets/videos/bouquet-reel-poster.webp",
-    "bytes": 1891007
+    "bytes": 1815278
   },
   {
     "id": "delivery",
@@ -35,6 +35,6 @@
     "marathi": "जवळच्या परिसरात डिलिव्हरी",
     "src": "assets/videos/delivery.mp4",
     "poster": "assets/videos/delivery-poster.webp",
-    "bytes": 1798623
+    "bytes": 1669793
   }
 ]

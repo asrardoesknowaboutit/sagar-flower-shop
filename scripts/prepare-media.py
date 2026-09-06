@@ -27,7 +27,7 @@ video_titles=[('delivery','Flowers, on their way','जवळच्या पर�
 videos=[]
 for source,(stem,title,mr) in zip(sorted((ROOT/'assets/images').glob('*.mp4')),video_titles):
  dest=ROOT/'assets/videos'/f'{stem}.mp4';poster=ROOT/'assets/videos'/f'{stem}-poster.webp'
- subprocess.run(['ffmpeg','-v','error','-i',str(source),'-c','copy','-movflags','+faststart','-y',str(dest)],check=True)
+ subprocess.run(['ffmpeg','-v','error','-i',str(source),'-c:v','copy','-an','-movflags','+faststart','-y',str(dest)],check=True)
  subprocess.run(['ffmpeg','-v','error','-ss','1','-i',str(source),'-frames:v','1','-vf','scale=480:-2','-quality','80','-y',str(poster)],check=True)
  videos.append(dict(id=stem,title=title,marathi=mr,src=str(dest.relative_to(ROOT)),poster=str(poster.relative_to(ROOT)),bytes=dest.stat().st_size))
 (ROOT/'assets/videos.json').write_text(json.dumps(videos,ensure_ascii=False,indent=2))
