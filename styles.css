@@ -427,16 +427,14 @@ button[hidden], [hidden] { display: none !important; }
   z-index: 2;
 }
 
-/* Floral Morph Animation Transitions */
+/* Butter-Smooth 60fps GPU-Accelerated Hero Slide Transitions */
 .hero-slide.slide-morph-out {
   opacity: 0 !important;
   visibility: visible !important;
   pointer-events: none;
-  transform: scale(1.08) rotate(2.5deg) !important;
-  filter: blur(8px) brightness(1.06);
-  transition: opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.55s cubic-bezier(0.4, 0, 0.2, 1),
-              filter 0.55s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transform: scale(1.03) !important;
+  transition: opacity 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.48s cubic-bezier(0.4, 0, 0.2, 1) !important;
   z-index: 1;
 }
 
@@ -444,25 +442,17 @@ button[hidden], [hidden] { display: none !important; }
   opacity: 0 !important;
   visibility: visible !important;
   pointer-events: none;
-  transform: scale(0.88) rotate(-3deg) !important;
-  filter: blur(7px);
+  transform: scale(0.97) !important;
 }
 
 .hero-slide.slide-morph-blooming {
   opacity: 1 !important;
   visibility: visible !important;
   pointer-events: auto;
-  transform: scale(1) rotate(0deg) !important;
-  filter: blur(0px) !important;
-  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-              filter 0.65s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transform: scale(1) !important;
+  transition: opacity 0.52s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.52s cubic-bezier(0.16, 1, 0.3, 1) !important;
   z-index: 2;
-}
-
-/* Organic Floral Displacement Morph Effect */
-.hero-3d-showcase.is-morphing .hero-subject-img {
-  filter: url(#floralMorph) drop-shadow(0 26px 36px rgba(23, 26, 31, 0.22)) drop-shadow(0 6px 14px rgba(183, 148, 90, 0.16));
 }
 
 /* Central 3D Stage & Floating Floral Subject */
@@ -2098,10 +2088,9 @@ button[hidden], [hidden] { display: none !important; }
 .work-card.priority-item:nth-child(11) { animation-delay: 430ms; }
 .work-card.priority-item:nth-child(12) { animation-delay: 470ms; }
 
-/* Below-the-fold render optimization for smooth 60fps scrolling */
-.work-card:not(.priority-item) {
-  content-visibility: auto;
-  contain-intrinsic-size: 360px 480px;
+/* Smooth 60fps scrolling optimization without dynamic layout shifts */
+.work-card {
+  contain: layout style;
 }
 
 .photo-button {
@@ -2111,7 +2100,7 @@ button[hidden], [hidden] { display: none !important; }
   border: 0;
   width: 100%;
   aspect-ratio: var(--aspect, auto);
-  background: #ffffff;
+  background: #faf8f5;
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
@@ -2122,6 +2111,15 @@ button[hidden], [hidden] { display: none !important; }
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
   isolation: isolate;
   transform: translateZ(0);
+}
+.photo-button:not(.is-loaded) {
+  background: linear-gradient(110deg, #faf7f2 20%, #f3ede2 38%, #faf7f2 56%);
+  background-size: 200% 100%;
+  animation: photoPlaceholderShimmer 2.2s ease-in-out infinite;
+}
+@keyframes photoPlaceholderShimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
 }
 .work-card:hover .photo-button {
   transform: translateY(-2px);
@@ -2183,9 +2181,25 @@ button[hidden], [hidden] { display: none !important; }
   aspect-ratio: inherit;
   object-fit: contain;
   object-position: center center;
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  transition: opacity 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
   display: block;
   border-radius: inherit;
+  will-change: opacity, transform;
+}
+.photo-button.is-loaded > img,
+.photo-button > img.is-loaded {
+  opacity: 1;
+}
+@media (scripting: none), (prefers-reduced-motion: reduce) {
+  .photo-button > img {
+    opacity: 1 !important;
+    transition: none !important;
+  }
+  .photo-button:not(.is-loaded) {
+    animation: none !important;
+  }
 }
 .photo-button:hover > img {
   transform: scale(1.04);
@@ -4730,7 +4744,12 @@ dialog::backdrop { background: rgba(10, 24, 43, 0.94); }
 .premium-slide { position: absolute; inset: 0; display: grid; grid-template-columns: minmax(0, .9fr) minmax(260px, .8fr); align-items: stretch; gap: 0; opacity: 0; pointer-events: none; transform: translate3d(9%, 0, -80px) rotateY(-12deg) scale(.96); transition: opacity .65s ease, transform .85s cubic-bezier(.16,1,.3,1); }
 .premium-slide.is-active { opacity: 1; pointer-events: auto; transform: translate3d(0, 0, 0) rotateY(0) scale(1); z-index: 2; }
 .premium-slide-media { min-height: 420px; overflow: hidden; background: var(--line); }
-.premium-slide-media img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.premium-slide-media img { width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 0.4s ease-out; will-change: opacity; }
+.premium-slide-media img.is-loaded,
+.premium-slide-media.is-loaded img { opacity: 1; }
+@media (scripting: none), (prefers-reduced-motion: reduce) {
+  .premium-slide-media img { opacity: 1 !important; transition: none !important; }
+}
 .premium-slide-copy { display: flex; flex-direction: column; justify-content: center; padding: 38px clamp(24px, 5vw, 68px); background: var(--card-bg); }
 .premium-slide-copy h3 { margin: 14px 0 8px; font-size: clamp(30px, 4vw, 54px); line-height: 1.05; }
 .premium-slide-copy p { color: var(--muted); font-size: 14px; }

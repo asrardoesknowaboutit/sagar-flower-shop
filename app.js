@@ -144,6 +144,15 @@ function showPhoto(button) {
       photo.animate([{ opacity: 0.6 }, { opacity: 1 }], { duration: 160 });
     }
   });
+
+  // Pre-load next & previous images offscreen so arrow navigation never lags
+  const currentIdx = photoGroup.indexOf(button);
+  if (currentIdx !== -1 && photoGroup.length > 1) {
+    const nextBtn = photoGroup[(currentIdx + 1) % photoGroup.length];
+    const prevBtn = photoGroup[(currentIdx - 1 + photoGroup.length) % photoGroup.length];
+    if (nextBtn?.dataset.image) { const imgNext = new Image(); imgNext.src = nextBtn.dataset.image; }
+    if (prevBtn?.dataset.image) { const imgPrev = new Image(); imgPrev.src = prevBtn.dataset.image; }
+  }
 }
 
 function nextPhoto(direction) {
@@ -249,37 +258,14 @@ function initHero3DShowcase() {
     glider.style.width = `${pillWidth}px`;
   }
 
-  function triggerMorphEffect() {
-    if (!morphDisplacement) return;
-    container.classList.add('is-morphing');
-    const startTime = performance.now();
-    const duration = 600;
-    const maxScale = 32;
-
-    if (morphAnimFrame) cancelAnimationFrame(morphAnimFrame);
-
-    function stepMorph(now) {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const currentScale = Math.sin(progress * Math.PI) * maxScale;
-      morphDisplacement.setAttribute('scale', currentScale.toFixed(2));
-
-      if (morphTurbulence) {
-        const freqX = (0.02 + Math.sin(progress * Math.PI) * 0.015).toFixed(3);
-        const freqY = (0.03 + Math.cos(progress * Math.PI) * 0.015).toFixed(3);
-        morphTurbulence.setAttribute('baseFrequency', `${freqX} ${freqY}`);
+  // Asynchronously pre-decode all hero images in the background to ensure instantaneous slide switches with 0 lag
+  slides.forEach(slide => {
+    slide.querySelectorAll('img').forEach(img => {
+      if (img.decode) {
+        img.decode().catch(() => {});
       }
-
-      if (progress < 1) {
-        morphAnimFrame = requestAnimationFrame(stepMorph);
-      } else {
-        morphDisplacement.setAttribute('scale', '0');
-        container.classList.remove('is-morphing');
-      }
-    }
-
-    morphAnimFrame = requestAnimationFrame(stepMorph);
-  }
+    });
+  });
 
   function setSlide(targetIndex, dir = 'next') {
     if (targetIndex === currentIndex && slides[currentIndex].classList.contains('active')) {
@@ -290,14 +276,12 @@ function initHero3DShowcase() {
     const outgoingSlide = slides[currentIndex];
     const incomingSlide = slides[targetIndex];
 
-    if (animate()) triggerMorphEffect();
-
     if (outgoingSlide && outgoingSlide !== incomingSlide) {
       outgoingSlide.classList.remove('active', 'slide-morph-blooming');
       outgoingSlide.classList.add('slide-morph-out');
       setTimeout(() => {
         outgoingSlide.classList.remove('slide-morph-out');
-      }, 550);
+      }, 480);
     }
 
     if (incomingSlide) {
@@ -1157,3 +1141,51 @@ initElasticBoundaries();
   render(0);
   start();
 })();
+
+// Progressive, stutter-free image revelation & proactive offscreen pre-decoding
+(() => {
+  function markImageLoaded(img) {
+    if (!img) return;
+    img.classList.add('is-loaded');
+    const container = img.closest('.photo-button') || img.closest('.premium-slide-media');
+    if (container) container.classList.add('is-loaded');
+  }
+
+  // 1. Immediately reveal pre-cached or complete images to prevent any delay/flicker
+  document.querySelectorAll('.photo-button > img, .premium-slide-media img').forEach(img => {
+    if (img.complete && img.naturalWidth > 0) {
+      markImageLoaded(img);
+    }
+  });
+
+  // 2. Global load event capturing: smoothly reveals images the instant they finish loading
+  document.addEventListener('load', event => {
+    if (event.target && event.target.tagName === 'IMG') {
+      markImageLoaded(event.target);
+    }
+  }, { capture: true, passive: true });
+
+  // 3. Proactive offscreen observer (600px ahead of viewport):
+  // Triggers async decoding before the user scrolls to the card, completely preventing pop-in and frame drops
+  if ('IntersectionObserver' in window) {
+    const prefetchObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target.querySelector('img') || (entry.target.tagName === 'IMG' ? entry.target : null);
+          if (img) {
+            if (img.loading === 'lazy') {
+              img.loading = 'eager';
+            }
+            if (img.decode) {
+              img.decode().catch(() => {}).then(() => markImageLoaded(img));
+            }
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '600px 0px' });
+
+    document.querySelectorAll('.work-card, .premium-slide').forEach(card => prefetchObserver.observe(card));
+  }
+})();
+
