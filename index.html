@@ -933,11 +933,107 @@
     </div>
   </a>
 </div><nav class="mobile-nav" aria-label="Mobile navigation">
+  <svg class="dock-defs-svg" aria-hidden="true" width="0" height="0" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+    <defs>
+      <!-- Liquid 24K Molten Gold Gradient (High specular sheen + rich bronze contour) -->
+      <linearGradient id="liquid-gold-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#fffdf5" />
+        <stop offset="18%" stop-color="#fde59b" />
+        <stop offset="44%" stop-color="#d4af37" />
+        <stop offset="68%" stop-color="#8c5e06" />
+        <stop offset="85%" stop-color="#fff1c2" />
+        <stop offset="100%" stop-color="#4d3202" />
+      </linearGradient>
+
+      <!-- Liquid Champagne Platinum Metallic Gradient (Tactile metallic contour for resting state) -->
+      <linearGradient id="liquid-champagne-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ffffff" />
+        <stop offset="20%" stop-color="#f7ecd7" />
+        <stop offset="46%" stop-color="#c5a66f" />
+        <stop offset="70%" stop-color="#735932" />
+        <stop offset="86%" stop-color="#fff7eb" />
+        <stop offset="100%" stop-color="#4e3c20" />
+      </linearGradient>
+
+      <!-- Liquid Gold Translucent Shimmer Fill -->
+      <linearGradient id="liquid-gold-fill" x1="20%" y1="0%" x2="80%" y2="100%">
+        <stop offset="0%" stop-color="rgba(255, 250, 230, 0.55)" />
+        <stop offset="50%" stop-color="rgba(212, 175, 55, 0.28)" />
+        <stop offset="100%" stop-color="rgba(140, 94, 6, 0.38)" />
+      </linearGradient>
+
+      <!-- Liquid Champagne Metallic Fill -->
+      <linearGradient id="liquid-champagne-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="rgba(255, 255, 255, 0.65)" />
+        <stop offset="50%" stop-color="rgba(220, 200, 165, 0.22)" />
+        <stop offset="100%" stop-color="rgba(115, 89, 50, 0.28)" />
+      </linearGradient>
+
+      <!-- Molten Core Radial Highlight -->
+      <radialGradient id="liquid-molten-core" cx="36%" cy="30%" r="68%">
+        <stop offset="0%" stop-color="#ffffff" />
+        <stop offset="30%" stop-color="#ffea9f" />
+        <stop offset="72%" stop-color="#d4af37" />
+        <stop offset="100%" stop-color="#6e4903" />
+      </radialGradient>
+    </defs>
+  </svg>
   <div class="fluid-mobile-dock">
-    <a href="#home" data-section="home" class="fluid-mobile-item active"><span class="dock-icon" aria-hidden="true">⌂</span><span class="dock-text">होम</span></a>
-    <a href="#collection" data-section="collection" class="fluid-mobile-item"><span class="dock-icon" aria-hidden="true">❀</span><span class="dock-text">फुले</span></a>
-    <a href="#films" data-section="films" class="fluid-mobile-item"><span class="dock-icon" aria-hidden="true">▷</span><span class="dock-text">व्हिडिओ</span></a>
-    <a href="#contact" data-section="contact" class="fluid-mobile-item"><span class="dock-icon" aria-hidden="true">♡</span><span class="dock-text">संपर्क</span></a>
+    <a href="#home" data-section="home" class="fluid-mobile-item active">
+      <span class="dock-icon-pod" aria-hidden="true">
+        <svg class="metallic-contour-svg" viewBox="0 0 24 24" aria-hidden="true">
+          <path class="metal-fill-layer" d="M12 2.6L3.8 8.8C3.3 9.2 3 9.9 3 10.6V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V10.6C21 9.9 20.7 9.2 20.2 8.8L12 2.6Z" />
+          <path class="metal-stroke-layer" d="M12 2.6L3.8 8.8C3.3 9.2 3 9.9 3 10.6V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V10.6C21 9.9 20.7 9.2 20.2 8.8L12 2.6Z" />
+          <path class="metal-stroke-inner" d="M9 21V14.5C9 12.8 10.3 11.5 12 11.5C13.7 11.5 15 12.8 15 14.5V21" />
+          <path class="metal-spire" d="M12 1.2V3.6" />
+          <circle class="metal-gem" cx="12" cy="7" r="1.2" />
+          <line class="metal-beam" x1="2.5" y1="21" x2="21.5" y2="21" />
+        </svg>
+        <span class="liquid-sheen-sweep" aria-hidden="true"></span>
+      </span>
+      <span class="dock-text">होम</span>
+    </a>
+    <a href="#collection" data-section="collection" class="fluid-mobile-item">
+      <span class="dock-icon-pod" aria-hidden="true">
+        <svg class="metallic-contour-svg" viewBox="0 0 24 24" aria-hidden="true">
+          <path class="metal-fill-layer" d="M12 3.5C10.6 6.5 9.5 9.5 9.5 12.5C9.5 15.5 10.6 17.5 12 18C13.4 17.5 14.5 15.5 14.5 12.5C14.5 9.5 13.4 6.5 12 3.5Z" />
+          <path class="metal-stroke-layer" d="M12 3.5C10.6 6.5 9.5 9.5 9.5 12.5C9.5 15.5 10.6 17.5 12 18C13.4 17.5 14.5 15.5 14.5 12.5C14.5 9.5 13.4 6.5 12 3.5Z" />
+          <path class="metal-stroke-layer" d="M9.8 12C7.5 9.2 4.8 8.8 2.8 9.8C2.2 12.6 3.6 15.8 7.6 17.5C9 18 10.5 18.2 12 18.2" />
+          <path class="metal-stroke-layer" d="M14.2 12C16.5 9.2 19.2 8.8 21.2 9.8C21.8 12.6 20.4 15.8 16.4 17.5C15 18 13.5 18.2 12 18.2" />
+          <path class="metal-stroke-inner" d="M3.2 14.5C4.8 18 8.5 20.5 12 20.5C15.5 20.5 19.2 18 20.8 14.5" />
+          <circle class="metal-gem" cx="12" cy="11.8" r="1.3" />
+        </svg>
+        <span class="liquid-sheen-sweep" aria-hidden="true"></span>
+      </span>
+      <span class="dock-text">फुले</span>
+    </a>
+    <a href="#films" data-section="films" class="fluid-mobile-item">
+      <span class="dock-icon-pod" aria-hidden="true">
+        <svg class="metallic-contour-svg" viewBox="0 0 24 24" aria-hidden="true">
+          <circle class="metal-fill-layer" cx="12" cy="12" r="9.2" />
+          <circle class="metal-stroke-layer" cx="12" cy="12" r="9.2" />
+          <path class="metal-play-glyph" d="M10 8.2C9.3 7.8 8.5 8.3 8.5 9.1V14.9C8.5 15.7 9.3 16.2 10 15.8L15.8 12.9C16.5 12.5 16.5 11.5 15.8 11.1L10 8.2Z" />
+          <circle class="metal-gem" cx="12" cy="4.8" r="1.1" />
+          <circle class="metal-gem" cx="19.2" cy="12" r="1.1" />
+          <circle class="metal-gem" cx="12" cy="19.2" r="1.1" />
+          <circle class="metal-gem" cx="4.8" cy="12" r="1.1" />
+        </svg>
+        <span class="liquid-sheen-sweep" aria-hidden="true"></span>
+      </span>
+      <span class="dock-text">व्हिडिओ</span>
+    </a>
+    <a href="#contact" data-section="contact" class="fluid-mobile-item">
+      <span class="dock-icon-pod" aria-hidden="true">
+        <svg class="metallic-contour-svg" viewBox="0 0 24 24" aria-hidden="true">
+          <path class="metal-fill-layer" d="M12 21.2C11.4 21.2 2.8 15.4 2.8 9.2C2.8 5.6 5.6 2.8 9.1 2.8C10.8 2.8 11.8 3.6 12 4.2C12.2 3.6 13.2 2.8 14.9 2.8C18.4 2.8 21.2 5.6 21.2 9.2C21.2 15.4 12.6 21.2 12 21.2Z" />
+          <path class="metal-stroke-layer" d="M12 21.2C11.4 21.2 2.8 15.4 2.8 9.2C2.8 5.6 5.6 2.8 9.1 2.8C10.8 2.8 11.8 3.6 12 4.2C12.2 3.6 13.2 2.8 14.9 2.8C18.4 2.8 21.2 5.6 21.2 9.2C21.2 15.4 12.6 21.2 12 21.2Z" />
+          <path class="metal-stroke-inner" d="M12 17.5C11.7 17.5 6 13.4 6 9.4C6 7.2 7.6 5.4 9.5 5.4C10.6 5.4 11.4 6 12 6.8C12.6 6 13.4 5.4 14.5 5.4C16.4 5.4 18 7.2 18 9.4C18 13.4 12.3 17.5 12 17.5Z" />
+          <circle class="metal-gem" cx="12" cy="10.8" r="1.3" />
+        </svg>
+        <span class="liquid-sheen-sweep" aria-hidden="true"></span>
+      </span>
+      <span class="dock-text">संपर्क</span>
+    </a>
   </div>
 </nav>
 
