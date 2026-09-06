@@ -81,7 +81,7 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
 <main id="main">
 
 <section class="hero wrap" id="home">
-  <!-- Living Typography Synchronized Backdrop (Cinematic crossfade + scale + blur-to-focus) -->
+  <!-- Living Typography Synchronized Backdrop (Cinematic crossfade + scale) -->
   <div class="hero-living-backdrop" aria-hidden="true">
     <div class="living-bg-slide active" data-service="bouquets" style="background-image: url('assets/images/bouquets/collection-02-1280.webp');"></div>
     <div class="living-bg-slide" data-service="garlands" style="background-image: url('assets/images/garlands/collection-20-1280.webp');"></div>
