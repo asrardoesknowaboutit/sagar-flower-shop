@@ -4350,3 +4350,10 @@ dialog::backdrop { background: rgba(8, 24, 17, 0.94); }
   .hero-caption-cta { min-height: 44px; display: inline-flex; align-items: center; }
   .hero-video-live-badge { max-width: calc(100% - 76px); font-size: clamp(9px, 2.5vw, 11px); padding: 5px 9px; gap: 5px; }
 }
+
+/* Slender liquid necks join neighbouring images through the empty gutters. */
+.portfolio { position: relative; isolation: isolate; }
+.gallery-fluid-connections {
+  position: absolute; top: 0; left: 0; z-index: -1;
+  pointer-events: none; overflow: visible;
+}
