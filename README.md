@@ -2,7 +2,7 @@
 
 A mobile-first florist portfolio, built with semantic HTML, CSS and vanilla JavaScript. No build step, framework, subscription or paid hosting is required.
 
-Live website: https://asrardoesknowaboutit.github.io/sagar-flower-shop/
+Live website: https://sagarflowershopparli.github.io/sagar-flower-shop/
 
 ## GitHub Pages deployment checklist
 
