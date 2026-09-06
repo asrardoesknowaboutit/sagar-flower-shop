@@ -909,7 +909,7 @@ initElasticBoundaries();
     layer.setAttribute('height', origin.height);
     layer.replaceChildren();
     const defs = document.createElementNS(ns, 'defs');
-    defs.innerHTML = '<linearGradient id="gallery-fluid-tint" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffefa"/><stop offset=".5" stop-color="#e5f1e7"/><stop offset="1" stop-color="#fffefa"/></linearGradient>';
+    defs.innerHTML = '<linearGradient id="gallery-fluid-tint" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFDF8"/><stop offset=".5" stop-color="#F7F3EC"/><stop offset="1" stop-color="#FFFDF8"/></linearGradient>';
     layer.append(defs);
     const visible = cards.filter(card => !card.hidden).map(card => {
       const r = card.getBoundingClientRect();
@@ -933,7 +933,7 @@ initElasticBoundaries();
       path.setAttribute('d', `M -1 ${-half} C ${length*.3} ${-half} ${length*.28} -5 ${length/2} -5 C ${length*.72} -5 ${length*.7} ${-half} ${length+1} ${-half} L ${length+1} ${half} C ${length*.7} ${half} ${length*.72} 5 ${length/2} 5 C ${length*.28} 5 ${length*.3} ${half} -1 ${half} Z`);
       path.setAttribute('transform', `translate(${x} ${y})${vertical ? ' rotate(90)' : ''}`);
       path.setAttribute('fill', 'url(#gallery-fluid-tint)');
-      path.setAttribute('stroke', '#fffefa');
+      path.setAttribute('stroke', '#FFFDF8');
       path.setAttribute('stroke-width', '1');
       layer.append(path);
     }
