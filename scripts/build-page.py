@@ -510,27 +510,6 @@ for idx, i in enumerate(items):
 
 parts.append(f'''</div>
 <div class="collection-footer">
-  <button id="show-more" class="neo-load-more" hidden aria-label="अधिक सुंदर डिझाईन्स उघडा">
-    <span class="load-more-halo" aria-hidden="true"></span>
-    <span class="load-more-content">
-      <span class="load-more-icon-wrap" aria-hidden="true">
-        <span class="load-more-flower">🌸</span>
-      </span>
-      <span class="load-more-text">
-        <span class="load-more-primary" lang="mr">अधिक सुंदर डिझाईन्स उघडा</span>
-        <span class="load-more-secondary">Explore more floral designs</span>
-      </span>
-      <span class="load-more-chip">
-        <span class="chip-pulse" aria-hidden="true"></span>
-        <span class="chip-count" id="show-more-count">+28</span>
-        <span class="chip-label" lang="mr">आणखी</span>
-      </span>
-      <span class="load-more-arrow-wrap" aria-hidden="true">
-        <span class="load-more-arrow">↓</span>
-      </span>
-    </span>
-    <span class="load-more-shimmer" aria-hidden="true"></span>
-  </button>
   <p>तुमच्या आवडीचे रंग, बजेट किंवा खास कल्पना आहे का?</p>
   <a class="text-link" href="{wa('कस्टम फुलांची ऑर्डर / Custom order')}" target="_blank" rel="noopener noreferrer">आम्हाला सांगा, आम्ही तयार करू ↗</a>
 </div>

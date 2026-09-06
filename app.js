@@ -95,8 +95,7 @@ if (rail) {
 const cards = $$('.work-card');
 const filterButtons = $$('[data-filter]');
 const filterContainer = $('.fluid-filter-ribbon-wrap') || $('.dynamic-island-ticker-wrap') || $('.neo-filter-container') || $('.filter-flow-wrapper');
-const batchSize = () => window.innerWidth >= 900 ? 12 : 8;
-let currentFilter = 'all', limit = batchSize();
+let currentFilter = 'all';
 
 function centerActiveButton(activeBtn) {
   if (!filterContainer || !activeBtn) return;
@@ -113,22 +112,11 @@ const getMatchingCards = () => cards.filter(card => currentFilter === 'all' || c
 function renderCollection() {
   const matches = getMatchingCards();
   cards.forEach(card => {
-    const index = matches.indexOf(card);
-    card.hidden = index === -1 || index >= limit;
+    card.hidden = currentFilter !== 'all' && card.dataset.category !== currentFilter;
   });
-  const count = Math.min(limit, matches.length);
   const status = $('#filter-status');
   if (status) {
-    status.textContent = `दाखवत आहोत: ${count} / ${matches.length} डिझाईन्स (Showing ${count} of ${matches.length})`;
-  }
-  const showMore = $('#show-more');
-  if (showMore) {
-    const remaining = matches.length - count;
-    showMore.hidden = remaining <= 0;
-    const countEl = $('#show-more-count');
-    if (countEl) {
-      countEl.textContent = `+${remaining}`;
-    }
+    status.textContent = `${matches.length} floral designs`;
   }
 
   requestScrollUpdate();
@@ -136,7 +124,6 @@ function renderCollection() {
 
 filterButtons.forEach(button => button.addEventListener('click', () => {
   currentFilter = button.dataset.filter;
-  limit = batchSize();
   if (filterContainer) filterContainer.dataset.activeFilter = currentFilter;
   filterButtons.forEach(item => {
     const active = item === button;
@@ -155,30 +142,6 @@ filterButtons.forEach(button => button.addEventListener('click', () => {
     }
   }
 }));
-
-$('#show-more')?.addEventListener('click', () => {
-  const matches = getMatchingCards();
-  const oldLimit = limit;
-  const firstNew = matches[oldLimit];
-  limit += batchSize();
-  renderCollection();
-
-  if (animate()) {
-    const newlyRevealed = matches.slice(oldLimit, limit);
-    newlyRevealed.forEach((card, idx) => {
-      card.style.animationDelay = `${idx * 45}ms`;
-      card.classList.remove('card-revealing');
-      void card.offsetWidth;
-      card.classList.add('card-revealing');
-    });
-  }
-
-  if (firstNew) {
-    const photo = $('.photo-button', firstNew);
-    photo?.focus({ preventScroll: true });
-    firstNew.scrollIntoView({ behavior: smooth(), block: 'nearest' });
-  }
-});
 
 // --- LIGHTBOX MODAL (100% Full uncropped view) ---
 const dialog = $('#lightbox');
