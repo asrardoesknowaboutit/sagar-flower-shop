@@ -437,16 +437,171 @@ window.addEventListener('resize', () => {
   if (currentBtn) centerActiveButton(currentBtn);
 });
 
+// --- SMOOTH ANIMATED SCROLL ENGINE (Slow, Organic Physics with Cubic Easing) ---
+let activeScrollAnim = null;
+
+function easeInOutCubic(t) {
+  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+}
+
+function slowSmoothScrollTo(targetY, customDuration, onComplete) {
+  if (motion.matches) {
+    window.scrollTo(0, targetY);
+    if (typeof onComplete === 'function') onComplete();
+    return;
+  }
+
+  if (activeScrollAnim) {
+    cancelAnimationFrame(activeScrollAnim);
+    activeScrollAnim = null;
+  }
+
+  const startY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+  const distance = targetY - startY;
+
+  if (Math.abs(distance) < 2) {
+    if (typeof onComplete === 'function') onComplete();
+    return;
+  }
+
+  // Base duration ~1420ms for long hero-to-collection glides (~1600-2000px)
+  const duration = customDuration || Math.min(1600, Math.max(900, Math.round(Math.abs(distance) * 0.72 + 320)));
+  let startTime = null;
+  let cancelled = false;
+
+  // Temporarily disable CSS scroll-behavior: smooth so rAF positions apply instantly without browser fight
+  const prevScrollBehavior = document.documentElement.style.scrollBehavior;
+  document.documentElement.style.scrollBehavior = 'auto';
+
+  const cleanupListeners = () => {
+    window.removeEventListener('wheel', handleInterrupt, { passive: true });
+    window.removeEventListener('touchstart', handleInterrupt, { passive: true });
+    window.removeEventListener('pointerdown', handleInterrupt, { passive: true });
+    window.removeEventListener('keydown', handleKeyInterrupt);
+    document.documentElement.style.scrollBehavior = prevScrollBehavior;
+  };
+
+  const handleInterrupt = () => {
+    cancelled = true;
+    if (activeScrollAnim) {
+      cancelAnimationFrame(activeScrollAnim);
+      activeScrollAnim = null;
+    }
+    cleanupListeners();
+  };
+
+  const handleKeyInterrupt = (e) => {
+    if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' '].includes(e.key)) {
+      handleInterrupt();
+    }
+  };
+
+  window.addEventListener('wheel', handleInterrupt, { passive: true });
+  window.addEventListener('touchstart', handleInterrupt, { passive: true });
+  window.addEventListener('pointerdown', handleInterrupt, { passive: true });
+  window.addEventListener('keydown', handleKeyInterrupt);
+
+  function step(timestamp) {
+    if (cancelled) return;
+    if (!startTime) startTime = timestamp;
+    const elapsed = timestamp - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = easeInOutCubic(progress);
+
+    window.scrollTo(0, Math.round(startY + distance * eased));
+
+    if (progress < 1) {
+      activeScrollAnim = requestAnimationFrame(step);
+    } else {
+      activeScrollAnim = null;
+      window.scrollTo(0, targetY);
+      cleanupListeners();
+      if (typeof onComplete === 'function') onComplete();
+    }
+  }
+
+  activeScrollAnim = requestAnimationFrame(step);
+}
+
+function highlightBouquetArrival() {
+  const bouquetPill = $('.fluid-filter-pill[data-filter="bouquets"]');
+  if (bouquetPill) {
+    bouquetPill.classList.add('arrival-pulse');
+    setTimeout(() => bouquetPill.classList.remove('arrival-pulse'), 1100);
+  }
+  const firstCard = $('.work-card[data-category="bouquets"]:not([hidden])');
+  if (firstCard && animate()) {
+    firstCard.animate([
+      { transform: 'scale(1.025)', filter: 'brightness(1.06)' },
+      { transform: 'scale(1)', filter: 'none' }
+    ], { duration: 650, easing: 'cubic-bezier(0.16, 1, 0.3, 1)' });
+  }
+}
+
+function navigateToCategoryWithSlowScroll(categoryName, event) {
+  if (event) event.preventDefault();
+  const filter = categoryName || 'bouquets';
+
+  // 1. Activate the target filter button in the collection ribbon
+  const targetBtn = $(`.fluid-filter-pill[data-filter="${filter}"]`) ||
+                    $(`.island-btn[data-filter="${filter}"]`) ||
+                    $(`.neo-btn[data-filter="${filter}"]`) ||
+                    $(`.filter-pill[data-filter="${filter}"]`);
+  if (targetBtn) {
+    targetBtn.click();
+  }
+
+  // 2. Measure target coordinate (placing the filter ribbon comfortably below sticky header)
+  const header = $('.header');
+  const headerHeight = header ? header.offsetHeight : 68;
+  const ribbonWrap = $('.fluid-filter-ribbon-wrap') || $('#collection');
+  const targetY = Math.max(0, Math.round(ribbonWrap.getBoundingClientRect().top + window.scrollY - headerHeight - 12));
+
+  // 3. Distance-based slow smooth scroll duration (~1420ms for hero-to-collection)
+  const currentY = window.scrollY || window.pageYOffset || 0;
+  const dist = Math.abs(targetY - currentY);
+  const duration = Math.min(1600, Math.max(850, Math.round(dist * 0.72 + 320)));
+
+  slowSmoothScrollTo(targetY, duration, () => {
+    if (filter === 'bouquets') {
+      highlightBouquetArrival();
+    }
+  });
+}
+
 // Quick filter click from fluid tags ribbon & values ribbon
 $$('.fluid-tag-pill[data-filter-trigger], .fluid-val-pill[data-filter-trigger]').forEach(tag => {
-  tag.addEventListener('click', () => {
+  tag.addEventListener('click', (e) => {
     const filter = tag.dataset.filterTrigger;
     if (filter) {
-      const targetBtn = $(`.fluid-filter-pill[data-filter="${filter}"]`) || $(`.island-btn[data-filter="${filter}"]`) || $(`.neo-btn[data-filter="${filter}"]`) || $(`.filter-pill[data-filter="${filter}"]`);
-      if (targetBtn) {
-        targetBtn.click();
-      }
+      navigateToCategoryWithSlowScroll(filter, e);
     }
+  });
+});
+
+// Smooth in-page navigation for header and section anchors
+$$('a[href^="#"]').forEach(anchor => {
+  if (anchor.classList.contains('living-word-slot') ||
+      anchor.classList.contains('living-scroll-cue') ||
+      anchor.hasAttribute('data-filter-trigger')) {
+    return;
+  }
+  anchor.addEventListener('click', (e) => {
+    const href = anchor.getAttribute('href');
+    if (!href || href === '#' || href === '#main') return;
+    const target = $(href);
+    if (!target) return;
+
+    e.preventDefault();
+    const header = $('.header');
+    const headerHeight = header ? header.offsetHeight : 68;
+    const targetY = href === '#home' ? 0 : Math.max(0, Math.round(target.getBoundingClientRect().top + window.scrollY - headerHeight - 10));
+
+    const currentY = window.scrollY || 0;
+    const dist = Math.abs(targetY - currentY);
+    const duration = Math.min(1400, Math.max(700, Math.round(dist * 0.5 + 300)));
+
+    slowSmoothScrollTo(targetY, duration);
   });
 });
 
@@ -460,6 +615,7 @@ function initLivingTypography() {
 
   const slots = $$('.living-word-slot', stage);
   const slides = $$('.living-bg-slide');
+  const scrollCue = $('.living-scroll-cue', stage);
   if (!slots.length) return;
 
   const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -469,6 +625,21 @@ function initLivingTypography() {
   }
 
   const SERVICES = ['bouquets', 'garlands', 'wedding', 'decor', 'gifts'];
+  const cueTexts = {
+    bouquets: 'खास बुके पहा · Explore Bouquets',
+    garlands: 'शाही लग्नहार पहा · Explore Garlands',
+    wedding: 'लग्न फुले पहा · Wedding Flowers',
+    decor: 'सजावट डिझाईन्स पहा · Explore Décor',
+    gifts: 'भेटवस्तू व कंबरपट्टा · Floral Jewellery'
+  };
+  const cueFilters = {
+    bouquets: 'bouquets',
+    garlands: 'garlands',
+    wedding: 'garlands',
+    decor: 'decor',
+    gifts: 'belts'
+  };
+
   let currentIndex = 0;
   let timerId = null;
   let isPaused = false;
@@ -485,6 +656,11 @@ function initLivingTypography() {
       });
       // Gently dim backdrops during reset
       slides.forEach(slide => slide.classList.remove('active'));
+      if (scrollCue) {
+        scrollCue.dataset.filter = 'all';
+        const textEl = scrollCue.querySelector('.scroll-cue-text');
+        if (textEl) textEl.textContent = 'सर्व फुले पहा · Explore All Flowers';
+      }
       return;
     }
 
@@ -499,6 +675,13 @@ function initLivingTypography() {
       const match = (slide.dataset.service === serviceId);
       slide.classList.toggle('active', match);
     });
+
+    if (scrollCue) {
+      const targetFilter = cueFilters[serviceId] || 'bouquets';
+      scrollCue.dataset.filter = targetFilter;
+      const textEl = scrollCue.querySelector('.scroll-cue-text');
+      if (textEl) textEl.textContent = cueTexts[serviceId] || 'खास बुके पहा · Explore Bouquets';
+    }
   }
 
   function nextStep() {
@@ -536,14 +719,18 @@ function initLivingTypography() {
       timerId = setTimeout(nextStep, STAND_DURATION);
     });
 
-    slot.addEventListener('click', () => {
-      const filter = slot.dataset.filter;
-      if (filter) {
-        const targetBtn = $(`.fluid-filter-pill[data-filter="${filter}"]`) || $(`.island-btn[data-filter="${filter}"]`) || $(`.neo-btn[data-filter="${filter}"]`) || $(`.filter-pill[data-filter="${filter}"]`);
-        if (targetBtn) targetBtn.click();
-      }
+    slot.addEventListener('click', (e) => {
+      const filter = slot.dataset.filter || 'bouquets';
+      navigateToCategoryWithSlowScroll(filter, e);
     });
   });
+
+  if (scrollCue) {
+    scrollCue.addEventListener('click', (e) => {
+      const filter = scrollCue.dataset.filter || 'bouquets';
+      navigateToCategoryWithSlowScroll(filter, e);
+    });
+  }
 
   // Power optimization on visibility change
   document.addEventListener('visibilitychange', () => {

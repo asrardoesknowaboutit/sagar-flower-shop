@@ -19,6 +19,9 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 92px;
 }
+section[id], .section {
+  scroll-margin-top: 92px;
+}
 body {
   margin: 0;
   background: var(--paper);
@@ -497,6 +500,87 @@ button[hidden], [hidden] { display: none !important; }
 }
 .living-word-slot.active:hover .living-word {
   opacity: 1;
+}
+
+/* Living Typography Slow Smooth Scroll Cue */
+.living-scroll-cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 15px 5px 13px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(16, 184, 83, 0.32);
+  border-radius: 999px;
+  color: #0c3322;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.25px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(13, 43, 31, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.25s ease,
+              border-color 0.25s ease,
+              box-shadow 0.28s ease,
+              color 0.25s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  margin-top: 2px;
+}
+
+.living-scroll-cue:hover {
+  background: #ffffff;
+  border-color: #10b853;
+  color: #04431e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(16, 184, 83, 0.24), inset 0 1px 0 #ffffff;
+}
+
+.living-scroll-cue:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.scroll-cue-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b853;
+  box-shadow: 0 0 0 2px rgba(16, 184, 83, 0.25);
+  animation: cueDotGlow 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes cueDotGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 2px rgba(16, 184, 83, 0.25);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(16, 184, 83, 0);
+    transform: scale(1.15);
+  }
+}
+
+.scroll-cue-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #10b853;
+  transition: transform 0.25s ease;
+  animation: cueArrowFloat 1.8s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.living-scroll-cue:hover .scroll-cue-arrow {
+  transform: translateY(2px);
+}
+
+@keyframes cueArrowFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(2.5px); }
 }
 
 .hero-copy {
@@ -1526,6 +1610,26 @@ h1 em {
 }
 .fluid-filter-pill.active .filter-icon {
   transform: scale(1.15);
+}
+
+/* Bouquet Arrival Landing Pulse */
+@keyframes bouquetArrivalPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 184, 83, 0.65), inset 0 2px 1px #ffffff;
+    transform: translateY(-2px) scale(1);
+  }
+  40% {
+    box-shadow: 0 0 0 12px rgba(16, 184, 83, 0), 0 14px 36px rgba(16, 184, 83, 0.45), inset 0 2px 1px #ffffff;
+    transform: translateY(-3px) scale(1.04);
+  }
+  100% {
+    box-shadow: 0 12px 32px rgba(16, 184, 83, 0.38), inset 0 2px 1px #ffffff;
+    transform: translateY(-2px) scale(1);
+  }
+}
+
+.fluid-filter-pill.arrival-pulse {
+  animation: bouquetArrivalPulse 1s cubic-bezier(0.16, 1, 0.3, 1) 1;
 }
 
 /* Organic Concave SVG Waist Bridges */
@@ -3716,6 +3820,11 @@ dialog::backdrop { background: rgba(8, 24, 17, 0.94); }
     min-width: 0;
     padding: 10px 4px 16px;
     gap: 8px;
+  }
+  .living-scroll-cue {
+    font-size: 10.5px;
+    padding: 4px 12px 4px 10px;
+    gap: 6px;
   }
   .living-word-slot {
     padding-inline: 4px;
