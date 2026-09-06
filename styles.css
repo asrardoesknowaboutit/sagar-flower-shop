@@ -4357,3 +4357,50 @@ dialog::backdrop { background: rgba(8, 24, 17, 0.94); }
   position: absolute; top: 0; left: 0; z-index: -1;
   pointer-events: none; overflow: visible;
 }
+
+/* Keep the reference's desktop silhouettes intact at every phone width.
+   All dimensions share the same container scale, including text and icons. */
+@media (max-width: 760px) {
+  .reference-actions { container-type: inline-size; }
+  .reference-actions .fluid-action-pod-wrap { margin-bottom: 1.8333cqw; }
+  .reference-actions .fluid-action-pod {
+    display: grid; grid-template-columns: 61% 39%; gap: 0;
+    min-height: 12.5cqw;
+    background: url('assets/brand/fluid-actions.svg') center / 100% 100% no-repeat;
+    filter: drop-shadow(0 1.25cqw 1.5cqw #16b75a28);
+  }
+  .reference-actions .fluid-unit {
+    min-height: 12.5cqw; min-width: 0; width: auto;
+    padding: 2.1667cqw 2.5cqw; gap: 1.6667cqw;
+    border: 0; border-radius: 8.3333cqw; background: none;
+    box-shadow: none; transform: none;
+  }
+  .reference-actions .fluid-unit-wa { padding-right: 4.5833cqw; }
+  .reference-actions .fluid-unit-call { padding-left: 2.5cqw; gap: 1.25cqw; margin-top: 0; }
+  .reference-actions .fluid-unit-wa::after { display: none; }
+  .reference-actions .fluid-unit-wa .fluid-title,
+  .reference-actions .fluid-unit-call .call-number { font-size: 2.3333cqw; line-height: 1.4; white-space: nowrap; }
+  .reference-actions .fluid-unit .fluid-sub { font-size: 1.5cqw; margin-top: .75cqw; line-height: 1.4; white-space: nowrap; }
+  .reference-actions .wa-badge,
+  .reference-actions .wa-badge .wa-svg { width: 6.6667cqw; height: 6.6667cqw; }
+  .reference-actions .wa-badge { background: none; box-shadow: none; }
+  .reference-actions .call-badge { width: 5.6667cqw; height: 5.6667cqw; background: #e1f3e1; }
+  .reference-actions .call-badge .call-svg { width: 2.8333cqw; height: 2.8333cqw; }
+  .reference-actions .fluid-circle-arrow { display: grid; width: 4.3333cqw; height: 4.3333cqw; box-shadow: none; }
+  .reference-actions .fluid-circle-arrow svg { width: 2.1667cqw; height: 2.1667cqw; }
+  .reference-actions .fluid-tags-ribbon {
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0;
+    background: url('assets/brand/fluid-services.svg') center / 100% 100% no-repeat;
+    filter: drop-shadow(0 1cqw 1.25cqw #d9b78735);
+  }
+  .reference-actions .fluid-tag-pill {
+    min-height: 0; height: 8.3333cqw; padding: 0 1.3333cqw; gap: 1.1667cqw;
+    border: 0; background: none; box-shadow: none; transform: none;
+  }
+  .reference-actions .fluid-tag-pill .tag-label { font-size: 2.0833cqw; line-height: 1.4; white-space: nowrap; }
+  .reference-actions .fluid-tag-pill .tag-arrow { font-size: 2.5cqw; }
+  .reference-actions .tag-sticker { width: 2cqw; height: 2cqw; }
+  /* Extend the compact service links' touch area without changing the artwork. */
+  .reference-actions .fluid-tag-pill { position: relative; }
+  .reference-actions .fluid-tag-pill::after { content: ''; position: absolute; inset: 50% 0 auto; height: max(44px, 100%); transform: translateY(-50%); }
+}
