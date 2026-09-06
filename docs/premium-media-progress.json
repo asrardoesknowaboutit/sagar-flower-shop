@@ -1,0 +1,834 @@
+[
+  {
+    "id": 0,
+    "key": "assets/brand/hero/hero-belt.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/brand/hero/hero-belt.webp",
+    "targets": [
+      {
+        "path": "assets/brand/hero/hero-belt.webp",
+        "size": [
+          1024,
+          1024
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/.codex/generated_images/01a078c0-4286-70e0-9fcf-97ebb1b7be6c/exec-fef5c0bb-4458-49a4-ae45-419a83e1ed63.png",
+    "prompt": "Use case: precise-object-edit. Input image 1: exact existing website image to enhance. Input image 2: exact Sagar Flower Shop gold lotus logo, supporting brand insert. Faithfully recreate the first image as premium realistic floral photography. Preserve the original product, flower varieties, colors, arrangement, structural details, object count and framing. Improve fine petal detail, crisp natural textures, elegant soft lighting, balanced exposure and sophisticated yet vivid colors. No invented components, malformed flowers, fused objects, misspelled text, artificial plastic sheen or oversharpened edges. Use the exact supplied logo, small and legible, in the lower right within a safe margin. Apply evenly spaced repeated '7620644158' across the full image at subtle 12\u201315% opacity with exact digits, covering the subject too; refined unobtrusive typography. No additional words or labels. Maintain original aspect ratio. For this hero product image: seamless solid warm ivory background (#faf7f2), no checkerboard, no jagged cutout edges, no floating loose petals. Keep entire main subject and ribbon within frame. Natural soft grounding shadow. Do not add a car to the heart-shaped floral arrangement."
+  },
+  {
+    "id": 1,
+    "key": "assets/brand/hero/hero-bouquet-editorial.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/brand/hero/hero-bouquet-editorial.webp",
+    "targets": [
+      {
+        "path": "assets/brand/hero/hero-bouquet-editorial.webp",
+        "size": [
+          1254,
+          1254
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/.codex/generated_images/01a078c0-4286-70e0-9fcf-97ebb1b7be6c/exec-2d15b284-ef00-4961-b4fd-eaf29c354086.png",
+    "prompt": "Use case: precise-object-edit. Input image 1: exact existing website image to enhance. Input image 2: exact Sagar Flower Shop gold lotus logo, supporting brand insert. Faithfully recreate the first image as premium realistic floral photography. Preserve the original product, flower varieties, colors, arrangement, structural details, object count and framing. Improve fine petal detail, crisp natural textures, elegant soft lighting, balanced exposure and sophisticated yet vivid colors. No invented components, malformed flowers, fused objects, misspelled text, artificial plastic sheen or oversharpened edges. Use the exact supplied logo, small and legible, in the lower right within a safe margin. Apply evenly spaced repeated '7620644158' across the full image at subtle 12\u201315% opacity with exact digits, covering the subject too; refined unobtrusive typography. No additional words or labels. Maintain original aspect ratio. For this hero product image: seamless solid warm ivory background (#faf7f2), no checkerboard, no jagged cutout edges, no floating loose petals. Keep entire main subject and ribbon within frame. Natural soft grounding shadow. Do not add a car to the heart-shaped floral arrangement."
+  },
+  {
+    "id": 2,
+    "key": "assets/brand/hero/hero-cardecor.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/brand/hero/hero-cardecor.webp",
+    "targets": [
+      {
+        "path": "assets/brand/hero/hero-cardecor.webp",
+        "size": [
+          1024,
+          1024
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/.codex/generated_images/01a078c0-4286-70e0-9fcf-97ebb1b7be6c/exec-f86c05df-0460-45e8-8dc4-5050923f2600.png",
+    "prompt": "Use case: precise-object-edit. Input image 1: exact existing website image to enhance. Input image 2: exact Sagar Flower Shop gold lotus logo, supporting brand insert. Faithfully recreate the first image as premium realistic floral photography. Preserve the original product, flower varieties, colors, arrangement, structural details, object count and framing. Improve fine petal detail, crisp natural textures, elegant soft lighting, balanced exposure and sophisticated yet vivid colors. No invented components, malformed flowers, fused objects, misspelled text, artificial plastic sheen or oversharpened edges. Use the exact supplied logo, small and legible, in the lower right within a safe margin. Apply evenly spaced repeated '7620644158' across the full image at subtle 12\u201315% opacity with exact digits, covering the subject too; refined unobtrusive typography. No additional words or labels. Maintain original aspect ratio. For this hero product image: seamless solid warm ivory background (#faf7f2), no checkerboard, no jagged cutout edges, no floating loose petals. Keep entire main subject and ribbon within frame. Natural soft grounding shadow. Do not add a car to the heart-shaped floral arrangement."
+  },
+  {
+    "id": 3,
+    "key": "assets/brand/hero/hero-jhula.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/brand/hero/hero-jhula.webp",
+    "targets": [
+      {
+        "path": "assets/brand/hero/hero-jhula.webp",
+        "size": [
+          1024,
+          1024
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/.codex/generated_images/01a078c0-4286-70e0-9fcf-97ebb1b7be6c/exec-1380d732-4745-4c3c-acc0-1a3884941a6c.png",
+    "prompt": "Use case: precise-object-edit. Input image 1: exact existing website image to enhance. Input image 2: exact Sagar Flower Shop gold lotus logo, supporting brand insert. Faithfully recreate the first image as premium realistic floral photography. Preserve the original product, flower varieties, colors, arrangement, structural details, object count and framing. Improve fine petal detail, crisp natural textures, elegant soft lighting, balanced exposure and sophisticated yet vivid colors. No invented components, malformed flowers, fused objects, misspelled text, artificial plastic sheen or oversharpened edges. Use the exact supplied logo, small and legible, in the lower right within a safe margin. Apply evenly spaced repeated '7620644158' across the full image at subtle 12\u201315% opacity with exact digits, covering the subject too; refined unobtrusive typography. No additional words or labels. Maintain original aspect ratio. Hero product: seamless solid warm ivory background, no checkerboard or jagged cutout, no floating petals, real soft lighting and natural shadows."
+  },
+  {
+    "id": 4,
+    "key": "assets/brand/hero/hero-urli.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/brand/hero/hero-urli.webp",
+    "targets": [
+      {
+        "path": "assets/brand/hero/hero-urli.webp",
+        "size": [
+          1024,
+          1024
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/.codex/generated_images/01a078c0-4286-70e0-9fcf-97ebb1b7be6c/exec-842ea593-2079-430c-97f5-9adfaf323f78.png",
+    "prompt": "Use case: precise-object-edit. Input image 1: exact existing website image to enhance. Input image 2: exact Sagar Flower Shop gold lotus logo, supporting brand insert. Faithfully recreate the first image as premium realistic floral photography. Preserve the original product, flower varieties, colors, arrangement, structural details, object count and framing. Improve fine petal detail, crisp natural textures, elegant soft lighting, balanced exposure and sophisticated yet vivid colors. No invented components, malformed flowers, fused objects, misspelled text, artificial plastic sheen or oversharpened edges. Use the exact supplied logo, small and legible, in the lower right within a safe margin. Apply evenly spaced repeated '7620644158' across the full image at subtle 12\u201315% opacity with exact digits, covering the subject too; refined unobtrusive typography. No additional words or labels. Maintain original aspect ratio. Hero product: seamless solid warm ivory background, no checkerboard or jagged cutout, no floating petals, real soft lighting and natural shadows."
+  },
+  {
+    "id": 5,
+    "key": "assets/brand/hero/hero-varmala.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/brand/hero/hero-varmala.webp",
+    "targets": [
+      {
+        "path": "assets/brand/hero/hero-varmala.webp",
+        "size": [
+          1024,
+          1024
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/.codex/generated_images/01a078c0-4286-70e0-9fcf-97ebb1b7be6c/exec-27dd0f1d-2200-4729-b52d-a87aae5d000a.png",
+    "prompt": "Use case: precise-object-edit. Input image 1: exact existing website image to enhance. Input image 2: exact Sagar Flower Shop gold lotus logo, supporting brand insert. Faithfully recreate the first image as premium realistic floral photography. Preserve the original product, flower varieties, colors, arrangement, structural details, object count and framing. Improve fine petal detail, crisp natural textures, elegant soft lighting, balanced exposure and sophisticated yet vivid colors. No invented components, malformed flowers, fused objects, misspelled text, artificial plastic sheen or oversharpened edges. Use the exact supplied logo, small and legible, in the lower right within a safe margin. Apply evenly spaced repeated '7620644158' across the full image at subtle 12\u201315% opacity with exact digits, covering the subject too; refined unobtrusive typography. No additional words or labels. Maintain original aspect ratio. Hero product: seamless solid warm ivory background, no checkerboard or jagged cutout, no floating petals, real soft lighting and natural shadows."
+  },
+  {
+    "id": 6,
+    "key": "assets/images/belts/collection-11.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/belts/collection-11-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/belts/collection-11-1280.webp",
+        "size": [
+          924,
+          1264
+        ]
+      },
+      {
+        "path": "assets/images/belts/collection-11-360.webp",
+        "size": [
+          360,
+          492
+        ]
+      },
+      {
+        "path": "assets/images/belts/collection-11-640.webp",
+        "size": [
+          640,
+          875
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/.codex/generated_images/01a078c0-4286-70e0-9fcf-97ebb1b7be6c/exec-c0a977b6-4b4b-40e3-9edc-a33a23ed76d1.png",
+    "prompt": "Use case: precise-object-edit. Input image 1: exact existing website image to enhance. Input image 2: exact Sagar Flower Shop gold lotus logo, supporting brand insert. Faithfully recreate the first image as premium realistic floral photography. Preserve the original product, flower varieties, colors, arrangement, structural details, object count and framing. Improve fine petal detail, crisp natural textures, elegant soft lighting, balanced exposure and sophisticated yet vivid colors. No invented components, malformed flowers, fused objects, misspelled text, artificial plastic sheen or oversharpened edges. Use the exact supplied logo, small and legible, in the lower right within a safe margin. Apply evenly spaced repeated '7620644158' across the full image at subtle 12\u201315% opacity with exact digits, covering the subject too; refined unobtrusive typography. No additional words or labels. Maintain original aspect ratio. Keep recognizable original scene. Replace oversized marketing headlines and old promotional labels with clean background; the only branding should be the supplied small logo and subtle phone pattern. If people appear, strictly preserve their identity, pose, expression and anatomy; realistic hands and skin. Do not add people."
+  },
+  {
+    "id": 7,
+    "key": "assets/images/belts/collection-33.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/belts/collection-33-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/belts/collection-33-1280.webp",
+        "size": [
+          903,
+          1402
+        ]
+      },
+      {
+        "path": "assets/images/belts/collection-33-360.webp",
+        "size": [
+          360,
+          559
+        ]
+      },
+      {
+        "path": "assets/images/belts/collection-33-640.webp",
+        "size": [
+          640,
+          994
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/.codex/generated_images/01a078c0-4286-70e0-9fcf-97ebb1b7be6c/exec-bf290cd4-b97e-4972-bd57-8c2644f6f26e.png",
+    "prompt": "Use case: precise-object-edit. Input image 1: exact existing website image to enhance. Input image 2: exact Sagar Flower Shop gold lotus logo, supporting brand insert. Faithfully recreate the first image as premium realistic floral photography. Preserve the original product, flower varieties, colors, arrangement, structural details, object count and framing. Improve fine petal detail, crisp natural textures, elegant soft lighting, balanced exposure and sophisticated yet vivid colors. No invented components, malformed flowers, fused objects, misspelled text, artificial plastic sheen or oversharpened edges. Use the exact supplied logo, small and legible, in the lower right within a safe margin. Apply evenly spaced repeated '7620644158' across the full image at subtle 12\u201315% opacity with exact digits, covering the subject too; refined unobtrusive typography. No additional words or labels. Maintain original aspect ratio. Keep recognizable original scene. Replace oversized marketing headlines and old promotional labels with clean background; the only branding should be the supplied small logo and subtle phone pattern. If people appear, strictly preserve their identity, pose, expression and anatomy; realistic hands and skin. Do not add people."
+  },
+  {
+    "id": 8,
+    "key": "assets/images/bouquets/bouquets-25.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/bouquets-25.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/bouquets-25-small.webp",
+        "size": [
+          561,
+          800
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/bouquets-25.webp",
+        "size": [
+          982,
+          1400
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/.codex/generated_images/01a078c0-4286-70e0-9fcf-97ebb1b7be6c/exec-f872b60d-ca96-4477-addf-890e5701c037.png",
+    "prompt": "Use case: precise-object-edit. Input image 1: exact existing website image to enhance. Input image 2: exact Sagar Flower Shop gold lotus logo, supporting brand insert. Faithfully recreate the first image as premium realistic floral photography. Preserve the original product, flower varieties, colors, arrangement, structural details, object count and framing. Improve fine petal detail, crisp natural textures, elegant soft lighting, balanced exposure and sophisticated yet vivid colors. No invented components, malformed flowers, fused objects, misspelled text, artificial plastic sheen or oversharpened edges. Use the exact supplied logo, small and legible, in the lower right within a safe margin. Apply evenly spaced repeated '7620644158' across the full image at subtle 12\u201315% opacity with exact digits, covering the subject too; refined unobtrusive typography. No additional words or labels. Maintain original aspect ratio. Keep recognizable original scene. Replace oversized marketing headlines and old promotional labels with clean background; the only branding should be the supplied small logo and subtle phone pattern. If people appear, strictly preserve their identity, pose, expression and anatomy; realistic hands and skin. Do not add people."
+  },
+  {
+    "id": 9,
+    "key": "assets/images/bouquets/bouquets-37.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/bouquets-37.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/bouquets-37-small.webp",
+        "size": [
+          640,
+          800
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/bouquets-37.webp",
+        "size": [
+          1120,
+          1400
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/.codex/generated_images/01a078c0-4286-70e0-9fcf-97ebb1b7be6c/exec-2b7b8e9e-6f07-4dcd-90b0-53ab67ef041c.png",
+    "prompt": "Use case: precise-object-edit. Input image 1: exact existing website image to enhance. Input image 2: exact Sagar Flower Shop gold lotus logo, supporting brand insert. Faithfully recreate the first image as premium realistic floral photography. Preserve the original product, flower varieties, colors, arrangement, structural details, object count and framing. Improve fine petal detail, crisp natural textures, elegant soft lighting, balanced exposure and sophisticated yet vivid colors. No invented components, malformed flowers, fused objects, misspelled text, artificial plastic sheen or oversharpened edges. Use the exact supplied logo, small and legible, in the lower right within a safe margin. Apply evenly spaced repeated '7620644158' across the full image at subtle 12\u201315% opacity with exact digits, covering the subject too; refined unobtrusive typography. No additional words or labels. Maintain original aspect ratio. Keep recognizable original scene. Replace oversized marketing headlines and old promotional labels with clean background; the only branding should be the supplied small logo and subtle phone pattern. If people appear, strictly preserve their identity, pose, expression and anatomy; realistic hands and skin. Do not add people."
+  },
+  {
+    "id": 10,
+    "key": "assets/images/bouquets/collection-02.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-02-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-02-1280.webp",
+        "size": [
+          967,
+          1333
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-02-360.webp",
+        "size": [
+          360,
+          496
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-02-640.webp",
+        "size": [
+          640,
+          882
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/.codex/generated_images/01a078c0-4286-70e0-9fcf-97ebb1b7be6c/exec-505ad4f7-e932-4509-b548-10f344529ed4.png",
+    "prompt": "Use case: precise-object-edit. Input image 1: exact existing website image to enhance. Input image 2: exact Sagar Flower Shop gold lotus logo, supporting brand insert. Faithfully recreate the first image as premium realistic floral photography. Preserve the original product, flower varieties, colors, arrangement, structural details, object count and framing. Improve fine petal detail, crisp natural textures, elegant soft lighting, balanced exposure and sophisticated yet vivid colors. No invented components, malformed flowers, fused objects, misspelled text, artificial plastic sheen or oversharpened edges. Use the exact supplied logo, small and legible, in the lower right within a safe margin. Apply evenly spaced repeated '7620644158' across the full image at subtle 12\u201315% opacity with exact digits, covering the subject too; refined unobtrusive typography. No additional words or labels. Maintain original aspect ratio. Keep recognizable original scene. Replace oversized marketing headlines and old promotional labels with clean background; the only branding should be the supplied small logo and subtle phone pattern. If people appear, strictly preserve their identity, pose, expression and anatomy; realistic hands and skin. Do not add people."
+  },
+  {
+    "id": 11,
+    "key": "assets/images/bouquets/collection-03.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-03-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-03-1280.webp",
+        "size": [
+          962,
+          1496
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-03-360.webp",
+        "size": [
+          360,
+          560
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-03-640.webp",
+        "size": [
+          640,
+          995
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/.codex/generated_images/01a078c0-4286-70e0-9fcf-97ebb1b7be6c/exec-368ef1ac-0058-44a0-9c03-22e7b4b9bc63.png",
+    "prompt": "Use case: precise-object-edit. Input image 1: exact existing website image to enhance. Input image 2: exact Sagar Flower Shop gold lotus logo, supporting brand insert. Faithfully recreate the first image as premium realistic floral photography. Preserve the original product, flower varieties, colors, arrangement, structural details, object count and framing. Improve fine petal detail, crisp natural textures, elegant soft lighting, balanced exposure and sophisticated yet vivid colors. No invented components, malformed flowers, fused objects, misspelled text, artificial plastic sheen or oversharpened edges. Use the exact supplied logo, small and legible, in the lower right within a safe margin. Apply evenly spaced repeated '7620644158' across the full image at subtle 12\u201315% opacity with exact digits, covering the subject too; refined unobtrusive typography. No additional words or labels. Maintain original aspect ratio. Keep recognizable original scene. Replace oversized marketing headlines and old promotional labels with clean background; the only branding should be the supplied small logo and subtle phone pattern. If people appear, strictly preserve their identity, pose, expression and anatomy; realistic hands and skin. Do not add people."
+  },
+  {
+    "id": 12,
+    "key": "assets/images/bouquets/collection-04.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-04-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-04-1280.webp",
+        "size": [
+          935,
+          1333
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-04-360.webp",
+        "size": [
+          360,
+          513
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-04-640.webp",
+        "size": [
+          640,
+          912
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/.codex/generated_images/01a077b2-9ac9-70a2-b60e-ca439dc45a10/exec-e00ba671-78d3-4126-a13f-db305634a517.png",
+    "prompt": "Resume existing premium photography treatment: preserve product and scene, replace oversized branding with supplied small logo at lower right, repeat 7620644158 at subtle 12\u201315% opacity across image."
+  },
+  {
+    "id": 13,
+    "key": "assets/images/bouquets/collection-05.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-05-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-05-1280.webp",
+        "size": [
+          962,
+          1342
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-05-360.webp",
+        "size": [
+          360,
+          502
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-05-640.webp",
+        "size": [
+          640,
+          893
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/.codex/generated_images/01a077b2-9ac9-70a2-b60e-ca439dc45a10/exec-e135881f-5d1d-4908-9519-5604fe37faf7.png",
+    "prompt": "Use case: precise-object-edit. Image 1 exact photo to enhance; image 2 exact logo supporting insert. Preserve product, flowers, colors, wrapping, object count and framing. Improve natural petal texture, light and photographic clarity. Keep original scene. Remove oversized marketing headlines, promotional badges and old branding, replacing with matching clean background. Insert supplied logo small at lower right. Repeat exact '7620644158' evenly across full image including subject at subtle 12\u201315% opacity. No other labels. Maintain aspect ratio. If a person appears preserve identity, anatomy, pose and expression exactly. No invented objects or plastic texture."
+  },
+  {
+    "id": 14,
+    "key": "assets/images/bouquets/collection-06.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-06-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-06-1280.webp",
+        "size": [
+          975,
+          1336
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-06-360.webp",
+        "size": [
+          360,
+          493
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-06-640.webp",
+        "size": [
+          640,
+          877
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/.codex/generated_images/01a077b2-9ac9-70a2-b60e-ca439dc45a10/exec-3660eb93-4cfc-43a7-822f-f163840d65f0.png",
+    "prompt": "Use case: precise-object-edit. Image 1 exact photo to enhance; image 2 exact logo supporting insert. Preserve product, flowers, colors, wrapping, object count and framing. Improve natural petal texture, light and photographic clarity. Keep original scene. Remove oversized marketing headlines, promotional badges and old branding, replacing with matching clean background. Insert supplied logo small at lower right. Repeat exact '7620644158' evenly across full image including subject at subtle 12\u201315% opacity. No other labels. Maintain aspect ratio. If a person appears preserve identity, anatomy, pose and expression exactly. No invented objects or plastic texture."
+  },
+  {
+    "id": 15,
+    "key": "assets/images/bouquets/collection-07.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-07-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-07-1280.webp",
+        "size": [
+          958,
+          1483
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-07-360.webp",
+        "size": [
+          360,
+          557
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-07-640.webp",
+        "size": [
+          640,
+          991
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/.codex/generated_images/01a077b2-9ac9-70a2-b60e-ca439dc45a10/exec-23a1afd8-affa-476d-b676-8e2468b53af4.png",
+    "prompt": "Use case: precise-object-edit. Image 1 exact photo to enhance; image 2 exact logo supporting insert. Preserve product, flowers, colors, wrapping, object count and framing. Improve natural petal texture, light and photographic clarity. Keep original scene. Remove oversized marketing headlines, promotional badges and old branding, replacing with matching clean background. Insert supplied logo small at lower right. Repeat exact '7620644158' evenly across full image including subject at subtle 12\u201315% opacity. No other labels. Maintain aspect ratio. If a person appears preserve identity, anatomy, pose and expression exactly. No invented objects or plastic texture."
+  },
+  {
+    "id": 16,
+    "key": "assets/images/bouquets/collection-12.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-12-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-12-1280.webp",
+        "size": [
+          924,
+          1264
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-12-360.webp",
+        "size": [
+          360,
+          492
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-12-640.webp",
+        "size": [
+          640,
+          875
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/.codex/generated_images/01a077b2-9ac9-70a2-b60e-ca439dc45a10/exec-ca570cc4-1e80-4dfa-8774-4f50acc00195.png",
+    "prompt": "Use case: precise-object-edit. Image 1 exact photo to enhance; image 2 exact logo supporting insert. Preserve product, flowers, colors, wrapping, object count and framing. Improve natural petal texture, light and photographic clarity. Keep original scene. Remove oversized marketing headlines, promotional badges and old branding, replacing with matching clean background. Insert supplied logo small at lower right. Repeat exact '7620644158' evenly across full image including subject at subtle 12\u201315% opacity. No other labels. Maintain aspect ratio. If a person appears preserve identity, anatomy, pose and expression exactly. No invented objects or plastic texture."
+  },
+  {
+    "id": 17,
+    "key": "assets/images/bouquets/collection-14.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-14-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-14-1280.webp",
+        "size": [
+          924,
+          1264
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-14-360.webp",
+        "size": [
+          360,
+          492
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-14-640.webp",
+        "size": [
+          640,
+          875
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/.codex/generated_images/01a077b2-9ac9-70a2-b60e-ca439dc45a10/exec-9ed081fc-6300-4c36-8306-b8fb760b6512.png",
+    "prompt": "Use case: precise-object-edit. Image 1 exact photo to enhance; image 2 exact logo supporting insert. Preserve product, flowers, colors, wrapping, object count and framing. Improve natural petal texture, light and photographic clarity. Keep original scene. Remove oversized marketing headlines, promotional badges and old branding, replacing with matching clean background. Insert supplied logo small at lower right. Repeat exact '7620644158' evenly across full image including subject at subtle 12\u201315% opacity. No other labels. Maintain aspect ratio. If a person appears preserve identity, anatomy, pose and expression exactly. No invented objects or plastic texture."
+  },
+  {
+    "id": 18,
+    "key": "assets/images/bouquets/collection-16.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-16-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-16-1280.webp",
+        "size": [
+          924,
+          1264
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-16-360.webp",
+        "size": [
+          360,
+          492
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-16-640.webp",
+        "size": [
+          640,
+          875
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/.codex/generated_images/01a077b2-9ac9-70a2-b60e-ca439dc45a10/exec-feaf39f7-c9eb-4bf7-9335-a4d2803534da.png",
+    "prompt": "Use case: precise-object-edit. Image 1 exact photo to enhance; image 2 exact logo supporting insert. Preserve product, flowers, colors, wrapping, object count and framing. Improve natural petal texture, light and photographic clarity. Keep original scene. Remove oversized marketing headlines, promotional badges and old branding, replacing with matching clean background. Insert supplied logo small at lower right. Repeat exact '7620644158' evenly across full image including subject at subtle 12\u201315% opacity. No other labels. Maintain aspect ratio. If a person appears preserve identity, anatomy, pose and expression exactly. No invented objects or plastic texture."
+  },
+  {
+    "id": 19,
+    "key": "assets/images/bouquets/collection-17.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-17-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-17-1280.webp",
+        "size": [
+          924,
+          1264
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-17-360.webp",
+        "size": [
+          360,
+          492
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-17-640.webp",
+        "size": [
+          640,
+          875
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/.codex/generated_images/01a077b2-9ac9-70a2-b60e-ca439dc45a10/exec-b17f7916-f2c4-45a9-b6b4-d903d532c562.png",
+    "prompt": "Use case: precise-object-edit. Image 1 exact photo to enhance; image 2 exact logo supporting insert. Preserve product, flowers, colors, wrapping, object count and framing. Improve natural petal texture, light and photographic clarity. Keep original scene. Remove oversized marketing headlines, promotional badges and old branding, replacing with matching clean background. Insert supplied logo small at lower right. Repeat exact '7620644158' evenly across full image including subject at subtle 12\u201315% opacity. No other labels. Maintain aspect ratio. If a person appears preserve identity, anatomy, pose and expression exactly. No invented objects or plastic texture."
+  },
+  {
+    "id": 20,
+    "key": "assets/images/bouquets/collection-18.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-18-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-18-1280.webp",
+        "size": [
+          924,
+          1264
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-18-360.webp",
+        "size": [
+          360,
+          492
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-18-640.webp",
+        "size": [
+          640,
+          875
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/.codex/generated_images/01a077b2-9ac9-70a2-b60e-ca439dc45a10/exec-39511de2-1c38-49f2-a241-d0f189a95e65.png",
+    "prompt": "Use case: precise-object-edit. Image 1 exact photo to enhance; image 2 exact logo supporting insert. Preserve product, flowers, colors, wrapping, object count and framing. Improve natural petal texture, light and photographic clarity. Keep original scene. Remove oversized marketing headlines, promotional badges and old branding, replacing with matching clean background. Insert supplied logo small at lower right. Repeat exact '7620644158' evenly across full image including subject at subtle 12\u201315% opacity. No other labels. Maintain aspect ratio. If a person appears preserve identity, anatomy, pose and expression exactly. No invented objects or plastic texture."
+  },
+  {
+    "id": 21,
+    "key": "assets/images/bouquets/collection-19.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-19-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-19-1280.webp",
+        "size": [
+          924,
+          1264
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-19-360.webp",
+        "size": [
+          360,
+          492
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-19-640.webp",
+        "size": [
+          640,
+          875
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/.codex/generated_images/01a077b2-9ac9-70a2-b60e-ca439dc45a10/exec-7ca90d02-18c0-4f45-bae1-51f0be003941.png",
+    "prompt": "Use case: precise-object-edit. Image 1 exact photo to enhance; image 2 exact logo supporting insert. Preserve product, flowers, colors, wrapping, object count and framing. Improve natural petal texture, light and photographic clarity. Keep original scene. Remove oversized marketing headlines, promotional badges and old branding, replacing with matching clean background. Insert supplied logo small at lower right. Repeat exact '7620644158' evenly across full image including subject at subtle 12\u201315% opacity. No other labels. Maintain aspect ratio. If a person appears preserve identity, anatomy, pose and expression exactly. No invented objects or plastic texture."
+  },
+  {
+    "id": 22,
+    "key": "assets/images/bouquets/collection-31.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-31-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-31-1280.webp",
+        "size": [
+          1122,
+          1339
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-31-360.webp",
+        "size": [
+          360,
+          430
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-31-640.webp",
+        "size": [
+          640,
+          764
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/.codex/generated_images/01a077b2-9ac9-70a2-b60e-ca439dc45a10/exec-a0c7ad5c-fb57-4bec-8ce0-0384ad6ea3b6.png",
+    "prompt": "Use case: precise-object-edit. Image 1 exact photo to enhance; image 2 exact logo supporting insert. Preserve product, flowers, colors, wrapping, object count and framing. Improve natural petal texture, light and photographic clarity. Keep original scene. Remove oversized marketing headlines, promotional badges and old branding, replacing with matching clean background. Insert supplied logo small at lower right. Repeat exact '7620644158' evenly across full image including subject at subtle 12\u201315% opacity. No other labels. Maintain aspect ratio. If a person appears preserve identity, anatomy, pose and expression exactly. No invented objects or plastic texture."
+  },
+  {
+    "id": 23,
+    "key": "assets/images/bouquets/collection-34.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-34-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-34-1280.webp",
+        "size": [
+          905,
+          1402
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-34-360.webp",
+        "size": [
+          360,
+          558
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-34-640.webp",
+        "size": [
+          640,
+          991
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/.codex/generated_images/01a077b2-9ac9-70a2-b60e-ca439dc45a10/exec-0600b00f-a283-4557-9fc7-d3f88bfda0fe.png",
+    "prompt": "Use case: precise-object-edit. Image 1 exact photo to enhance; image 2 exact logo supporting insert. Preserve product, flowers, colors, wrapping, object count and framing. Improve natural petal texture, light and photographic clarity. Keep original scene. Remove oversized marketing headlines, promotional badges and old branding, replacing with matching clean background. Insert supplied logo small at lower right. Repeat exact '7620644158' evenly across full image including subject at subtle 12\u201315% opacity. No other labels. Maintain aspect ratio. If a person appears preserve identity, anatomy, pose and expression exactly. No invented objects or plastic texture."
+  },
+  {
+    "id": 24,
+    "key": "assets/images/bouquets/collection-35.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-35-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-35-1280.webp",
+        "size": [
+          1122,
+          1337
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-35-360.webp",
+        "size": [
+          360,
+          429
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-35-640.webp",
+        "size": [
+          640,
+          763
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/.codex/generated_images/01a077b2-9ac9-70a2-b60e-ca439dc45a10/exec-ca9e1cc4-5d04-44c8-97f3-9bb0606c781f.png",
+    "prompt": "Use case: precise-object-edit. Image 1 exact photo to enhance; image 2 exact logo supporting insert. Preserve product, flowers, colors, wrapping, object count and framing. Improve natural petal texture, light and photographic clarity. Keep original scene. Remove oversized marketing headlines, promotional badges and old branding, replacing with matching clean background. Insert supplied logo small at lower right. Repeat exact '7620644158' evenly across full image including subject at subtle 12\u201315% opacity. No other labels. Maintain aspect ratio. If a person appears preserve identity, anatomy, pose and expression exactly. No invented objects or plastic texture."
+  },
+  {
+    "id": 25,
+    "key": "assets/images/decor/collection-08.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/decor/collection-08-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/decor/collection-08-1280.webp",
+        "size": [
+          924,
+          1264
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-08-360.webp",
+        "size": [
+          360,
+          492
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-08-640.webp",
+        "size": [
+          640,
+          875
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/sagar florist shop/output/imagegen/selected/25-collection-08.png",
+    "prompt": "Premium realistic floral photography of Marigold celebration stage with Sagar Flower Shop logo and subtle 7620644158 watermark."
+  },
+  {
+    "id": 26,
+    "key": "assets/images/decor/collection-09.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/decor/collection-09-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/decor/collection-09-1280.webp",
+        "size": [
+          924,
+          1264
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-09-360.webp",
+        "size": [
+          360,
+          492
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-09-640.webp",
+        "size": [
+          640,
+          875
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/sagar florist shop/output/imagegen/selected/26-collection-09.png",
+    "prompt": "Premium floral photography"
+  },
+  {
+    "id": 27,
+    "key": "assets/images/decor/collection-10.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/decor/collection-10-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/decor/collection-10-1280.webp",
+        "size": [
+          924,
+          1264
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-10-360.webp",
+        "size": [
+          360,
+          492
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-10-640.webp",
+        "size": [
+          640,
+          875
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/sagar florist shop/output/imagegen/selected/27-collection-10.png",
+    "prompt": "Premium floral photography"
+  },
+  {
+    "id": 28,
+    "key": "assets/images/decor/collection-13.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/decor/collection-13-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/decor/collection-13-1280.webp",
+        "size": [
+          816,
+          1264
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-13-360.webp",
+        "size": [
+          360,
+          558
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-13-640.webp",
+        "size": [
+          640,
+          991
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/sagar florist shop/output/imagegen/selected/28-collection-13.png",
+    "prompt": "Premium floral photography"
+  },
+  {
+    "id": 29,
+    "key": "assets/images/decor/collection-23.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/decor/collection-23-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/decor/collection-23-1280.webp",
+        "size": [
+          967,
+          1276
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-23-360.webp",
+        "size": [
+          360,
+          475
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-23-640.webp",
+        "size": [
+          640,
+          845
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/sagar florist shop/output/imagegen/selected/29-collection-23.png",
+    "prompt": "Premium floral photography"
+  },
+  {
+    "id": 30,
+    "key": "assets/images/decor/collection-24.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/decor/collection-24-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/decor/collection-24-1280.webp",
+        "size": [
+          1001,
+          1378
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-24-360.webp",
+        "size": [
+          360,
+          496
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-24-640.webp",
+        "size": [
+          640,
+          881
+        ]
+      }
+    ],
+    "generated": "/home/asrarshaikh/sagar florist shop/output/imagegen/selected/30-collection-24.png",
+    "prompt": "Premium floral photography"
+  }
+]

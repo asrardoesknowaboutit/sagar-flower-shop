@@ -1,0 +1,1416 @@
+[
+  {
+    "id": 0,
+    "key": "assets/brand/hero/hero-belt.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/brand/hero/hero-belt.webp",
+    "targets": [
+      {
+        "path": "assets/brand/hero/hero-belt.webp",
+        "size": [
+          1024,
+          1024
+        ]
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "key": "assets/brand/hero/hero-bouquet-editorial.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/brand/hero/hero-bouquet-editorial.webp",
+    "targets": [
+      {
+        "path": "assets/brand/hero/hero-bouquet-editorial.webp",
+        "size": [
+          1254,
+          1254
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "key": "assets/brand/hero/hero-cardecor.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/brand/hero/hero-cardecor.webp",
+    "targets": [
+      {
+        "path": "assets/brand/hero/hero-cardecor.webp",
+        "size": [
+          1024,
+          1024
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "key": "assets/brand/hero/hero-jhula.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/brand/hero/hero-jhula.webp",
+    "targets": [
+      {
+        "path": "assets/brand/hero/hero-jhula.webp",
+        "size": [
+          1024,
+          1024
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "key": "assets/brand/hero/hero-urli.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/brand/hero/hero-urli.webp",
+    "targets": [
+      {
+        "path": "assets/brand/hero/hero-urli.webp",
+        "size": [
+          1024,
+          1024
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "key": "assets/brand/hero/hero-varmala.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/brand/hero/hero-varmala.webp",
+    "targets": [
+      {
+        "path": "assets/brand/hero/hero-varmala.webp",
+        "size": [
+          1024,
+          1024
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "key": "assets/images/belts/collection-11.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/belts/collection-11-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/belts/collection-11-1280.webp",
+        "size": [
+          924,
+          1264
+        ]
+      },
+      {
+        "path": "assets/images/belts/collection-11-360.webp",
+        "size": [
+          360,
+          492
+        ]
+      },
+      {
+        "path": "assets/images/belts/collection-11-640.webp",
+        "size": [
+          640,
+          875
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "key": "assets/images/belts/collection-33.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/belts/collection-33-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/belts/collection-33-1280.webp",
+        "size": [
+          903,
+          1402
+        ]
+      },
+      {
+        "path": "assets/images/belts/collection-33-360.webp",
+        "size": [
+          360,
+          559
+        ]
+      },
+      {
+        "path": "assets/images/belts/collection-33-640.webp",
+        "size": [
+          640,
+          994
+        ]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "key": "assets/images/bouquets/bouquets-25.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/bouquets-25.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/bouquets-25-small.webp",
+        "size": [
+          561,
+          800
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/bouquets-25.webp",
+        "size": [
+          982,
+          1400
+        ]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "key": "assets/images/bouquets/bouquets-37.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/bouquets-37.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/bouquets-37-small.webp",
+        "size": [
+          640,
+          800
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/bouquets-37.webp",
+        "size": [
+          1120,
+          1400
+        ]
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "key": "assets/images/bouquets/collection-02.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-02-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-02-1280.webp",
+        "size": [
+          967,
+          1333
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-02-360.webp",
+        "size": [
+          360,
+          496
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-02-640.webp",
+        "size": [
+          640,
+          882
+        ]
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "key": "assets/images/bouquets/collection-03.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-03-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-03-1280.webp",
+        "size": [
+          962,
+          1496
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-03-360.webp",
+        "size": [
+          360,
+          560
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-03-640.webp",
+        "size": [
+          640,
+          995
+        ]
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "key": "assets/images/bouquets/collection-04.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-04-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-04-1280.webp",
+        "size": [
+          935,
+          1333
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-04-360.webp",
+        "size": [
+          360,
+          513
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-04-640.webp",
+        "size": [
+          640,
+          912
+        ]
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "key": "assets/images/bouquets/collection-05.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-05-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-05-1280.webp",
+        "size": [
+          962,
+          1342
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-05-360.webp",
+        "size": [
+          360,
+          502
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-05-640.webp",
+        "size": [
+          640,
+          893
+        ]
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "key": "assets/images/bouquets/collection-06.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-06-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-06-1280.webp",
+        "size": [
+          975,
+          1336
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-06-360.webp",
+        "size": [
+          360,
+          493
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-06-640.webp",
+        "size": [
+          640,
+          877
+        ]
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "key": "assets/images/bouquets/collection-07.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-07-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-07-1280.webp",
+        "size": [
+          958,
+          1483
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-07-360.webp",
+        "size": [
+          360,
+          557
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-07-640.webp",
+        "size": [
+          640,
+          991
+        ]
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "key": "assets/images/bouquets/collection-12.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-12-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-12-1280.webp",
+        "size": [
+          924,
+          1264
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-12-360.webp",
+        "size": [
+          360,
+          492
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-12-640.webp",
+        "size": [
+          640,
+          875
+        ]
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "key": "assets/images/bouquets/collection-14.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-14-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-14-1280.webp",
+        "size": [
+          924,
+          1264
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-14-360.webp",
+        "size": [
+          360,
+          492
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-14-640.webp",
+        "size": [
+          640,
+          875
+        ]
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "key": "assets/images/bouquets/collection-16.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-16-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-16-1280.webp",
+        "size": [
+          924,
+          1264
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-16-360.webp",
+        "size": [
+          360,
+          492
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-16-640.webp",
+        "size": [
+          640,
+          875
+        ]
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "key": "assets/images/bouquets/collection-17.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-17-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-17-1280.webp",
+        "size": [
+          924,
+          1264
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-17-360.webp",
+        "size": [
+          360,
+          492
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-17-640.webp",
+        "size": [
+          640,
+          875
+        ]
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "key": "assets/images/bouquets/collection-18.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-18-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-18-1280.webp",
+        "size": [
+          924,
+          1264
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-18-360.webp",
+        "size": [
+          360,
+          492
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-18-640.webp",
+        "size": [
+          640,
+          875
+        ]
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "key": "assets/images/bouquets/collection-19.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-19-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-19-1280.webp",
+        "size": [
+          924,
+          1264
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-19-360.webp",
+        "size": [
+          360,
+          492
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-19-640.webp",
+        "size": [
+          640,
+          875
+        ]
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "key": "assets/images/bouquets/collection-31.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-31-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-31-1280.webp",
+        "size": [
+          1122,
+          1339
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-31-360.webp",
+        "size": [
+          360,
+          430
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-31-640.webp",
+        "size": [
+          640,
+          764
+        ]
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "key": "assets/images/bouquets/collection-34.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-34-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-34-1280.webp",
+        "size": [
+          905,
+          1402
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-34-360.webp",
+        "size": [
+          360,
+          558
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-34-640.webp",
+        "size": [
+          640,
+          991
+        ]
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "key": "assets/images/bouquets/collection-35.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/bouquets/collection-35-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/bouquets/collection-35-1280.webp",
+        "size": [
+          1122,
+          1337
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-35-360.webp",
+        "size": [
+          360,
+          429
+        ]
+      },
+      {
+        "path": "assets/images/bouquets/collection-35-640.webp",
+        "size": [
+          640,
+          763
+        ]
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "key": "assets/images/decor/collection-08.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/decor/collection-08-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/decor/collection-08-1280.webp",
+        "size": [
+          924,
+          1264
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-08-360.webp",
+        "size": [
+          360,
+          492
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-08-640.webp",
+        "size": [
+          640,
+          875
+        ]
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "key": "assets/images/decor/collection-09.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/decor/collection-09-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/decor/collection-09-1280.webp",
+        "size": [
+          924,
+          1264
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-09-360.webp",
+        "size": [
+          360,
+          492
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-09-640.webp",
+        "size": [
+          640,
+          875
+        ]
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "key": "assets/images/decor/collection-10.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/decor/collection-10-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/decor/collection-10-1280.webp",
+        "size": [
+          924,
+          1264
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-10-360.webp",
+        "size": [
+          360,
+          492
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-10-640.webp",
+        "size": [
+          640,
+          875
+        ]
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "key": "assets/images/decor/collection-13.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/decor/collection-13-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/decor/collection-13-1280.webp",
+        "size": [
+          816,
+          1264
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-13-360.webp",
+        "size": [
+          360,
+          558
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-13-640.webp",
+        "size": [
+          640,
+          991
+        ]
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "key": "assets/images/decor/collection-23.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/decor/collection-23-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/decor/collection-23-1280.webp",
+        "size": [
+          967,
+          1276
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-23-360.webp",
+        "size": [
+          360,
+          475
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-23-640.webp",
+        "size": [
+          640,
+          845
+        ]
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "key": "assets/images/decor/collection-24.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/decor/collection-24-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/decor/collection-24-1280.webp",
+        "size": [
+          1001,
+          1378
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-24-360.webp",
+        "size": [
+          360,
+          496
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-24-640.webp",
+        "size": [
+          640,
+          881
+        ]
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "key": "assets/images/decor/collection-27.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/decor/collection-27-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/decor/collection-27-1280.webp",
+        "size": [
+          1017,
+          1002
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-27-360.webp",
+        "size": [
+          360,
+          355
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-27-640.webp",
+        "size": [
+          640,
+          631
+        ]
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "key": "assets/images/decor/collection-28.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/decor/collection-28-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/decor/collection-28-1280.webp",
+        "size": [
+          994,
+          988
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-28-360.webp",
+        "size": [
+          360,
+          358
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-28-640.webp",
+        "size": [
+          640,
+          636
+        ]
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "key": "assets/images/decor/collection-29.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/decor/collection-29-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/decor/collection-29-1280.webp",
+        "size": [
+          910,
+          1150
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-29-360.webp",
+        "size": [
+          360,
+          455
+        ]
+      },
+      {
+        "path": "assets/images/decor/collection-29-640.webp",
+        "size": [
+          640,
+          809
+        ]
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "key": "assets/images/decor/decor-19.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/decor/decor-19.webp",
+    "targets": [
+      {
+        "path": "assets/images/decor/decor-19-small.webp",
+        "size": [
+          582,
+          800
+        ]
+      },
+      {
+        "path": "assets/images/decor/decor-19.webp",
+        "size": [
+          896,
+          1232
+        ]
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "key": "assets/images/decor/decor-31.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/decor/decor-31.webp",
+    "targets": [
+      {
+        "path": "assets/images/decor/decor-31-small.webp",
+        "size": [
+          640,
+          743
+        ]
+      },
+      {
+        "path": "assets/images/decor/decor-31.webp",
+        "size": [
+          1122,
+          1302
+        ]
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "key": "assets/images/decor/decor-44.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/decor/decor-44.webp",
+    "targets": [
+      {
+        "path": "assets/images/decor/decor-44-small.webp",
+        "size": [
+          640,
+          781
+        ]
+      },
+      {
+        "path": "assets/images/decor/decor-44.webp",
+        "size": [
+          978,
+          1194
+        ]
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "key": "assets/images/decor/decor-48.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/decor/decor-48.webp",
+    "targets": [
+      {
+        "path": "assets/images/decor/decor-48-small.webp",
+        "size": [
+          640,
+          570
+        ]
+      },
+      {
+        "path": "assets/images/decor/decor-48.webp",
+        "size": [
+          1146,
+          1020
+        ]
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "key": "assets/images/garlands/collection-15.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/garlands/collection-15-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/garlands/collection-15-1280.webp",
+        "size": [
+          708,
+          1374
+        ]
+      },
+      {
+        "path": "assets/images/garlands/collection-15-360.webp",
+        "size": [
+          360,
+          699
+        ]
+      },
+      {
+        "path": "assets/images/garlands/collection-15-640.webp",
+        "size": [
+          640,
+          1242
+        ]
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "key": "assets/images/garlands/collection-20.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/garlands/collection-20-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/garlands/collection-20-1280.webp",
+        "size": [
+          740,
+          1578
+        ]
+      },
+      {
+        "path": "assets/images/garlands/collection-20-360.webp",
+        "size": [
+          338,
+          720
+        ]
+      },
+      {
+        "path": "assets/images/garlands/collection-20-640.webp",
+        "size": [
+          600,
+          1280
+        ]
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "key": "assets/images/garlands/collection-21.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/garlands/collection-21-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/garlands/collection-21-1280.webp",
+        "size": [
+          981,
+          1600
+        ]
+      },
+      {
+        "path": "assets/images/garlands/collection-21-360.webp",
+        "size": [
+          360,
+          587
+        ]
+      },
+      {
+        "path": "assets/images/garlands/collection-21-640.webp",
+        "size": [
+          640,
+          1044
+        ]
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "key": "assets/images/garlands/collection-22.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/garlands/collection-22-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/garlands/collection-22-1280.webp",
+        "size": [
+          828,
+          1410
+        ]
+      },
+      {
+        "path": "assets/images/garlands/collection-22-360.webp",
+        "size": [
+          360,
+          613
+        ]
+      },
+      {
+        "path": "assets/images/garlands/collection-22-640.webp",
+        "size": [
+          640,
+          1090
+        ]
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "key": "assets/images/garlands/collection-25.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/garlands/collection-25-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/garlands/collection-25-1280.webp",
+        "size": [
+          1006,
+          1600
+        ]
+      },
+      {
+        "path": "assets/images/garlands/collection-25-360.webp",
+        "size": [
+          360,
+          573
+        ]
+      },
+      {
+        "path": "assets/images/garlands/collection-25-640.webp",
+        "size": [
+          640,
+          1018
+        ]
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "key": "assets/images/garlands/collection-26.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/garlands/collection-26-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/garlands/collection-26-1280.webp",
+        "size": [
+          979,
+          1574
+        ]
+      },
+      {
+        "path": "assets/images/garlands/collection-26-360.webp",
+        "size": [
+          360,
+          579
+        ]
+      },
+      {
+        "path": "assets/images/garlands/collection-26-640.webp",
+        "size": [
+          640,
+          1029
+        ]
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "key": "assets/images/garlands/collection-30.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/garlands/collection-30-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/garlands/collection-30-1280.webp",
+        "size": [
+          902,
+          1219
+        ]
+      },
+      {
+        "path": "assets/images/garlands/collection-30-360.webp",
+        "size": [
+          360,
+          487
+        ]
+      },
+      {
+        "path": "assets/images/garlands/collection-30-640.webp",
+        "size": [
+          640,
+          865
+        ]
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "key": "assets/images/garlands/collection-32.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/garlands/collection-32-1280.webp",
+    "targets": [
+      {
+        "path": "assets/images/garlands/collection-32-1280.webp",
+        "size": [
+          917,
+          1335
+        ]
+      },
+      {
+        "path": "assets/images/garlands/collection-32-360.webp",
+        "size": [
+          360,
+          524
+        ]
+      },
+      {
+        "path": "assets/images/garlands/collection-32-640.webp",
+        "size": [
+          640,
+          932
+        ]
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "key": "assets/images/generated/marigold-sewanti-garland.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/generated/marigold-sewanti-garland.webp",
+    "targets": [
+      {
+        "path": "assets/images/generated/marigold-sewanti-garland.webp",
+        "size": [
+          1122,
+          1402
+        ]
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "key": "assets/images/generated/nishigandha-mogra-closeup.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/generated/nishigandha-mogra-closeup.webp",
+    "targets": [
+      {
+        "path": "assets/images/generated/nishigandha-mogra-closeup.webp",
+        "size": [
+          1122,
+          1402
+        ]
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "key": "assets/images/generated/rose-mogra-bouquet.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/generated/rose-mogra-bouquet.webp",
+    "targets": [
+      {
+        "path": "assets/images/generated/rose-mogra-bouquet.webp",
+        "size": [
+          1122,
+          1402
+        ]
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "key": "assets/images/generated/royal-rose-mogra-garland.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/generated/royal-rose-mogra-garland.webp",
+    "targets": [
+      {
+        "path": "assets/images/generated/royal-rose-mogra-garland.webp",
+        "size": [
+          1122,
+          1402
+        ]
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "key": "assets/images/inspiration/haldi.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/inspiration/haldi-960.webp",
+    "targets": [
+      {
+        "path": "assets/images/inspiration/haldi-480.webp",
+        "size": [
+          480,
+          640
+        ]
+      },
+      {
+        "path": "assets/images/inspiration/haldi-960.webp",
+        "size": [
+          960,
+          1280
+        ]
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "key": "assets/images/inspiration/varmala.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/images/inspiration/varmala-960.webp",
+    "targets": [
+      {
+        "path": "assets/images/inspiration/varmala-480.webp",
+        "size": [
+          480,
+          640
+        ]
+      },
+      {
+        "path": "assets/images/inspiration/varmala-960.webp",
+        "size": [
+          960,
+          1280
+        ]
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "key": "assets/stickers/sticker-belt.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/stickers/sticker-belt.webp",
+    "targets": [
+      {
+        "path": "assets/stickers/sticker-belt.webp",
+        "size": [
+          160,
+          112
+        ]
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "key": "assets/stickers/sticker-blossom.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/stickers/sticker-blossom.webp",
+    "targets": [
+      {
+        "path": "assets/stickers/sticker-blossom.webp",
+        "size": [
+          160,
+          149
+        ]
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "key": "assets/stickers/sticker-bouquet.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/stickers/sticker-bouquet.webp",
+    "targets": [
+      {
+        "path": "assets/stickers/sticker-bouquet.webp",
+        "size": [
+          140,
+          160
+        ]
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "key": "assets/stickers/sticker-decor.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/stickers/sticker-decor.webp",
+    "targets": [
+      {
+        "path": "assets/stickers/sticker-decor.webp",
+        "size": [
+          160,
+          98
+        ]
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "key": "assets/stickers/sticker-delivery.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/stickers/sticker-delivery.webp",
+    "targets": [
+      {
+        "path": "assets/stickers/sticker-delivery.webp",
+        "size": [
+          146,
+          160
+        ]
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "key": "assets/stickers/sticker-garland.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/stickers/sticker-garland.webp",
+    "targets": [
+      {
+        "path": "assets/stickers/sticker-garland.webp",
+        "size": [
+          113,
+          160
+        ]
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "key": "assets/stickers/sticker-rings.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/stickers/sticker-rings.webp",
+    "targets": [
+      {
+        "path": "assets/stickers/sticker-rings.webp",
+        "size": [
+          160,
+          115
+        ]
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "key": "assets/videos/bouquet-reel-poster.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/videos/bouquet-reel-poster.webp",
+    "targets": [
+      {
+        "path": "assets/videos/bouquet-reel-poster.webp",
+        "size": [
+          720,
+          1280
+        ]
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "key": "assets/videos/delivery-poster.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/videos/delivery-poster.webp",
+    "targets": [
+      {
+        "path": "assets/videos/delivery-poster.webp",
+        "size": [
+          480,
+          270
+        ]
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "key": "assets/videos/lotus-varmala-poster.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/videos/lotus-varmala-poster.webp",
+    "targets": [
+      {
+        "path": "assets/videos/lotus-varmala-poster.webp",
+        "size": [
+          480,
+          854
+        ]
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "key": "assets/videos/rose-varmala-poster.webp",
+    "source": "/home/asrarshaikh/sagar florist shop/website/assets/videos/rose-varmala-poster.webp",
+    "targets": [
+      {
+        "path": "assets/videos/rose-varmala-poster.webp",
+        "size": [
+          480,
+          854
+        ]
+      }
+    ]
+  }
+]
