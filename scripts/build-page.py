@@ -255,7 +255,7 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
       <div class="fluid-tags-ribbon" role="region" aria-label="Quick Categories">
         <!-- Tag 1: लग्नहार (Garlands) -->
         <a class="fluid-tag-pill tag-garlands" href="#collection" data-filter-trigger="garlands">
-          <span class="tag-icon">🌸</span>
+          <img class="button-sticker tag-sticker" src="assets/stickers/sticker-garland.webp" alt="" width="22" height="22">
           <span class="tag-label">लग्नहार</span>
           <span class="tag-arrow" aria-hidden="true">›</span>
         </a>
@@ -265,7 +265,7 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
 
         <!-- Tag 2: बुके (Bouquets) -->
         <a class="fluid-tag-pill tag-bouquets" href="#collection" data-filter-trigger="bouquets">
-          <span class="tag-icon">💐</span>
+          <img class="button-sticker tag-sticker" src="assets/stickers/sticker-bouquet.webp" alt="" width="22" height="22">
           <span class="tag-label">बुके</span>
           <span class="tag-arrow" aria-hidden="true">›</span>
         </a>
@@ -275,7 +275,7 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
 
         <!-- Tag 3: गाडी सजावट (Car Decor) -->
         <a class="fluid-tag-pill tag-decor" href="#collection" data-filter-trigger="decor">
-          <span class="tag-icon">🚗</span>
+          <img class="button-sticker tag-sticker" src="assets/stickers/sticker-decor.webp" alt="" width="22" height="22">
           <span class="tag-label">गाडी सजावट</span>
           <span class="tag-arrow" aria-hidden="true">›</span>
         </a>
@@ -285,7 +285,7 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
 
         <!-- Tag 4: घरपोच डिलिव्हरी (Doorstep Delivery) -->
         <a class="fluid-tag-pill tag-delivery" href="{wa('घरपोच डिलिव्हरी बद्दल माहिती')}" target="_blank" rel="noopener noreferrer">
-          <span class="tag-icon">⚡</span>
+          <img class="button-sticker tag-sticker" src="assets/stickers/sticker-delivery.webp" alt="" width="22" height="22">
           <span class="tag-label">घरपोच डिलिव्हरी</span>
           <span class="tag-arrow" aria-hidden="true">›</span>
         </a>
@@ -300,7 +300,7 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
     <div class="fluid-values-ribbon" role="region" aria-label="Sagar Highlights">
       <!-- Value 1: १००% ताजी फुले -->
       <a class="fluid-val-pill val-fresh" href="#collection" data-filter-trigger="all" aria-label="१००% ताजी फुले - सर्व ताजी फुले पहा">
-        <span class="val-icon">🌸</span>
+        <img class="button-sticker val-sticker" src="assets/stickers/sticker-blossom.webp" alt="" width="22" height="22">
         <span class="val-label">१००% ताजी फुले</span>
         <span class="val-arrow" aria-hidden="true">›</span>
       </a>
@@ -324,7 +324,7 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
 
       <!-- Value 2: आकर्षक लग्नहार व वरमाला -->
       <a class="fluid-val-pill val-wedding" href="#collection" data-filter-trigger="garlands" aria-label="आकर्षक लग्नहार व वरमाला">
-        <span class="val-icon">💍</span>
+        <img class="button-sticker val-sticker" src="assets/stickers/sticker-rings.webp" alt="" width="22" height="22">
         <span class="val-label"><span class="val-text-full">आकर्षक लग्नहार व वरमाला</span><span class="val-text-short">लग्नहार व वरमाला</span></span>
         <span class="val-arrow" aria-hidden="true">›</span>
       </a>
@@ -348,7 +348,7 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
 
       <!-- Value 3: गाडी व मंडप सजावट -->
       <a class="fluid-val-pill val-decor" href="#collection" data-filter-trigger="decor" aria-label="गाडी व मंडप सजावट">
-        <span class="val-icon">🚗</span>
+        <img class="button-sticker val-sticker" src="assets/stickers/sticker-decor.webp" alt="" width="22" height="22">
         <span class="val-label"><span class="val-text-full">गाडी व मंडप सजावट</span><span class="val-text-short">गाडी व मंडप सजावट</span></span>
         <span class="val-arrow" aria-hidden="true">›</span>
       </a>
@@ -372,7 +372,7 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
 
       <!-- Value 4: परळी व परिसरात जलद डिलिव्हरी -->
       <a class="fluid-val-pill val-delivery" href="{wa('परळी व परिसरात जलद घरपोच डिलिव्हरी बद्दल माहिती')}" target="_blank" rel="noopener noreferrer" aria-label="परळी व परिसरात जलद डिलिव्हरी">
-        <span class="val-icon">⚡</span>
+        <img class="button-sticker val-sticker" src="assets/stickers/sticker-delivery.webp" alt="" width="22" height="22">
         <span class="val-label"><span class="val-text-full">परळी व परिसरात जलद डिलिव्हरी</span><span class="val-text-short">जलद घरपोच डिलिव्हरी</span></span>
         <span class="val-arrow" aria-hidden="true">›</span>
       </a>
@@ -394,7 +394,7 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
     <div class="fluid-filter-ribbon" role="region" aria-label="Floral Category Filter">
       <!-- Category 1: सर्व फुले -->
       <button data-filter="all" aria-pressed="true" class="fluid-filter-pill filter-all active" aria-label="सर्व फुले - All Designs">
-        <span class="filter-icon" aria-hidden="true">🌸</span>
+        <img class="button-sticker filter-sticker" src="assets/stickers/sticker-blossom.webp" alt="" width="22" height="22">
         <span class="filter-label">सर्व फुले</span>
         <span class="filter-arrow" aria-hidden="true">›</span>
       </button>
@@ -418,7 +418,7 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
 
       <!-- Category 2: लग्नहार व वरमाला -->
       <button data-filter="garlands" aria-pressed="false" class="fluid-filter-pill filter-garlands" aria-label="लग्नहार व वरमाला - Wedding Garlands">
-        <span class="filter-icon" aria-hidden="true">🌺</span>
+        <img class="button-sticker filter-sticker" src="assets/stickers/sticker-garland.webp" alt="" width="22" height="22">
         <span class="filter-label"><span class="filter-text-full">लग्नहार व वरमाला</span><span class="filter-text-short">लग्नहार</span></span>
         <span class="filter-arrow" aria-hidden="true">›</span>
       </button>
@@ -442,7 +442,7 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
 
       <!-- Category 3: आकर्षक बुके -->
       <button data-filter="bouquets" aria-pressed="false" class="fluid-filter-pill filter-bouquets" aria-label="आकर्षक बुके - Bouquets">
-        <span class="filter-icon" aria-hidden="true">💐</span>
+        <img class="button-sticker filter-sticker" src="assets/stickers/sticker-bouquet.webp" alt="" width="22" height="22">
         <span class="filter-label"><span class="filter-text-full">आकर्षक बुके</span><span class="filter-text-short">बुके</span></span>
         <span class="filter-arrow" aria-hidden="true">›</span>
       </button>
@@ -466,7 +466,7 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
 
       <!-- Category 4: गाडी व स्टेज सजावट -->
       <button data-filter="decor" aria-pressed="false" class="fluid-filter-pill filter-decor" aria-label="गाडी व स्टेज सजावट - Car & Stage Decor">
-        <span class="filter-icon" aria-hidden="true">🚗</span>
+        <img class="button-sticker filter-sticker" src="assets/stickers/sticker-decor.webp" alt="" width="22" height="22">
         <span class="filter-label"><span class="filter-text-full">गाडी व स्टेज सजावट</span><span class="filter-text-short">गाडी सजावट</span></span>
         <span class="filter-arrow" aria-hidden="true">›</span>
       </button>
@@ -490,7 +490,7 @@ parts = [head, f'''<body><a class="skip" href="#main">Skip to content</a>
 
       <!-- Category 5: गजरा व कंबरपट्टा -->
       <button data-filter="belts" aria-pressed="false" class="fluid-filter-pill filter-belts" aria-label="गजरा व कंबरपट्टा - Floral Jewellery">
-        <span class="filter-icon" aria-hidden="true">🌼</span>
+        <img class="button-sticker filter-sticker" src="assets/stickers/sticker-belt.webp" alt="" width="22" height="22">
         <span class="filter-label"><span class="filter-text-full">गजरा व कंबरपट्टा</span><span class="filter-text-short">कंबरपट्टा</span></span>
         <span class="filter-arrow" aria-hidden="true">›</span>
       </button>
@@ -844,7 +844,7 @@ contact = f'''<section id="contact" class="contact section wrap">
       <div class="maps-window-footer">
         <div class="footer-fluid-dock">
           <a class="footer-fluid-pill primary-dir" href="https://www.google.com/maps/dir/?api=1&destination=Sagar+Flower+Shop+near+Maharashtra+Shoe+Mart+Parli+Maharashtra" target="_blank" rel="noopener noreferrer">
-            <span aria-hidden="true">🚗</span>
+            <img class="button-sticker maps-btn-sticker" src="assets/stickers/sticker-decor.webp" alt="" width="18" height="18">
             <span class="pill-full-text">मार्ग दाखवा (Directions)</span>
             <span class="pill-short-text">मार्ग (Directions)</span>
           </a>
@@ -860,7 +860,7 @@ contact = f'''<section id="contact" class="contact section wrap">
           </a>
         </div>
         <div class="footer-delivery-pill">
-          <span aria-hidden="true">⚡</span>
+          <img class="button-sticker val-sticker" src="assets/stickers/sticker-delivery.webp" alt="" width="18" height="18">
           <span>परळी शहरात जलद घरपोच डिलिव्हरी</span>
         </div>
       </div>

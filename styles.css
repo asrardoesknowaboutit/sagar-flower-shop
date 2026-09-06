@@ -139,6 +139,58 @@ button[hidden], [hidden] { display: none !important; }
   border-color: var(--rose);
 }
 
+/* Button Stickers generated with Nano Banana Pro (3D Die-Cut Glossy Icons) */
+.button-sticker {
+  display: inline-block;
+  vertical-align: middle;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.18));
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.25s ease;
+  pointer-events: none;
+}
+
+.tag-sticker {
+  width: 24px;
+  height: 24px;
+}
+
+.val-sticker {
+  width: 26px;
+  height: 26px;
+}
+
+.filter-sticker {
+  width: 26px;
+  height: 26px;
+}
+
+.reel-sticker {
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
+}
+
+.maps-btn-sticker {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+/* Interactive micro-bounce for stickers */
+.fluid-tag-pill:hover .button-sticker,
+.fluid-val-pill:hover .button-sticker,
+.fluid-filter-pill:hover .button-sticker,
+.footer-fluid-pill:hover .button-sticker {
+  transform: scale(1.18) rotate(-4deg);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.24));
+}
+
+.fluid-filter-pill.active .button-sticker {
+  transform: scale(1.12);
+  filter: drop-shadow(0 3px 8px rgba(16, 184, 83, 0.35));
+}
+
 /* Sticky Header */
 .header {
   position: sticky;
