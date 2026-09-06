@@ -4358,6 +4358,50 @@ dialog::backdrop { background: rgba(8, 24, 17, 0.94); }
   pointer-events: none; overflow: visible;
 }
 
+/* Premium image carousel: a quiet 3D morph on desktop, a swipeable deck on phones. */
+.premium-carousel { background: #f1eee5; overflow: hidden; }
+.premium-carousel-heading { margin-bottom: 28px; }
+.premium-carousel-heading > p { max-width: 360px; }
+.premium-carousel-shell { position: relative; }
+.premium-carousel-track { position: relative; min-height: 420px; perspective: 1200px; }
+.premium-slide { position: absolute; inset: 0; display: grid; grid-template-columns: minmax(0, .9fr) minmax(260px, .8fr); align-items: stretch; gap: 0; opacity: 0; pointer-events: none; transform: translate3d(9%, 0, -80px) rotateY(-12deg) scale(.96); transition: opacity .65s ease, transform .85s cubic-bezier(.16,1,.3,1); }
+.premium-slide.is-active { opacity: 1; pointer-events: auto; transform: translate3d(0, 0, 0) rotateY(0) scale(1); z-index: 2; }
+.premium-slide-media { min-height: 420px; overflow: hidden; background: #d9cfbc; }
+.premium-slide-media img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.premium-slide-copy { display: flex; flex-direction: column; justify-content: center; padding: 38px clamp(24px, 5vw, 68px); background: #fffdf7; }
+.premium-slide-copy h3 { margin: 14px 0 8px; font-size: clamp(30px, 4vw, 54px); line-height: 1.05; }
+.premium-slide-copy p { color: var(--muted); font-size: 14px; }
+.premium-slide-copy a { display: inline-flex; justify-content: space-between; align-items: center; gap: 20px; max-width: 260px; margin-top: 28px; padding-bottom: 8px; border-bottom: 1px solid var(--ink); font-size: 12px; }
+.premium-slide-copy a span { font-size: 18px; }
+.premium-carousel-controls { display: flex; align-items: center; justify-content: space-between; padding: 18px 4px 0; }
+.premium-carousel-controls > button { width: 42px; height: 42px; border: 1px solid var(--line); background: var(--paper); }
+.premium-carousel-dots { display: flex; align-items: center; gap: 8px; }
+.premium-carousel-dots button { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 50%; background: #bec8bb; }
+.premium-carousel-dots button.is-active { width: 25px; border-radius: 99px; background: var(--ink); }
+@media (max-width: 760px) {
+  .premium-carousel { padding-block: 48px; }
+  .premium-carousel-heading { display: block; margin-bottom: 22px; }
+  .premium-carousel-heading > p { margin-top: 14px; }
+  .premium-carousel-track { min-height: 0; aspect-ratio: 10 / 13; }
+  .premium-slide { display: block; transform: translate3d(17%, 0, -70px) rotateY(-9deg) scale(.94); }
+  .premium-slide-media { min-height: 0; height: 100%; }
+  .premium-slide-copy { position: absolute; inset: auto 0 0; padding: 54px 18px 17px; color: #fff; background: linear-gradient(transparent, rgba(10,29,20,.9)); }
+  .premium-slide-copy h3 { font-size: clamp(25px, 7.4vw, 34px); margin: 5px 0 1px; }
+  .premium-slide-copy p { color: #e5eee3; font-size: 11px; }
+  .premium-slide-copy a { max-width: none; width: 100%; margin-top: 11px; padding-bottom: 0; border-bottom: 0; font-size: 11px; }
+  .premium-slide-copy a span { font-size: 16px; }
+  .premium-carousel-controls { padding-top: 13px; }
+  .premium-carousel-controls > button { width: 40px; height: 40px; }
+}
+
+/* Every ribbon starts at the first option on a phone; no centered overflow gets clipped. */
+@media (max-width: 760px) {
+  .fluid-values-ribbon-wrap, .fluid-filter-ribbon-wrap { justify-content: flex-start; padding-inline: 12px; scroll-padding-inline: 12px; }
+  .fluid-values-ribbon, .fluid-filter-ribbon { margin-left: 0; margin-right: 0; }
+  .fluid-val-pill, .fluid-filter-pill { scroll-snap-align: start; }
+  .fluid-values-ribbon-wrap, .fluid-filter-ribbon-wrap { scroll-snap-type: x proximity; }
+}
+
 /* Keep the reference's desktop silhouettes intact at every phone width.
    All dimensions share the same container scale, including text and icons. */
 @media (max-width: 760px) {

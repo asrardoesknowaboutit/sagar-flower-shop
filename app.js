@@ -819,3 +819,40 @@ initElasticBoundaries();
   window.addEventListener('resize', schedule);
   schedule();
 })();
+
+// Premium editorial carousel: light, touch-friendly morphing deck.
+(() => {
+  const root = document.querySelector('.premium-carousel');
+  if (!root) return;
+  const slides = [...root.querySelectorAll('[data-premium-slide]')];
+  const dots = [...root.querySelectorAll('[data-premium-dot]')];
+  const prev = root.querySelector('[data-premium-prev]');
+  const next = root.querySelector('[data-premium-next]');
+  if (!slides.length) return;
+  let current = 0;
+  let timer;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const render = index => {
+    current = (index + slides.length) % slides.length;
+    slides.forEach((slide, i) => slide.classList.toggle('is-active', i === current));
+    dots.forEach((dot, i) => {
+      const active = i === current;
+      dot.classList.toggle('is-active', active);
+      dot.setAttribute('aria-selected', String(active));
+    });
+  };
+  const stop = () => { if (timer) window.clearInterval(timer); timer = undefined; };
+  const start = () => { stop(); if (!reduceMotion.matches) timer = window.setInterval(() => render(current + 1), 5200); };
+  prev?.addEventListener('click', () => { render(current - 1); start(); });
+  next?.addEventListener('click', () => { render(current + 1); start(); });
+  dots.forEach(dot => dot.addEventListener('click', () => { render(Number(dot.dataset.premiumDot)); start(); }));
+  root.addEventListener('mouseenter', stop);
+  root.addEventListener('mouseleave', start);
+  root.addEventListener('focusin', stop);
+  root.addEventListener('focusout', start);
+  root.addEventListener('touchstart', stop, { passive: true });
+  root.addEventListener('touchend', start, { passive: true });
+  reduceMotion.addEventListener?.('change', start);
+  render(0);
+  start();
+})();
