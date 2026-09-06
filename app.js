@@ -244,7 +244,24 @@ function initHero3DShowcase() {
   let autoplayTimer = null;
   let isPaused = false;
   let morphAnimFrame = null;
-  const ROTATION_MS = 5500;
+  const ROTATION_MS = 7000;
+  let manuallyPaused = false;
+  const pauseButton = document.getElementById('heroPauseBtn');
+  function syncSlides() {
+    slides.forEach((slide, index) => {
+      slide.inert = index !== currentIndex;
+      slide.setAttribute('aria-hidden', String(index !== currentIndex));
+    });
+  }
+  syncSlides();
+  pauseButton?.addEventListener('click', () => {
+    manuallyPaused = !manuallyPaused;
+    pauseButton.textContent = manuallyPaused ? 'Play slideshow' : 'Pause slideshow';
+    pauseButton.setAttribute('aria-pressed', String(manuallyPaused));
+    restartAutoplay();
+  });
+  container.addEventListener('focusin', stopAutoplay);
+  container.addEventListener('focusout', () => setTimeout(startAutoplay, 0));
 
   function updateGlider() {
     if (!glider || currentIndex < 0 || currentIndex >= pills.length) return;
@@ -297,7 +314,7 @@ function initHero3DShowcase() {
     const outgoingSlide = slides[currentIndex];
     const incomingSlide = slides[targetIndex];
 
-    triggerMorphEffect();
+    if (animate()) triggerMorphEffect();
 
     if (outgoingSlide && outgoingSlide !== incomingSlide) {
       outgoingSlide.classList.remove('active', 'slide-morph-blooming');
@@ -324,6 +341,7 @@ function initHero3DShowcase() {
     });
 
     currentIndex = targetIndex;
+    syncSlides();
     updateGlider();
   }
 
@@ -369,7 +387,7 @@ function initHero3DShowcase() {
 
   function startAutoplay() {
     stopAutoplay();
-    if (!isPaused && !document.hidden && (!window.motion || window.motion.matches !== false)) {
+    if (!isPaused && !manuallyPaused && !document.hidden && animate() && !container.contains(document.activeElement)) {
       autoplayTimer = setInterval(nextSlide, ROTATION_MS);
     }
   }
