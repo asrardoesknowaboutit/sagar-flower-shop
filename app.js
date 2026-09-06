@@ -242,26 +242,14 @@ function initHero3DShowcase() {
   let isPaused = false;
   const ROTATION_MS = 5500;
 
-  function setSlide(targetIndex, direction = 'next') {
+  function setSlide(targetIndex) {
     if (targetIndex === currentIndex && slides[currentIndex].classList.contains('active')) return;
 
-    const curSlide = slides[currentIndex];
-    const newSlide = slides[targetIndex];
-
-    slides.forEach(s => {
+    slides.forEach((s, idx) => {
+      const isActive = idx === targetIndex;
+      s.classList.toggle('active', isActive);
       s.classList.remove('slide-leaving-prev', 'slide-leaving-next', 'slide-entering-prev', 'slide-entering-next');
     });
-
-    if (direction === 'next') {
-      curSlide.classList.add('slide-leaving-next');
-      newSlide.classList.add('slide-entering-next');
-    } else {
-      curSlide.classList.add('slide-leaving-prev');
-      newSlide.classList.add('slide-entering-prev');
-    }
-
-    curSlide.classList.remove('active');
-    newSlide.classList.add('active');
 
     pills.forEach((pill, idx) => {
       const isActive = idx === targetIndex;
@@ -270,6 +258,12 @@ function initHero3DShowcase() {
     });
 
     currentIndex = targetIndex;
+  }
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const initialSlide = parseInt(urlParams.get('slide'), 10);
+  if (!isNaN(initialSlide) && initialSlide >= 0 && initialSlide < slides.length) {
+    setSlide(initialSlide);
   }
 
   function nextSlide() {
