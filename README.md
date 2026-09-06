@@ -21,9 +21,8 @@ Run `python3 -m http.server 8000` from this directory and open `http://localhost
 
 ## Content maintenance
 
-- Edit shop information and service copy in `scripts/site-base.html`, then run `python3 scripts/build-page.py`.
-- Edit gallery items in `assets/collection.json`; the builder generates `index.html` using only the Python standard library.
-- Portfolio cards are rendered in HTML for search engines and work without JavaScript. Titles, categories, image paths and WhatsApp links are generated together.
+- Edit shop information and service copy in `index.html`.
+- Portfolio cards are rendered in HTML for search engines and work without JavaScript. Update cards' titles, categories, image paths and WhatsApp links together.
 - Phone numbers and WhatsApp destination appear in `index.html` and `app.js`.
 - `assets/source-content.json` catalogs the eight original Google Sites pages.
 - `assets/source-catalog.json` records downloaded source photos; `assets/portfolio.json` catalogs the displayed collection.
@@ -36,8 +35,4 @@ Run `python3 -m http.server 8000` from this directory and open `http://localhost
 
 ## Features
 
-Responsive two-column mobile gallery, category filtering, accessible native-dialog lightbox with keyboard and swipe navigation, product-specific WhatsApp links, compact mobile ordering navigation, passive/rAF scroll updates, reduced-motion support, lazy responsive images, local assets, Florist JSON-LD, Open Graph metadata, and a skip link.
-
-## Mobile design
-
-Ivory and forest-green styling, a static Marathi hero, a two-column phone gallery, and a single fixed ordering bar. Videos use native playback controls and load on request. Desktop layouts expand at 700px and 1000px. Layout and gallery interactions were checked in Chrome at 320, 360, 390, 430, 768 and 1440px.
+Responsive two-column mobile gallery, category filtering, accessible native-dialog lightbox with keyboard and swipe navigation, product-specific WhatsApp links, scroll-aware bottom navigation, passive/rAF scroll updates, reduced-motion support, lazy responsive images, local assets, Florist JSON-LD, Open Graph metadata, and a skip link.
