@@ -518,84 +518,102 @@ button[hidden], [hidden] { display: none !important; }
 }
 
 /* ==========================================================================
-   ULTRA-THIN LIQUID-SILVER MERCURY CONTOUR RING
+   PHOTOREALISTIC 3D LIQUID CHROME LAYERS & SPECULAR SHEEN
    ========================================================================== */
-.hero-liquid-ring {
+.hero-liquid-layer {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) translateZ(0);
-  width: 115%;
-  height: 115%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   pointer-events: none;
-  overflow: visible;
   user-select: none;
-  -webkit-user-select: none;
-}
-
-.hero-liquid-ring.ring-back {
-  z-index: 1;
-}
-
-.hero-liquid-ring.ring-front {
-  z-index: 3;
-}
-
-/* Base and Traveling Specular Highlights */
-.liquid-contour-base {
-  will-change: auto;
-}
-
-.liquid-caustic-stream {
-  stroke-dasharray: 120 280 90 350 180 260 70 320;
-  stroke-dashoffset: 0;
-  animation: mercuryCirculateFlow 26s linear infinite;
-  will-change: stroke-dashoffset;
-}
-
-.liquid-caustic-stream-front {
-  stroke-dasharray: 60 140 40 180;
-  stroke-dashoffset: 0;
-  animation: mercuryCirculateFlowFront 26s linear infinite;
-  will-change: stroke-dashoffset;
-}
-
-@keyframes mercuryCirculateFlow {
-  from { stroke-dashoffset: 0; }
-  to { stroke-dashoffset: -2805.16px; }
-}
-
-@keyframes mercuryCirculateFlowFront {
-  from { stroke-dashoffset: 0; }
-  to { stroke-dashoffset: -2805.16px; }
-}
-
-/* Fluid Surface Tension Breathing on Meniscus Flare */
-.liquid-fluid-envelope {
-  animation: mercurySurfaceTension 8s ease-in-out infinite alternate;
-  transform-origin: 930px 480px;
-}
-
-@keyframes mercurySurfaceTension {
-  0% { opacity: 0.82; transform: scale(0.994); }
-  100% { opacity: 0.95; transform: scale(1.006); }
-}
-
-/* Orbiting Mercury Micro-Droplets */
-.orbiting-bead {
-  filter: drop-shadow(0 2px 3px rgba(20, 28, 38, 0.4));
+  -webkit-user-drag: none;
   will-change: transform;
 }
 
-/* Suspended Liquid Mercury Droplets */
-.liquid-mercury-droplet {
-  filter: drop-shadow(0 2px 3px rgba(20, 28, 38, 0.35));
-  animation: dropletMicroDrift 6s ease-in-out infinite alternate;
+.liquid-layer-back {
+  z-index: 1;
+  animation: liquidBackMicroDrift 9s ease-in-out infinite alternate;
 }
 
-@keyframes dropletMicroDrift {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(0.5px, -0.6px); }
+.liquid-layer-front {
+  z-index: 3;
+  animation: liquidFrontMicroDrift 7.5s ease-in-out infinite alternate;
+}
+
+/* Subtle GPU Micro-Physics Parallax on Liquid Layers (Keeping Subject Stationary) */
+@keyframes liquidBackMicroDrift {
+  0% {
+    transform: translate(-50%, -50%) translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) translate3d(-1.5px, 2px, 0) scale(1.008);
+  }
+  100% {
+    transform: translate(-50%, -50%) translate3d(2px, -1.5px, 0) scale(0.995);
+  }
+}
+
+@keyframes liquidFrontMicroDrift {
+  0% {
+    transform: translate(-50%, -50%) translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) translate3d(2px, -2px, 0) scale(0.993);
+  }
+  100% {
+    transform: translate(-50%, -50%) translate3d(-2px, 1.5px, 0) scale(1.006);
+  }
+}
+
+/* Specular Light Pass Sweep (Traveling Caustic Sheen) */
+.hero-liquid-sheen-sweep {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 104%;
+  height: 104%;
+  transform: translate(-50%, -50%) translateZ(0);
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse 50% 40% at 35% 25%,
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(255, 255, 255, 0.12) 30%,
+    transparent 65%
+  );
+  mix-blend-mode: screen;
+  opacity: 0.65;
+  animation: liquidCausticSweep 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: opacity, transform;
+}
+
+.hero-liquid-sheen-sweep.sheen-back {
+  z-index: 1;
+}
+
+.hero-liquid-sheen-sweep.sheen-front {
+  z-index: 3;
+  animation-delay: -7s;
+  opacity: 0.45;
+}
+
+@keyframes liquidCausticSweep {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) rotate(0deg) scale(0.98);
+  }
+  35% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) rotate(120deg) scale(1.02);
+  }
+  70% {
+    opacity: 0.4;
+    transform: translate(-50%, -50%) rotate(240deg) scale(0.99);
+  }
 }
 
 /* Slide Content (Bilingual Titles, Dual CTAs) */
